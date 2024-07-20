@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraBars.Ribbon;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,71 @@ namespace GUI
         private void ribbonStatusBar1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        string phong;
+        string tang;
+        void testLoadPhong()
+        {
+            var lstTang = new List<dynamic>
+            {
+                new
+                {
+                    TenTang = "Tầng 1",
+                    Phongs = new List<dynamic>
+                    {
+                        new { TenPhong = "Phòng 101" },
+                        new { TenPhong = "Phòng 102" },
+                        new { TenPhong = "Phòng 103" }
+                    }
+                },
+                new
+                {
+                    TenTang = "Tầng 2",
+                    Phongs = new List<dynamic>
+                    {
+                        new { TenPhong = "Phòng 201" },
+                        new { TenPhong = "Phòng 202" },
+                        new { TenPhong = "Phòng 203" }
+                    }
+                },
+                new
+                {
+                    TenTang = "Tầng 3",
+                    Phongs = new List<dynamic>
+                    {
+                        new { TenPhong = "Phòng 301" },
+                        new { TenPhong = "Phòng 302" },
+                        new { TenPhong = "Phòng 303" }
+                    }
+                }
+            };
+
+            gControl.Gallery.ItemImageLayout = DevExpress.Utils.Drawing.ImageLayoutMode.ZoomInside;
+            gControl.Gallery.ImageSize = new Size(64, 64);
+            gControl.Gallery.ShowItemText = true;
+            gControl.Gallery.ShowGroupCaption = true;
+
+            // Truy cập thông tin trong danh sách
+            foreach (var tang in lstTang)
+            {
+                var galleryItemGroup = new GalleryItemGroup
+                {
+                    Caption = tang.TenTang.ToString(),
+                    CaptionAlignment = GalleryItemGroupCaptionAlignment.Stretch
+                };
+
+                foreach (var phong in tang.Phongs)
+                {
+                    var gc_item = new GalleryItem
+                    {
+                        Caption = phong.TenPhong.ToString()
+                    };
+                    galleryItemGroup.Items.Add(gc_item);
+                }
+
+                gControl.Gallery.Groups.Add(galleryItemGroup);
+            }
         }
     }
 }
