@@ -20,8 +20,22 @@ namespace GUI
 
         private void FrmDangNhap_Load(object sender, EventArgs e)
         {
-                panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
-                button1.BackColor = Color.FromArgb(100, 0, 0, 0);
+                panel1.BackColor = Color.FromArgb(100, 38, 147, 109);
+                button1.BackColor = Color.FromArgb(100, 138, 211, 154);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmDangNhap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult ret = MessageBox.Show("Thoát khỏi phần mềm?", "Hỏi thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (ret == DialogResult.No)
+            { 
+                e.Cancel = true;
+            }
         }
     }
 }

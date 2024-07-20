@@ -118,20 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="iconMainQuanLy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconMainQuanLy.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="iconBaoCao" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconBaoCao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AnhNenDangNhap" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AnhNenDangNhap.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconThoat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconThoat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon-dangnhap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-dangnhap1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconHeThong" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconHeThong1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon-dangnhap" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon-dangnhap1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconThoat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconThoat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconDanhMucMainNho" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconDanhMucMainNho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,7 +142,7 @@
   <data name="iconDanhMucMain" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconDanhMucMain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconMainQuanLy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconMainQuanLy.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="nutTatDangNhap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nutTatDangNhap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

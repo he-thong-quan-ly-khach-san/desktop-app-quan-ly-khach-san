@@ -10,11 +10,26 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frmMain : Form
+    public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public frmMain()
         {
             InitializeComponent();
+        }
+
+        private void panelControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ribbonControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ribbonStatusBar1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
