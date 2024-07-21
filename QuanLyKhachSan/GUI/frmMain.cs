@@ -16,6 +16,14 @@ namespace GUI
         public frmMain()
         {
             InitializeComponent();
+            btnThoat.ItemClick += BtnThoat_ItemClick;
+            testLoadPhong();
+            
+        }
+
+        private void BtnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
         }
 
         private void panelControl1_Paint(object sender, PaintEventArgs e)
@@ -87,14 +95,27 @@ namespace GUI
 
                 foreach (var phong in tang.Phongs)
                 {
-                    var gc_item = new GalleryItem
-                    {
-                        Caption = phong.TenPhong.ToString()
-                    };
+                    var gc_item = new GalleryItem();
+                    gc_item.Caption = phong.TenPhong.ToString();
+                    gc_item.ImageOptions.Image = imgListGiuong.Images[0];
                     galleryItemGroup.Items.Add(gc_item);
                 }
 
                 gControl.Gallery.Groups.Add(galleryItemGroup);
+            }
+        }    
+        /// <summary>
+        /// Hàm này mai mốt cần xử lý khi dữ liệu trường hợp chưa lưu thì hỏi muốn lưu trước khi đóng không
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+            DialogResult ret = MessageBox.Show("Thoát khỏi phần mềm?", "Hỏi thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (ret == DialogResult.No)
+            {
+                e.Cancel = true;
             }
         }
     }
