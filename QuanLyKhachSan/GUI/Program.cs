@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.Utils.DirectXPaint;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,17 +7,25 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    internal static class Program
+    public static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// frmDangNhap formDN;
+        public static frmCauHinhKetNoi formCN;
+        public static frmMain MainForm;
+        public static frmDangNhap formDN;
         [STAThread]
+
         static void Main()
         {
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            formDN = new frmDangNhap();
+            formCN = new frmCauHinhKetNoi();
+            Application.Run(formDN);
         }
     }
 }
