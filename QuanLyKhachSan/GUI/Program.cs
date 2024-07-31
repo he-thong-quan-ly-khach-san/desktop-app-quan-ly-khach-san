@@ -25,7 +25,7 @@ namespace GUI
             Application.SetCompatibleTextRenderingDefault(false);
             formDN = new frmDangNhap();
             formCN = new frmCauHinhKetNoi();
-            Application.Run(formDN);
+            Application.Run(new frmMain());
         }
     }
 }

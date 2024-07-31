@@ -47,8 +47,10 @@
     <Reference Include="DevExpress.Xpo.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraNavBar.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -79,11 +81,47 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDanhSachKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDanhSachKhachHang.Designer.cs">
+      <DependentUpon>frmDanhSachKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLienKetNDVaNND.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLienKetNDVaNND.Designer.cs">
+      <DependentUpon>frmLienKetNDVaNND.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManHinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManHinh.Designer.cs">
+      <DependentUpon>frmManHinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNguoiDung.Designer.cs">
+      <DependentUpon>frmNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhomNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhomNguoiDung.Designer.cs">
+      <DependentUpon>frmNhomNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhanQuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhanQuyen.Designer.cs">
+      <DependentUpon>frmPhanQuyen.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginResult.cs" />
     <Compile Include="Program.cs" />
@@ -95,8 +133,26 @@
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDanhSachKhachHang.resx">
+      <DependentUpon>frmDanhSachKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLienKetNDVaNND.resx">
+      <DependentUpon>frmLienKetNDVaNND.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManHinh.resx">
+      <DependentUpon>frmManHinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNguoiDung.resx">
+      <DependentUpon>frmNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhomNguoiDung.resx">
+      <DependentUpon>frmNhomNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhanQuyen.resx">
+      <DependentUpon>frmPhanQuyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -126,6 +182,9 @@
     <None Include="Resources\AnhNenDangNhap.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\iconPhong.png" />
+    <None Include="Resources\apply_32x32.png" />
+    <None Include="Resources\apply_16x16.png" />
     <Content Include="Resources\icon-dangnhap.png" />
     <None Include="Resources\nutTatDangNhap.png" />
     <None Include="Resources\iconMainQuanLy.gif" />
@@ -141,9 +200,9 @@
       <Project>{e54ebe11-99aa-4780-a652-b8e2b25bd809}</Project>
       <Name>BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{6dacf3a8-48e0-4795-8804-8f34d0b9417b}</Project>
-      <Name>DAL</Name>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{bea79ea5-8f55-4a57-94b3-7c5bd571ccbd}</Project>
+      <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

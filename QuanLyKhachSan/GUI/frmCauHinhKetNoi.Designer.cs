@@ -46,7 +46,7 @@
             this.btnHuy.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(92, 32);
-            this.btnHuy.TabIndex = 12;
+            this.btnHuy.TabIndex = 9;
             this.btnHuy.Text = "hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
             // 
@@ -56,7 +56,7 @@
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(92, 32);
-            this.btnLuu.TabIndex = 13;
+            this.btnLuu.TabIndex = 8;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             // 
@@ -67,7 +67,7 @@
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 16);
-            this.label4.TabIndex = 8;
+            this.label4.TabIndex = 6;
             this.label4.Text = "Tên Database";
             // 
             // label2
@@ -77,7 +77,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 16);
-            this.label2.TabIndex = 9;
+            this.label2.TabIndex = 2;
             this.label2.Text = "UserName";
             // 
             // label3
@@ -87,7 +87,7 @@
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 16);
-            this.label3.TabIndex = 10;
+            this.label3.TabIndex = 4;
             this.label3.Text = "Password:";
             // 
             // label1
@@ -97,7 +97,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 16);
-            this.label1.TabIndex = 11;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Tên server";
             // 
             // txtPassword
@@ -106,7 +106,7 @@
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(206, 22);
-            this.txtPassword.TabIndex = 6;
+            this.txtPassword.TabIndex = 5;
             // 
             // txtUsername
             // 
@@ -114,7 +114,7 @@
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(206, 22);
-            this.txtUsername.TabIndex = 7;
+            this.txtUsername.TabIndex = 3;
             // 
             // cboDataBase
             // 
@@ -123,7 +123,7 @@
             this.cboDataBase.Margin = new System.Windows.Forms.Padding(4);
             this.cboDataBase.Name = "cboDataBase";
             this.cboDataBase.Size = new System.Drawing.Size(206, 24);
-            this.cboDataBase.TabIndex = 4;
+            this.cboDataBase.TabIndex = 7;
             // 
             // cboServer
             // 
@@ -132,10 +132,11 @@
             this.cboServer.Margin = new System.Windows.Forms.Padding(4);
             this.cboServer.Name = "cboServer";
             this.cboServer.Size = new System.Drawing.Size(206, 24);
-            this.cboServer.TabIndex = 5;
+            this.cboServer.TabIndex = 1;
             // 
             // frmCauHinhKetNoi
             // 
+            this.AcceptButton = this.btnLuu;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 222);

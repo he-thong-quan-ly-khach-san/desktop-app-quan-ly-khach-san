@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GUI.Properties {
+namespace DTO.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,24 +26,11 @@ namespace GUI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-J8JE5C3;Initial Catalog=Module_DN;User ID=sa;Password=123;Enc" +
-            "rypt=False")]
-        public string Module_DNConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-J8JE5C3;Initial Catalog=QL_KHACHSAN;User ID=sa;Password=123;T" +
+            "rustServerCertificate=True")]
+        public string QL_KHACHSANConnectionString {
             get {
-                return ((string)(this["Module_DNConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-J8JE5C3;Initial Catalog=Module_DN;User ID=sa;Password=123;Enc" +
-            "rypt=False")]
-        public string cnString {
-            get {
-                return ((string)(this["cnString"]));
-            }
-            set {
-                this["cnString"] = value;
+                return ((string)(this["QL_KHACHSANConnectionString"]));
             }
         }
     }
