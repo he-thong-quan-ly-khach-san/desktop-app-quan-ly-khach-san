@@ -18,7 +18,28 @@ namespace GUI
             InitializeComponent();
             btnThoat.ItemClick += BtnThoat_ItemClick;
             testLoadPhong();
-            
+            loadForm();
+        }
+
+        void loadForm()
+        {
+            this.WindowState = FormWindowState.Maximized;
+            btnNguoiDung.ItemClick += BtnNguoiDung_ItemClick;
+            btnNhomNguoiDung.ItemClick += BtnNhomNguoiDung_ItemClick;
+        }
+
+        private void BtnNhomNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmNhomNguoiDung frm = new frmNhomNguoiDung();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
+        }
+
+        private void BtnNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmNguoiDung frm = new frmNguoiDung();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
         }
 
         private void BtnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -117,6 +138,21 @@ namespace GUI
             {
                 e.Cancel = true;
             }
+        }
+
+        private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

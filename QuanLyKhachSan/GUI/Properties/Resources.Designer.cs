@@ -73,6 +73,26 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap apply_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("apply_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap apply_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("apply_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_dangnhap {
             get {
                 object obj = ResourceManager.GetObject("icon-dangnhap", resourceCulture);
@@ -126,6 +146,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap iconMainQuanLy {
             get {
                 object obj = ResourceManager.GetObject("iconMainQuanLy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconPhong {
+            get {
+                object obj = ResourceManager.GetObject("iconPhong", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
