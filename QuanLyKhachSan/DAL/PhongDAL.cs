@@ -11,7 +11,7 @@ namespace DAL
     {
         QLKSDataContext qlks;
         public PhongDAL() { qlks = new QLKSDataContext(); }
-        public List<PHONG> GetPHONGs() { return qlks.PHONGs.Where(ph => ph.HOATDONG == true).ToList<PHONG>(); }
+        public List<PHONG> GetPHONGs() { return qlks.PHONGs.Select(ph => ph).ToList<PHONG>(); }
         public void themPhong(PHONG phong)
         {
             qlks.PHONGs.InsertOnSubmit(phong);
@@ -30,6 +30,12 @@ namespace DAL
             PHONG phongCu = qlks.PHONGs.Single(ph=>ph.MAPHONG.Equals(phong.MAPHONG));
             phongCu.HOATDONG = false;
             qlks.SubmitChanges();
+        }
+
+        //lay phong theo tang
+        public List<PHONG> GetPHONGsByTang(TANG tang)
+        {
+            return qlks.PHONGs.Where(ph => ph.MATANG == tang.MATANG).ToList<PHONG>();
         }
 
     }

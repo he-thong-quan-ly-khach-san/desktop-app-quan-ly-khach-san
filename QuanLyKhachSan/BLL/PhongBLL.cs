@@ -20,5 +20,9 @@ namespace BLL
         {
             phongDAL.xoaPhong(phong);
         }
+        public List<PHONG> loadPhongTheoTang(TANG tang) 
+        {
+            return phongDAL.GetPHONGsByTang(tang);
+        }
     }
 }

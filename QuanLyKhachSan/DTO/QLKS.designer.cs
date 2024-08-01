@@ -2278,6 +2278,8 @@ namespace DTO
 		
 		private string _TENTANG;
 		
+		private System.Nullable<bool> _HOATDONG;
+		
 		private EntitySet<PHONG> _PHONGs;
 		
     #region Extensibility Method Definitions
@@ -2288,6 +2290,8 @@ namespace DTO
     partial void OnMATANGChanged();
     partial void OnTENTANGChanging(string value);
     partial void OnTENTANGChanged();
+    partial void OnHOATDONGChanging(System.Nullable<bool> value);
+    partial void OnHOATDONGChanged();
     #endregion
 		
 		public TANG()
@@ -2332,6 +2336,26 @@ namespace DTO
 					this._TENTANG = value;
 					this.SendPropertyChanged("TENTANG");
 					this.OnTENTANGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOATDONG", DbType="Bit")]
+		public System.Nullable<bool> HOATDONG
+		{
+			get
+			{
+				return this._HOATDONG;
+			}
+			set
+			{
+				if ((this._HOATDONG != value))
+				{
+					this.OnHOATDONGChanging(value);
+					this.SendPropertyChanging();
+					this._HOATDONG = value;
+					this.SendPropertyChanged("HOATDONG");
+					this.OnHOATDONGChanged();
 				}
 			}
 		}

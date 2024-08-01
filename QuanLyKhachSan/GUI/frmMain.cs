@@ -8,7 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BLL;
+using DTO;
 namespace GUI
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
@@ -17,12 +18,18 @@ namespace GUI
         {
             InitializeComponent();
             btnThoat.ItemClick += BtnThoat_ItemClick;
-            testLoadPhong();
+            tangBLL = new TangBLL();
+            phongBLL = new PhongBLL();
+            //testLoadPhong();
             loadForm();
+            loadDSPhong();
         }
         static string tenDangNhap;
+        TangBLL tangBLL;
+        PhongBLL phongBLL;
         void loadForm()
         {
+
             this.WindowState = FormWindowState.Maximized;
             tenDangNhap = frmDangNhap.tenDangNhap;
             btnNguoiDung.ItemClick += BtnNguoiDung_ItemClick;
@@ -81,6 +88,39 @@ namespace GUI
 
         string phong;
         string tang;
+        
+        void loadDSPhong()
+        {
+            List<TANG> lstTang = tangBLL.layDanhSachTangBLL();
+            gControl.Gallery.ItemImageLayout = DevExpress.Utils.Drawing.ImageLayoutMode.ZoomInside;
+            gControl.Gallery.ImageSize = new Size(64, 64);
+            gControl.Gallery.ShowItemText = true;
+            gControl.Gallery.ShowGroupCaption = true;
+            foreach(TANG tang in lstTang)
+            {
+                var galleryItemGroup = new GalleryItemGroup
+                {
+                    Caption = tang.TENTANG.ToString(),
+                    CaptionAlignment = GalleryItemGroupCaptionAlignment.Stretch
+                };
+                List<PHONG> phongList = phongBLL.loadPhongTheoTang(tang);
+                foreach(PHONG phong in phongList)
+                {
+                    var gc_item = new GalleryItem();
+                    gc_item.Caption = phong.TENPHONG.ToString();
+                    if (phong.HOATDONG == false)
+                    {
+                        gc_item.ImageOptions.Image = imgListGiuong.Images[0];
+                    }
+                    else
+                    {
+                        gc_item.ImageOptions.Image = imgListGiuong.Images[1];
+                    }
+                    galleryItemGroup.Items.Add(gc_item);
+                }
+                gControl.Gallery.Groups.Add(galleryItemGroup);
+            }
+        }
         void testLoadPhong()
         {
             var lstTang = new List<dynamic>
