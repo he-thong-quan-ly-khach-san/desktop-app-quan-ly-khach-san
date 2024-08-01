@@ -20,26 +20,43 @@ namespace GUI
             testLoadPhong();
             loadForm();
         }
-
+        static string tenDangNhap;
         void loadForm()
         {
             this.WindowState = FormWindowState.Maximized;
+            tenDangNhap = frmDangNhap.tenDangNhap;
             btnNguoiDung.ItemClick += BtnNguoiDung_ItemClick;
             btnNhomNguoiDung.ItemClick += BtnNhomNguoiDung_ItemClick;
+            btnManHinh.ItemClick += BtnManHinh_ItemClick;
+            if (tenDangNhap.Equals("null"))
+            {
+                lblXinChao.Caption = string.Empty;
+            }
+            else
+            {
+                lblXinChao.Caption = "Xin chào " + tenDangNhap; 
+            }
+        }
+        private void LoadForm<T>() where T : Form, new()
+        {
+            T frm = new T();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
+        }
+        private void BtnManHinh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadForm<frmManHinh>();
+
         }
 
         private void BtnNhomNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmNhomNguoiDung frm = new frmNhomNguoiDung();
-            frm.StartPosition = FormStartPosition.CenterScreen;
-            frm.ShowDialog();
+            LoadForm<frmNhomNguoiDung>();
         }
 
         private void BtnNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmNguoiDung frm = new frmNguoiDung();
-            frm.StartPosition = FormStartPosition.CenterScreen;
-            frm.ShowDialog();
+            LoadForm<frmNguoiDung>();
         }
 
         private void BtnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -154,5 +171,7 @@ namespace GUI
         {
 
         }
+
+
     }
 }

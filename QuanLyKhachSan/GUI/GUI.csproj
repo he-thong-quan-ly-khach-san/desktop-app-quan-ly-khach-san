@@ -87,6 +87,12 @@
     <Compile Include="frmDanhSachKhachHang.Designer.cs">
       <DependentUpon>frmDanhSachKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKhachHang.Designer.cs">
+      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLienKetNDVaNND.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDanhSachKhachHang.resx">
       <DependentUpon>frmDanhSachKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKhachHang.resx">
+      <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLienKetNDVaNND.resx">
       <DependentUpon>frmLienKetNDVaNND.cs</DependentUpon>
