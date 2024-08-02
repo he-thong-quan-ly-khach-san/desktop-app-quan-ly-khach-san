@@ -45,6 +45,13 @@
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
+<<<<<<< Updated upstream
+=======
+            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+>>>>>>> Stashed changes
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -103,7 +110,7 @@
             this.ribbonPage1,
             this.ribbonPage3,
             this.ribbonPage4});
-            this.ribbonControl1.Size = new System.Drawing.Size(1067, 193);
+            this.ribbonControl1.Size = new System.Drawing.Size(1067, 158);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
@@ -175,6 +182,7 @@
             this.barButtonItem7.Id = 10;
             this.barButtonItem7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem7.ImageOptions.SvgImage")));
             this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
             // 
             // barButtonItem8
             // 
@@ -190,6 +198,35 @@
             this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
             this.btnThoat.Name = "btnThoat";
             // 
+<<<<<<< Updated upstream
+=======
+            // barButtonItem10
+            // 
+            this.barButtonItem10.Caption = "Quản lý thiết bị";
+            this.barButtonItem10.Id = 14;
+            this.barButtonItem10.Name = "barButtonItem10";
+            this.barButtonItem10.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem10_ItemClick);
+            // 
+            // barButtonItem11
+            // 
+            this.barButtonItem11.Caption = "Quản lý loại phòng";
+            this.barButtonItem11.Id = 15;
+            this.barButtonItem11.Name = "barButtonItem11";
+            this.barButtonItem11.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem11_ItemClick);
+            // 
+            // barButtonItem12
+            // 
+            this.barButtonItem12.Caption = "Quản lý tầng";
+            this.barButtonItem12.Id = 16;
+            this.barButtonItem12.Name = "barButtonItem12";
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "Quản lý phòng";
+            this.barButtonItem6.Id = 17;
+            this.barButtonItem6.Name = "barButtonItem6";
+            // 
+>>>>>>> Stashed changes
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -256,10 +293,10 @@
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 526);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 532);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1067, 28);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1067, 22);
             this.ribbonStatusBar1.Click += new System.EventHandler(this.ribbonStatusBar1_Click);
             // 
             // ribbonPage2
@@ -271,17 +308,22 @@
             // 
             this.gControl.Controls.Add(this.galleryControlClient1);
             this.gControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gControl.Location = new System.Drawing.Point(0, 193);
+            this.gControl.Location = new System.Drawing.Point(0, 158);
             this.gControl.Name = "gControl";
+<<<<<<< Updated upstream
             this.gControl.Size = new System.Drawing.Size(1067, 333);
             this.gControl.TabIndex = 2;
+=======
+            this.gControl.Size = new System.Drawing.Size(1067, 374);
+            this.gControl.TabIndex = 0;
+>>>>>>> Stashed changes
             this.gControl.Text = "Danh sách phòng";
             // 
             // galleryControlClient1
             // 
             this.galleryControlClient1.GalleryControl = this.gControl;
             this.galleryControlClient1.Location = new System.Drawing.Point(2, 2);
-            this.galleryControlClient1.Size = new System.Drawing.Size(1042, 329);
+            this.galleryControlClient1.Size = new System.Drawing.Size(1046, 370);
             // 
             // imgListGiuong
             // 
@@ -293,7 +335,7 @@
             // frmMain
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.gControl);
