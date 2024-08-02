@@ -41,13 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
     <Compile Include="Class1.cs" />
-=======
-    <Compile Include="KhachHangDAL.cs" />
-    <Compile Include="NguoiDungDAL.cs" />
-    <Compile Include="PhongDAL.cs" />
->>>>>>> Stashed changes
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

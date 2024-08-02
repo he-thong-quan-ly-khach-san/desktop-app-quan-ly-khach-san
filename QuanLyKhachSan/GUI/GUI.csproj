@@ -144,13 +144,6 @@
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{6dacf3a8-48e0-4795-8804-8f34d0b9417b}</Project>
       <Name>DAL</Name>
-<<<<<<< Updated upstream
-=======
-    </ProjectReference>
-    <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{bea79ea5-8f55-4a57-94b3-7c5bd571ccbd}</Project>
-      <Name>DTO</Name>
->>>>>>> Stashed changes
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
