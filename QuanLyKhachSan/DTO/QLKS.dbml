@@ -106,6 +106,8 @@
     <Type Name="SANPHAM">
       <Column Name="MASP" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TENSP" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DONGIA" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DAXOA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="SANPHAM_DATPHONG" Member="DATPHONGs" ThisKey="MASP" OtherKey="MASP" Type="DATPHONG" />
     </Type>
   </Table>

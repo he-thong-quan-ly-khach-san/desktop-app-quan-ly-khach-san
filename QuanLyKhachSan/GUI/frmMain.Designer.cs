@@ -63,6 +63,7 @@
             this.gControl = new DevExpress.XtraBars.Ribbon.GalleryControl();
             this.galleryControlClient1 = new DevExpress.XtraBars.Ribbon.GalleryControlClient();
             this.imgListGiuong = new System.Windows.Forms.ImageList(this.components);
+            this.btnSanPhamDV = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gControl)).BeginInit();
@@ -102,9 +103,10 @@
             this.barButtonItem11,
             this.barButtonItem12,
             this.barButtonItem6,
-            this.lblXinChao});
+            this.lblXinChao,
+            this.btnSanPhamDV});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 19;
+            this.ribbonControl1.MaxItemId = 21;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageHeaderItemLinks.Add(this.btnThoat);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -146,7 +148,7 @@
             // 
             this.btnManHinh.Caption = "Màn hình";
             this.btnManHinh.Id = 5;
-            this.btnManHinh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
+            this.btnManHinh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnManHinh.ImageOptions.SvgImage")));
             this.btnManHinh.Name = "btnManHinh";
             // 
             // btnPhanQuyen
@@ -268,6 +270,7 @@
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem10);
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem11);
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem12);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnSanPhamDV);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Danh mục phòng";
             // 
@@ -326,6 +329,13 @@
             this.imgListGiuong.TransparentColor = System.Drawing.Color.Transparent;
             this.imgListGiuong.Images.SetKeyName(0, "bluebed.png");
             this.imgListGiuong.Images.SetKeyName(1, "redbed.png");
+            // 
+            // btnSanPhamDV
+            // 
+            this.btnSanPhamDV.Caption = "Sản phẩm";
+            this.btnSanPhamDV.Id = 20;
+            this.btnSanPhamDV.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSanPhamDV.ImageOptions.SvgImage")));
+            this.btnSanPhamDV.Name = "btnSanPhamDV";
             // 
             // frmMain
             // 
@@ -387,5 +397,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarStaticItem lblXinChao;
+        private DevExpress.XtraBars.BarButtonItem btnSanPhamDV;
     }
 }

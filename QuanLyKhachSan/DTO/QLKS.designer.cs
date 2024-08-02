@@ -2164,6 +2164,10 @@ namespace DTO
 		
 		private string _TENSP;
 		
+		private System.Nullable<decimal> _DONGIA;
+		
+		private System.Nullable<bool> _DAXOA;
+		
 		private EntitySet<DATPHONG> _DATPHONGs;
 		
     #region Extensibility Method Definitions
@@ -2174,6 +2178,10 @@ namespace DTO
     partial void OnMASPChanged();
     partial void OnTENSPChanging(string value);
     partial void OnTENSPChanged();
+    partial void OnDONGIAChanging(System.Nullable<decimal> value);
+    partial void OnDONGIAChanged();
+    partial void OnDAXOAChanging(System.Nullable<bool> value);
+    partial void OnDAXOAChanged();
     #endregion
 		
 		public SANPHAM()
@@ -2218,6 +2226,46 @@ namespace DTO
 					this._TENSP = value;
 					this.SendPropertyChanged("TENSP");
 					this.OnTENSPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONGIA", DbType="Money")]
+		public System.Nullable<decimal> DONGIA
+		{
+			get
+			{
+				return this._DONGIA;
+			}
+			set
+			{
+				if ((this._DONGIA != value))
+				{
+					this.OnDONGIAChanging(value);
+					this.SendPropertyChanging();
+					this._DONGIA = value;
+					this.SendPropertyChanged("DONGIA");
+					this.OnDONGIAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DAXOA", DbType="Bit")]
+		public System.Nullable<bool> DAXOA
+		{
+			get
+			{
+				return this._DAXOA;
+			}
+			set
+			{
+				if ((this._DAXOA != value))
+				{
+					this.OnDAXOAChanging(value);
+					this.SendPropertyChanging();
+					this._DAXOA = value;
+					this.SendPropertyChanged("DAXOA");
+					this.OnDAXOAChanged();
 				}
 			}
 		}
