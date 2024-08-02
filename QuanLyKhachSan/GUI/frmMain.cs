@@ -154,5 +154,13 @@ namespace GUI
         {
 
         }
-    }
+
+
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmDanhSachKhachHang frm = new frmDanhSachKhachHang();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
+        }
+
 }

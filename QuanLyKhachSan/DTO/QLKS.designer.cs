@@ -69,7 +69,7 @@ namespace DTO
     #endregion
 		
 		public QLKSDataContext() : 
-				base(global::DTO.Properties.Settings.Default.QL_KHACHSANConnectionString, mappingSource)
+				base(global::DTO.Properties.Settings.Default.QL_KHACHSANConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -792,6 +792,8 @@ namespace DTO
 		
 		private string _DIACHI;
 		
+		private System.Nullable<bool> _TRANGTHAI;
+		
 		private EntitySet<DATPHONG> _DATPHONGs;
 		
     #region Extensibility Method Definitions
@@ -810,6 +812,8 @@ namespace DTO
     partial void OnEMAILChanged();
     partial void OnDIACHIChanging(string value);
     partial void OnDIACHIChanged();
+    partial void OnTRANGTHAIChanging(System.Nullable<bool> value);
+    partial void OnTRANGTHAIChanged();
     #endregion
 		
 		public KHACHHANG()
@@ -938,7 +942,36 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_DATPHONG", Storage="_DATPHONGs", ThisKey="MAKH", OtherKey="MAKH")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRANGTHAI", DbType="Bit")]
+		public System.Nullable<bool> TRANGTHAI
+		{
+			get
+			{
+				return this._TRANGTHAI ;
+
+			}
+			set
+			{
+				if ((this._TRANGTHAI != value))
+				{
+					this.OnTRANGTHAIChanging(value);
+					this.SendPropertyChanging();
+					this._TRANGTHAI = value;
+					this.SendPropertyChanged("TRANGTHAI");
+					this.OnTRANGTHAIChanged();
+				}
+			}
+		}
+
+        public string TrangThaiHienThi
+        {
+            get
+            {
+                return TRANGTHAI == true ? "Đang ở" : "Đã trả phòng";
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_DATPHONG", Storage="_DATPHONGs", ThisKey="MAKH", OtherKey="MAKH")]
 		public EntitySet<DATPHONG> DATPHONGs
 		{
 			get
@@ -2488,6 +2521,69 @@ namespace DTO
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THIETBI_PHONG")]
+	public partial class THIETBI_PHONG
+	{
+		
+		private string _MATHIETBI;
+		
+		private string _MAPHONG;
+		
+		private System.Nullable<short> _SOLUONG;
+		
+		public THIETBI_PHONG()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MATHIETBI", DbType="Char(5)")]
+		public string MATHIETBI
+		{
+			get
+			{
+				return this._MATHIETBI;
+			}
+			set
+			{
+				if ((this._MATHIETBI != value))
+				{
+					this._MATHIETBI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAPHONG", DbType="Char(5)")]
+		public string MAPHONG
+		{
+			get
+			{
+				return this._MAPHONG;
+			}
+			set
+			{
+				if ((this._MAPHONG != value))
+				{
+					this._MAPHONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOLUONG", DbType="SmallInt")]
+		public System.Nullable<short> SOLUONG
+		{
+			get
+			{
+				return this._SOLUONG;
+			}
+			set
+			{
+				if ((this._SOLUONG != value))
+				{
+					this._SOLUONG = value;
+				}
 			}
 		}
 	}
