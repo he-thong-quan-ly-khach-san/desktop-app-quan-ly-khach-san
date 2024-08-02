@@ -124,7 +124,7 @@ namespace GUI
 
                 gControl.Gallery.Groups.Add(galleryItemGroup);
             }
-        }    
+        }
         /// <summary>
         /// Hàm này mai mốt cần xử lý khi dữ liệu trường hợp chưa lưu thì hỏi muốn lưu trước khi đóng không
         /// </summary>
@@ -132,7 +132,7 @@ namespace GUI
         /// <param name="e"></param>
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+
             DialogResult ret = MessageBox.Show("Thoát khỏi phần mềm?", "Hỏi thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (ret == DialogResult.No)
             {
@@ -154,5 +154,14 @@ namespace GUI
         {
 
         }
+
+
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmDanhSachKhachHang frm = new frmDanhSachKhachHang();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
+        }
+
     }
 }
