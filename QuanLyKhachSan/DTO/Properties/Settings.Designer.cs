@@ -26,12 +26,31 @@ namespace DTO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+<<<<<<< HEAD
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-J8JE5C3;Initial Catalog=QL_KHACHSAN;User ID=sa;Password=123;T" +
             "rustServerCertificate=True")]
+=======
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=COMPUTEROFLONG;Initial Catalog=QL_KHACHSAN;TrustServerCertificate=Tru" +
+            "e")]
+>>>>>>> feature/QLKH
         public string QL_KHACHSANConnectionString {
             get {
                 return ((string)(this["QL_KHACHSANConnectionString"]));
             }
         }
+<<<<<<< HEAD
+=======
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=COMPUTEROFLONG;Initial Catalog=QL_KHACHSAN;Integrated Security=True;E" +
+            "ncrypt=False;TrustServerCertificate=True")]
+        public string QL_KHACHSANConnectionString1 {
+            get {
+                return ((string)(this["QL_KHACHSANConnectionString1"]));
+            }
+        }
+>>>>>>> feature/QLKH
     }
 }

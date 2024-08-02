@@ -48,9 +48,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="QLKS.cs">
       <DependentUpon>QLKS.dbml</DependentUpon>
     </Compile>
+=======
+>>>>>>> feature/QLKH
     <Compile Include="QLKS.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

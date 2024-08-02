@@ -69,7 +69,11 @@ namespace DTO
     #endregion
 		
 		public QLKSDataContext() : 
+<<<<<<< HEAD
 				base(global::DTO.Properties.Settings.Default.QL_KHACHSANConnectionString, mappingSource)
+=======
+				base(global::DTO.Properties.Settings.Default.QL_KHACHSANConnectionString1, mappingSource)
+>>>>>>> feature/QLKH
 		{
 			OnCreated();
 		}
@@ -106,6 +110,7 @@ namespace DTO
 			}
 		}
 		
+<<<<<<< HEAD
 		public System.Data.Linq.Table<THIETBI_PHONG> THIETBI_PHONGs
 		{
 			get
@@ -114,6 +119,8 @@ namespace DTO
 			}
 		}
 		
+=======
+>>>>>>> feature/QLKH
 		public System.Data.Linq.Table<DM_MANHINH> DM_MANHINHs
 		{
 			get
@@ -201,6 +208,17 @@ namespace DTO
 				return this.GetTable<THIETBI>();
 			}
 		}
+<<<<<<< HEAD
+=======
+		
+		public System.Data.Linq.Table<THIETBI_PHONG> THIETBI_PHONGs
+		{
+			get
+			{
+				return this.GetTable<THIETBI_PHONG>();
+			}
+		}
+>>>>>>> feature/QLKH
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DATPHONG")]
@@ -597,6 +615,7 @@ namespace DTO
 		}
 	}
 	
+<<<<<<< HEAD
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THIETBI_PHONG")]
 	public partial class THIETBI_PHONG
 	{
@@ -660,6 +679,8 @@ namespace DTO
 		}
 	}
 	
+=======
+>>>>>>> feature/QLKH
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DM_MANHINH")]
 	public partial class DM_MANHINH : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -792,6 +813,11 @@ namespace DTO
 		
 		private string _DIACHI;
 		
+<<<<<<< HEAD
+=======
+		private System.Nullable<bool> _TRANGTHAI;
+		
+>>>>>>> feature/QLKH
 		private EntitySet<DATPHONG> _DATPHONGs;
 		
     #region Extensibility Method Definitions
@@ -810,6 +836,11 @@ namespace DTO
     partial void OnEMAILChanged();
     partial void OnDIACHIChanging(string value);
     partial void OnDIACHIChanged();
+<<<<<<< HEAD
+=======
+    partial void OnTRANGTHAIChanging(System.Nullable<bool> value);
+    partial void OnTRANGTHAIChanged();
+>>>>>>> feature/QLKH
     #endregion
 		
 		public KHACHHANG()
@@ -938,7 +969,40 @@ namespace DTO
 			}
 		}
 		
+<<<<<<< HEAD
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_DATPHONG", Storage="_DATPHONGs", ThisKey="MAKH", OtherKey="MAKH")]
+=======
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRANGTHAI", DbType="Bit")]
+		public System.Nullable<bool> TRANGTHAI
+		{
+			get
+			{
+				return this._TRANGTHAI ;
+
+			}
+			set
+			{
+				if ((this._TRANGTHAI != value))
+				{
+					this.OnTRANGTHAIChanging(value);
+					this.SendPropertyChanging();
+					this._TRANGTHAI = value;
+					this.SendPropertyChanged("TRANGTHAI");
+					this.OnTRANGTHAIChanged();
+				}
+			}
+		}
+
+        public string TrangThaiHienThi
+        {
+            get
+            {
+                return TRANGTHAI == true ? "Đang ở" : "Đã trả phòng";
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_DATPHONG", Storage="_DATPHONGs", ThisKey="MAKH", OtherKey="MAKH")]
+>>>>>>> feature/QLKH
 		public EntitySet<DATPHONG> DATPHONGs
 		{
 			get
@@ -2491,5 +2555,71 @@ namespace DTO
 			}
 		}
 	}
+<<<<<<< HEAD
+=======
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THIETBI_PHONG")]
+	public partial class THIETBI_PHONG
+	{
+		
+		private string _MATHIETBI;
+		
+		private string _MAPHONG;
+		
+		private System.Nullable<short> _SOLUONG;
+		
+		public THIETBI_PHONG()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MATHIETBI", DbType="Char(5)")]
+		public string MATHIETBI
+		{
+			get
+			{
+				return this._MATHIETBI;
+			}
+			set
+			{
+				if ((this._MATHIETBI != value))
+				{
+					this._MATHIETBI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAPHONG", DbType="Char(5)")]
+		public string MAPHONG
+		{
+			get
+			{
+				return this._MAPHONG;
+			}
+			set
+			{
+				if ((this._MAPHONG != value))
+				{
+					this._MAPHONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOLUONG", DbType="SmallInt")]
+		public System.Nullable<short> SOLUONG
+		{
+			get
+			{
+				return this._SOLUONG;
+			}
+			set
+			{
+				if ((this._SOLUONG != value))
+				{
+					this._SOLUONG = value;
+				}
+			}
+		}
+	}
+>>>>>>> feature/QLKH
 }
 #pragma warning restore 1591

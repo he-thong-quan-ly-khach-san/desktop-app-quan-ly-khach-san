@@ -42,8 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="NguoiDungDAL.cs" />
     <Compile Include="PhongDAL.cs" />
+=======
+<<<<<<< Updated upstream
+    <Compile Include="Class1.cs" />
+=======
+    <Compile Include="KhachHangDAL.cs" />
+    <Compile Include="NguoiDungDAL.cs" />
+    <Compile Include="PhongDAL.cs" />
+>>>>>>> Stashed changes
+>>>>>>> feature/QLKH
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
