@@ -947,8 +947,7 @@ namespace DTO
 		{
 			get
 			{
-				return this._TRANGTHAI ;
-
+				return this._TRANGTHAI;
 			}
 			set
 			{
@@ -962,16 +961,8 @@ namespace DTO
 				}
 			}
 		}
-
-        public string TrangThaiHienThi
-        {
-            get
-            {
-                return TRANGTHAI == true ? "Đang ở" : "Đã trả phòng";
-            }
-        }
-
-        [global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_DATPHONG", Storage="_DATPHONGs", ThisKey="MAKH", OtherKey="MAKH")]
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_DATPHONG", Storage="_DATPHONGs", ThisKey="MAKH", OtherKey="MAKH")]
 		public EntitySet<DATPHONG> DATPHONGs
 		{
 			get

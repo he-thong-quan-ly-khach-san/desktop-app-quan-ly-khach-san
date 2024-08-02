@@ -17,6 +17,9 @@ namespace GUI
 {
     public partial class frmDanhSachKhachHang : Form
     {
+        private KhachHangDAL khachHangDAL = new KhachHangDAL();
+        bool CapNhapKhachHang = false;
+        bool XoaKH = false;
         public frmDanhSachKhachHang()
         {
             InitializeComponent();
