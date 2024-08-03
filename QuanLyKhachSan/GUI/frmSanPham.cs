@@ -23,8 +23,9 @@ namespace GUI
 
         private void GridDS_Click(object sender, EventArgs e)
         {
-            if (gridDS.RowCount > 0)
+            if (gridDS.RowCount > 0 && !_them)
             {
+                _them = false;
                 txtMaSP.Text = gridDS.GetFocusedRowCellValue("MASP").ToString();
                 txtTenSP.Text = gridDS.GetFocusedRowCellValue("TENSP").ToString();
                 txtDonGia.Text = gridDS.GetFocusedRowCellValue("DONGIA").ToString();
@@ -51,6 +52,7 @@ namespace GUI
         void xuLyControl()
         {
             _them = false;
+            btnThem.Enabled = true;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
             btnLuu.Enabled = false;
@@ -152,12 +154,15 @@ namespace GUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-
+            _them = false;
+            btnThem.Enabled = false;
+            btnXoa.Enabled = false;
             enableCacControl();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            
             int focus = gridDS.FocusedRowHandle;
             if (focus >= 0)
             {
