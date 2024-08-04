@@ -12,17 +12,32 @@ namespace BLL
         PhongDAL phongDAL;
         public PhongBLL() { phongDAL = new PhongDAL(); }
         public List<PHONG> loadPhongBLL() { return phongDAL.GetPHONGs(); }
+        public List<dynamic> layPhongDataSourceBLL()
+        {
+            return phongDAL.layPhongDataSource();
+        }
+
+        public void themPhongBLL(PHONG phong)
+        {
+            phongDAL.themPhong(phong);
+        }
+
         public void SuaPhongBLL(PHONG phong)
         {
             phongDAL.suaPhong(phong);
         }
-        public void XoaPhongBLL(PHONG phong)
+        public bool XoaPhongBLL(PHONG phong)
         {
-            phongDAL.xoaPhong(phong);
+            return phongDAL.xoaPhong(phong);
         }
         public List<PHONG> loadPhongTheoTang(TANG tang) 
         {
             return phongDAL.GetPHONGsByTang(tang);
         }
+        public PHONG layPhong(string maPhong)
+        {
+            return phongDAL.layPhong(maPhong);
+        }
+
     }
 }

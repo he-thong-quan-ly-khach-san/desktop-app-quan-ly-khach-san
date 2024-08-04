@@ -12,6 +12,11 @@ namespace DAL
         QLKSDataContext qlks;
         public PhongDAL() { qlks = new QLKSDataContext(); }
         public List<PHONG> GetPHONGs() { return qlks.PHONGs.Select(ph => ph).ToList<PHONG>(); }
+        public List<dynamic> layPhongDataSource()
+        {
+            return qlks.PHONGs.Select(ph => new {ph.MAPHONG, ph.TENPHONG, ph.TANG.TENTANG, ph.LOAIPHONG.TENLOAIPHONG, ph.HOATDONG}).ToList<dynamic>();
+
+        }
         public void themPhong(PHONG phong)
         {
             qlks.PHONGs.InsertOnSubmit(phong);
@@ -25,11 +30,25 @@ namespace DAL
             phongCu.TENPHONG = phong.TENPHONG;
             qlks.SubmitChanges();
         }
-        public void xoaPhong(PHONG phong)
+        public bool xoaPhong(PHONG phong)
         {
-            PHONG phongCu = qlks.PHONGs.Single(ph=>ph.MAPHONG.Equals(phong.MAPHONG));
-            phongCu.HOATDONG = false;
-            qlks.SubmitChanges();
+            try
+            {
+                PHONG phongCu = qlks.PHONGs.Single(ph=>ph.MAPHONG.Equals(phong.MAPHONG));
+                qlks.PHONGs.DeleteOnSubmit(phongCu);
+                qlks.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
+        public PHONG layPhong(String maPhong)
+        {
+            return qlks.PHONGs.FirstOrDefault(p => p.MAPHONG== maPhong);
+
         }
 
         //lay phong theo tang

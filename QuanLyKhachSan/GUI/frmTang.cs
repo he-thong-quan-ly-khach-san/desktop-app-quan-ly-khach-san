@@ -133,12 +133,13 @@ namespace GUI
             int focus = gridDS.FocusedRowHandle;
             if (focus >= 0)
             {
-                DialogResult ret = MessageBox.Show("Bạn có muốn xóa tầng này không?", "Hỏi xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                TANG t = tangBLL.layTangBLL(txtMaTang.Text);
+                DialogResult ret = MessageBox.Show("Bạn có muốn xóa tầng " + "'"+t.TENTANG+"'" + " không?", "Hỏi xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (ret == DialogResult.Yes)
                 {
                     try
                     {
-                        TANG t = tangBLL.layTangBLL(txtMaTang.Text);
+                        
                         if (!tangBLL.xoaTangBLL(t))
                         {
                             MessageBox.Show("Không thể xóa tầng!");

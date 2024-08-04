@@ -164,14 +164,16 @@ namespace GUI
         {
             
             int focus = gridDS.FocusedRowHandle;
+            
             if (focus >= 0)
             {
-                DialogResult ret = MessageBox.Show("Bạn có muốn xóa sản phẩm này không?","Hỏi xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                SANPHAM sp = spBLL.laySPBLL(txtMaSP.Text);
+                DialogResult ret = MessageBox.Show("Bạn có muốn xóa sản phẩm" +"'" +sp.TENSP+ "'" +" không?","Hỏi xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (ret == DialogResult.Yes)
                 {
                     try
                     {
-                        SANPHAM sp = spBLL.laySPBLL(txtMaSP.Text);
+                
                         spBLL.xoaSPBLL(sp);
                         loadData();
                     }

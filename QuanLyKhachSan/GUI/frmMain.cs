@@ -212,6 +212,28 @@ namespace GUI
 
         }
 
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmPhong frm = new frmPhong();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
+        }
 
+        private void btnNguoiDung_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnManHinh_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnSanPhamDV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmSanPham frm = new frmSanPham();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
+        }
     }
 }
