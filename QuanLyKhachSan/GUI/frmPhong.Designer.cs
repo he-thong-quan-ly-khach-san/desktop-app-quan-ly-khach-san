@@ -60,6 +60,7 @@
             // 
             // btnHuy
             // 
+            this.btnHuy.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
             this.btnHuy.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnHuy.Name = "btnHuy";
