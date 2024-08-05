@@ -32,7 +32,6 @@ namespace DAL
         public SANPHAM laySP(String maSp)
         {
             return qlks.SANPHAMs.FirstOrDefault(sp=>sp.MASP == maSp);
-            
         }
     }
 }
