@@ -51,9 +51,6 @@ namespace DTO
     partial void InsertQL_NGUOIDUNG(QL_NGUOIDUNG instance);
     partial void UpdateQL_NGUOIDUNG(QL_NGUOIDUNG instance);
     partial void DeleteQL_NGUOIDUNG(QL_NGUOIDUNG instance);
-    partial void InsertPHONG(PHONG instance);
-    partial void UpdatePHONG(PHONG instance);
-    partial void DeletePHONG(PHONG instance);
     partial void InsertQL_NGUOIDUNG_NHOMNGUOIDUNG(QL_NGUOIDUNG_NHOMNGUOIDUNG instance);
     partial void UpdateQL_NGUOIDUNG_NHOMNGUOIDUNG(QL_NGUOIDUNG_NHOMNGUOIDUNG instance);
     partial void DeleteQL_NGUOIDUNG_NHOMNGUOIDUNG(QL_NGUOIDUNG_NHOMNGUOIDUNG instance);
@@ -66,9 +63,9 @@ namespace DTO
     partial void InsertSANPHAM(SANPHAM instance);
     partial void UpdateSANPHAM(SANPHAM instance);
     partial void DeleteSANPHAM(SANPHAM instance);
-    partial void InsertSP_DATPHONG(SP_DATPHONG instance);
-    partial void UpdateSP_DATPHONG(SP_DATPHONG instance);
-    partial void DeleteSP_DATPHONG(SP_DATPHONG instance);
+    partial void InsertSANPHAM_DATPHONG(SANPHAM_DATPHONG instance);
+    partial void UpdateSANPHAM_DATPHONG(SANPHAM_DATPHONG instance);
+    partial void DeleteSANPHAM_DATPHONG(SANPHAM_DATPHONG instance);
     partial void InsertTANG(TANG instance);
     partial void UpdateTANG(TANG instance);
     partial void DeleteTANG(TANG instance);
@@ -78,7 +75,7 @@ namespace DTO
     #endregion
 		
 		public QLKSDataContext() : 
-				base(global::DTO.Properties.Settings.Default.QL_KHACHSANConnectionString1, mappingSource)
+				base(global::DTO.Properties.Settings.Default.QL_KHACHSANConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -115,6 +112,14 @@ namespace DTO
 			}
 		}
 		
+		public System.Data.Linq.Table<THIETBI_PHONG> THIETBI_PHONGs
+		{
+			get
+			{
+				return this.GetTable<THIETBI_PHONG>();
+			}
+		}
+		
 		public System.Data.Linq.Table<DM_MANHINH> DM_MANHINHs
 		{
 			get
@@ -139,11 +144,11 @@ namespace DTO
 			}
 		}
 		
-		public System.Data.Linq.Table<QL_NGUOIDUNG> QL_NGUOIDUNGs
+		public System.Data.Linq.Table<PHONG> PHONGs
 		{
 			get
 			{
-				return this.GetTable<QL_NGUOIDUNG>();
+				return this.GetTable<PHONG>();
 			}
 		}
 		
@@ -159,7 +164,7 @@ namespace DTO
 		{
 			get
 			{
-				return this.GetTable<PHONG>();
+				return this.GetTable<QL_NGUOIDUNG>();
 			}
 		}
 		
@@ -195,11 +200,11 @@ namespace DTO
 			}
 		}
 		
-		public System.Data.Linq.Table<SP_DATPHONG> SP_DATPHONGs
+		public System.Data.Linq.Table<SANPHAM_DATPHONG> SANPHAM_DATPHONGs
 		{
 			get
 			{
-				return this.GetTable<SP_DATPHONG>();
+				return this.GetTable<SANPHAM_DATPHONG>();
 			}
 		}
 		
@@ -216,14 +221,6 @@ namespace DTO
 			get
 			{
 				return this.GetTable<THIETBI>();
-			}
-		}
-		
-		public System.Data.Linq.Table<THIETBI_PHONG> THIETBI_PHONGs
-		{
-			get
-			{
-				return this.GetTable<THIETBI_PHONG>();
 			}
 		}
 	}
@@ -247,7 +244,7 @@ namespace DTO
 		private System.Nullable<short> _SONGUOIO;
 		
 		private System.Nullable<bool> _TRANGTHAI;
-
+		
 		private System.Nullable<bool> _DISABLED;
 		
 		private System.Nullable<bool> _THEODOAN;
@@ -264,12 +261,12 @@ namespace DTO
 		
 		private EntitySet<PHONG_DATPHONG> _PHONG_DATPHONGs;
 		
-		private EntitySet<SP_DATPHONG> _SP_DATPHONGs;
+		private EntitySet<SANPHAM_DATPHONG> _SANPHAM_DATPHONGs;
 		
 		private EntityRef<KHACHHANG> _KHACHHANG;
 		
 		private EntityRef<QL_NGUOIDUNG> _QL_NGUOIDUNG;
-
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -307,10 +304,9 @@ namespace DTO
 		public DATPHONG()
 		{
 			this._PHONG_DATPHONGs = new EntitySet<PHONG_DATPHONG>(new Action<PHONG_DATPHONG>(this.attach_PHONG_DATPHONGs), new Action<PHONG_DATPHONG>(this.detach_PHONG_DATPHONGs));
-			this._SP_DATPHONGs = new EntitySet<SP_DATPHONG>(new Action<SP_DATPHONG>(this.attach_SP_DATPHONGs), new Action<SP_DATPHONG>(this.detach_SP_DATPHONGs));
+			this._SANPHAM_DATPHONGs = new EntitySet<SANPHAM_DATPHONG>(new Action<SANPHAM_DATPHONG>(this.attach_SANPHAM_DATPHONGs), new Action<SANPHAM_DATPHONG>(this.detach_SANPHAM_DATPHONGs));
 			this._KHACHHANG = default(EntityRef<KHACHHANG>);
 			this._QL_NGUOIDUNG = default(EntityRef<QL_NGUOIDUNG>);
-
 			OnCreated();
 		}
 		
@@ -475,7 +471,6 @@ namespace DTO
 				{
 					this.OnDISABLEDChanging(value);
 					this.SendPropertyChanging();
-
 					this._DISABLED = value;
 					this.SendPropertyChanged("DISABLED");
 					this.OnDISABLEDChanged();
@@ -616,16 +611,16 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DATPHONG_SP_DATPHONG", Storage="_SP_DATPHONGs", ThisKey="MADATPHONG", OtherKey="MADATPHONG")]
-		public EntitySet<SP_DATPHONG> SP_DATPHONGs
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DATPHONG_SANPHAM_DATPHONG", Storage="_SANPHAM_DATPHONGs", ThisKey="MADATPHONG", OtherKey="MADATPHONG")]
+		public EntitySet<SANPHAM_DATPHONG> SANPHAM_DATPHONGs
 		{
 			get
 			{
-				return this._SP_DATPHONGs;
+				return this._SANPHAM_DATPHONGs;
 			}
 			set
 			{
-				this._SP_DATPHONGs.Assign(value);
+				this._SANPHAM_DATPHONGs.Assign(value);
 			}
 		}
 		
@@ -729,13 +724,13 @@ namespace DTO
 			entity.DATPHONG = null;
 		}
 		
-		private void attach_SP_DATPHONGs(SP_DATPHONG entity)
+		private void attach_SANPHAM_DATPHONGs(SANPHAM_DATPHONG entity)
 		{
 			this.SendPropertyChanging();
 			entity.DATPHONG = this;
 		}
 		
-		private void detach_SP_DATPHONGs(SP_DATPHONG entity)
+		private void detach_SANPHAM_DATPHONGs(SANPHAM_DATPHONG entity)
 		{
 			this.SendPropertyChanging();
 			entity.DATPHONG = null;
@@ -937,8 +932,6 @@ namespace DTO
 		
 		private string _DIACHI;
 		
-		private System.Nullable<bool> _TRANGTHAI;
-		
 		private EntitySet<DATPHONG> _DATPHONGs;
 		
     #region Extensibility Method Definitions
@@ -957,8 +950,6 @@ namespace DTO
     partial void OnEMAILChanged();
     partial void OnDIACHIChanging(string value);
     partial void OnDIACHIChanged();
-    partial void OnTRANGTHAIChanging(System.Nullable<bool> value);
-    partial void OnTRANGTHAIChanged();
     #endregion
 		
 		public KHACHHANG()
@@ -1083,26 +1074,6 @@ namespace DTO
 					this._DIACHI = value;
 					this.SendPropertyChanged("DIACHI");
 					this.OnDIACHIChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRANGTHAI", DbType="Bit")]
-		public System.Nullable<bool> TRANGTHAI
-		{
-			get
-			{
-				return this._TRANGTHAI;
-			}
-			set
-			{
-				if ((this._TRANGTHAI != value))
-				{
-					this.OnTRANGTHAIChanging(value);
-					this.SendPropertyChanging();
-					this._TRANGTHAI = value;
-					this.SendPropertyChanged("TRANGTHAI");
-					this.OnTRANGTHAIChanged();
 				}
 			}
 		}
@@ -1339,172 +1310,6 @@ namespace DTO
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.QL_NGUOIDUNG")]
-	public partial class QL_NGUOIDUNG : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _TENDANGNHAP;
-		
-		private string _MATKHAU;
-		
-		private System.Nullable<bool> _HOATDONG;
-		
-		private EntitySet<DATPHONG> _DATPHONGs;
-		
-		private EntitySet<QL_NGUOIDUNG_NHOMNGUOIDUNG> _QL_NGUOIDUNG_NHOMNGUOIDUNGs;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnTENDANGNHAPChanging(string value);
-    partial void OnTENDANGNHAPChanged();
-    partial void OnMATKHAUChanging(string value);
-    partial void OnMATKHAUChanged();
-    partial void OnHOATDONGChanging(System.Nullable<bool> value);
-    partial void OnHOATDONGChanged();
-    #endregion
-		
-		public QL_NGUOIDUNG()
-		{
-			this._DATPHONGs = new EntitySet<DATPHONG>(new Action<DATPHONG>(this.attach_DATPHONGs), new Action<DATPHONG>(this.detach_DATPHONGs));
-			this._QL_NGUOIDUNG_NHOMNGUOIDUNGs = new EntitySet<QL_NGUOIDUNG_NHOMNGUOIDUNG>(new Action<QL_NGUOIDUNG_NHOMNGUOIDUNG>(this.attach_QL_NGUOIDUNG_NHOMNGUOIDUNGs), new Action<QL_NGUOIDUNG_NHOMNGUOIDUNG>(this.detach_QL_NGUOIDUNG_NHOMNGUOIDUNGs));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENDANGNHAP", DbType="VarChar(40) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string TENDANGNHAP
-		{
-			get
-			{
-				return this._TENDANGNHAP;
-			}
-			set
-			{
-				if ((this._TENDANGNHAP != value))
-				{
-					this.OnTENDANGNHAPChanging(value);
-					this.SendPropertyChanging();
-					this._TENDANGNHAP = value;
-					this.SendPropertyChanged("TENDANGNHAP");
-					this.OnTENDANGNHAPChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MATKHAU", DbType="VarChar(40)")]
-		public string MATKHAU
-		{
-			get
-			{
-				return this._MATKHAU;
-			}
-			set
-			{
-				if ((this._MATKHAU != value))
-				{
-					this.OnMATKHAUChanging(value);
-					this.SendPropertyChanging();
-					this._MATKHAU = value;
-					this.SendPropertyChanged("MATKHAU");
-					this.OnMATKHAUChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOATDONG", DbType="Bit")]
-		public System.Nullable<bool> HOATDONG
-		{
-			get
-			{
-				return this._HOATDONG;
-			}
-			set
-			{
-				if ((this._HOATDONG != value))
-				{
-					this.OnHOATDONGChanging(value);
-					this.SendPropertyChanging();
-					this._HOATDONG = value;
-					this.SendPropertyChanged("HOATDONG");
-					this.OnHOATDONGChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="QL_NGUOIDUNG_DATPHONG", Storage="_DATPHONGs", ThisKey="TENDANGNHAP", OtherKey="TENDANGNHAP")]
-		public EntitySet<DATPHONG> DATPHONGs
-		{
-			get
-			{
-				return this._DATPHONGs;
-			}
-			set
-			{
-				this._DATPHONGs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="QL_NGUOIDUNG_QL_NGUOIDUNG_NHOMNGUOIDUNG", Storage="_QL_NGUOIDUNG_NHOMNGUOIDUNGs", ThisKey="TENDANGNHAP", OtherKey="TENDANGNHAP")]
-		public EntitySet<QL_NGUOIDUNG_NHOMNGUOIDUNG> QL_NGUOIDUNG_NHOMNGUOIDUNGs
-		{
-			get
-			{
-				return this._QL_NGUOIDUNG_NHOMNGUOIDUNGs;
-			}
-			set
-			{
-				this._QL_NGUOIDUNG_NHOMNGUOIDUNGs.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_DATPHONGs(DATPHONG entity)
-		{
-			this.SendPropertyChanging();
-			entity.QL_NGUOIDUNG = this;
-		}
-		
-		private void detach_DATPHONGs(DATPHONG entity)
-		{
-			this.SendPropertyChanging();
-			entity.QL_NGUOIDUNG = null;
-		}
-		
-		private void attach_QL_NGUOIDUNG_NHOMNGUOIDUNGs(QL_NGUOIDUNG_NHOMNGUOIDUNG entity)
-		{
-			this.SendPropertyChanging();
-			entity.QL_NGUOIDUNG = this;
-		}
-		
-		private void detach_QL_NGUOIDUNG_NHOMNGUOIDUNGs(QL_NGUOIDUNG_NHOMNGUOIDUNG entity)
-		{
-			this.SendPropertyChanging();
-			entity.QL_NGUOIDUNG = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PHONG")]
 	public partial class PHONG : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1522,8 +1327,6 @@ namespace DTO
 		private System.Nullable<bool> _HOATDONG;
 		
 		private EntitySet<PHONG_DATPHONG> _PHONG_DATPHONGs;
-		
-		private EntitySet<SP_DATPHONG> _SP_DATPHONGs;
 		
 		private EntityRef<LOAIPHONG> _LOAIPHONG;
 		
@@ -1548,7 +1351,6 @@ namespace DTO
 		public PHONG()
 		{
 			this._PHONG_DATPHONGs = new EntitySet<PHONG_DATPHONG>(new Action<PHONG_DATPHONG>(this.attach_PHONG_DATPHONGs), new Action<PHONG_DATPHONG>(this.detach_PHONG_DATPHONGs));
-			this._SP_DATPHONGs = new EntitySet<SP_DATPHONG>(new Action<SP_DATPHONG>(this.attach_SP_DATPHONGs), new Action<SP_DATPHONG>(this.detach_SP_DATPHONGs));
 			this._LOAIPHONG = default(EntityRef<LOAIPHONG>);
 			this._TANG = default(EntityRef<TANG>);
 			OnCreated();
@@ -1675,19 +1477,6 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PHONG_SP_DATPHONG", Storage="_SP_DATPHONGs", ThisKey="MAPHONG", OtherKey="MAPHONG")]
-		public EntitySet<SP_DATPHONG> SP_DATPHONGs
-		{
-			get
-			{
-				return this._SP_DATPHONGs;
-			}
-			set
-			{
-				this._SP_DATPHONGs.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LOAIPHONG_PHONG", Storage="_LOAIPHONG", ThisKey="MALOAIPHONG", OtherKey="MALOAIPHONG", IsForeignKey=true)]
 		public LOAIPHONG LOAIPHONG
 		{
@@ -1787,20 +1576,8 @@ namespace DTO
 			this.SendPropertyChanging();
 			entity.PHONG = null;
 		}
-		
-		private void attach_SP_DATPHONGs(SP_DATPHONG entity)
-		{
-			this.SendPropertyChanging();
-			entity.PHONG = this;
-		}
-		
-		private void detach_SP_DATPHONGs(SP_DATPHONG entity)
-		{
-			this.SendPropertyChanging();
-			entity.PHONG = null;
-		}
 	}
-
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PHONG_DATPHONG")]
 	public partial class PHONG_DATPHONG : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2159,7 +1936,6 @@ namespace DTO
 		}
 	}
 	
-
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.QL_NGUOIDUNG_NHOMNGUOIDUNG")]
 	public partial class QL_NGUOIDUNG_NHOMNGUOIDUNG : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2724,7 +2500,7 @@ namespace DTO
 		
 		private System.Nullable<bool> _DAXOA;
 		
-		private EntitySet<SP_DATPHONG> _SP_DATPHONGs;
+		private EntitySet<SANPHAM_DATPHONG> _SANPHAM_DATPHONGs;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2742,7 +2518,7 @@ namespace DTO
 		
 		public SANPHAM()
 		{
-			this._SP_DATPHONGs = new EntitySet<SP_DATPHONG>(new Action<SP_DATPHONG>(this.attach_SP_DATPHONGs), new Action<SP_DATPHONG>(this.detach_SP_DATPHONGs));
+			this._SANPHAM_DATPHONGs = new EntitySet<SANPHAM_DATPHONG>(new Action<SANPHAM_DATPHONG>(this.attach_SANPHAM_DATPHONGs), new Action<SANPHAM_DATPHONG>(this.detach_SANPHAM_DATPHONGs));
 			OnCreated();
 		}
 		
@@ -2826,16 +2602,16 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SANPHAM_SP_DATPHONG", Storage="_SP_DATPHONGs", ThisKey="MASP", OtherKey="MASP")]
-		public EntitySet<SP_DATPHONG> SP_DATPHONGs
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SANPHAM_SANPHAM_DATPHONG", Storage="_SANPHAM_DATPHONGs", ThisKey="MASP", OtherKey="MASP")]
+		public EntitySet<SANPHAM_DATPHONG> SANPHAM_DATPHONGs
 		{
 			get
 			{
-				return this._SP_DATPHONGs;
+				return this._SANPHAM_DATPHONGs;
 			}
 			set
 			{
-				this._SP_DATPHONGs.Assign(value);
+				this._SANPHAM_DATPHONGs.Assign(value);
 			}
 		}
 		
@@ -2859,44 +2635,34 @@ namespace DTO
 			}
 		}
 		
-		private void attach_SP_DATPHONGs(SP_DATPHONG entity)
+		private void attach_SANPHAM_DATPHONGs(SANPHAM_DATPHONG entity)
 		{
 			this.SendPropertyChanging();
 			entity.SANPHAM = this;
 		}
 		
-		private void detach_SP_DATPHONGs(SP_DATPHONG entity)
+		private void detach_SANPHAM_DATPHONGs(SANPHAM_DATPHONG entity)
 		{
 			this.SendPropertyChanging();
 			entity.SANPHAM = null;
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SP_DATPHONG")]
-	public partial class SP_DATPHONG : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SANPHAM_DATPHONG")]
+	public partial class SANPHAM_DATPHONG : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _MASPDP;
+		private string _MASP_DP;
 		
 		private string _MASP;
 		
-		private string _MAPHONG;
-		
 		private string _MADATPHONG;
-		
-		private System.Nullable<System.DateTime> _NGAY;
-		
-		private System.Nullable<decimal> _DONGIA;
 		
 		private System.Nullable<int> _SOLUONG;
 		
-		private System.Nullable<decimal> _THANHTIEN;
-		
 		private EntityRef<DATPHONG> _DATPHONG;
-		
-		private EntityRef<PHONG> _PHONG;
 		
 		private EntityRef<SANPHAM> _SANPHAM;
 		
@@ -2904,48 +2670,39 @@ namespace DTO
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMASPDPChanging(string value);
-    partial void OnMASPDPChanged();
+    partial void OnMASP_DPChanging(string value);
+    partial void OnMASP_DPChanged();
     partial void OnMASPChanging(string value);
     partial void OnMASPChanged();
-    partial void OnMAPHONGChanging(string value);
-    partial void OnMAPHONGChanged();
     partial void OnMADATPHONGChanging(string value);
     partial void OnMADATPHONGChanged();
-    partial void OnNGAYChanging(System.Nullable<System.DateTime> value);
-    partial void OnNGAYChanged();
-    partial void OnDONGIAChanging(System.Nullable<decimal> value);
-    partial void OnDONGIAChanged();
     partial void OnSOLUONGChanging(System.Nullable<int> value);
     partial void OnSOLUONGChanged();
-    partial void OnTHANHTIENChanging(System.Nullable<decimal> value);
-    partial void OnTHANHTIENChanged();
     #endregion
 		
-		public SP_DATPHONG()
+		public SANPHAM_DATPHONG()
 		{
 			this._DATPHONG = default(EntityRef<DATPHONG>);
-			this._PHONG = default(EntityRef<PHONG>);
 			this._SANPHAM = default(EntityRef<SANPHAM>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MASPDP", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MASPDP
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MASP_DP", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MASP_DP
 		{
 			get
 			{
-				return this._MASPDP;
+				return this._MASP_DP;
 			}
 			set
 			{
-				if ((this._MASPDP != value))
+				if ((this._MASP_DP != value))
 				{
-					this.OnMASPDPChanging(value);
+					this.OnMASP_DPChanging(value);
 					this.SendPropertyChanging();
-					this._MASPDP = value;
-					this.SendPropertyChanged("MASPDP");
-					this.OnMASPDPChanged();
+					this._MASP_DP = value;
+					this.SendPropertyChanged("MASP_DP");
+					this.OnMASP_DPChanged();
 				}
 			}
 		}
@@ -2974,30 +2731,6 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAPHONG", DbType="Char(5)")]
-		public string MAPHONG
-		{
-			get
-			{
-				return this._MAPHONG;
-			}
-			set
-			{
-				if ((this._MAPHONG != value))
-				{
-					if (this._PHONG.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMAPHONGChanging(value);
-					this.SendPropertyChanging();
-					this._MAPHONG = value;
-					this.SendPropertyChanged("MAPHONG");
-					this.OnMAPHONGChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADATPHONG", DbType="Char(10)")]
 		public string MADATPHONG
 		{
@@ -3022,46 +2755,6 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAY", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NGAY
-		{
-			get
-			{
-				return this._NGAY;
-			}
-			set
-			{
-				if ((this._NGAY != value))
-				{
-					this.OnNGAYChanging(value);
-					this.SendPropertyChanging();
-					this._NGAY = value;
-					this.SendPropertyChanged("NGAY");
-					this.OnNGAYChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONGIA", DbType="Decimal(18,0)")]
-		public System.Nullable<decimal> DONGIA
-		{
-			get
-			{
-				return this._DONGIA;
-			}
-			set
-			{
-				if ((this._DONGIA != value))
-				{
-					this.OnDONGIAChanging(value);
-					this.SendPropertyChanging();
-					this._DONGIA = value;
-					this.SendPropertyChanged("DONGIA");
-					this.OnDONGIAChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOLUONG", DbType="Int")]
 		public System.Nullable<int> SOLUONG
 		{
@@ -3082,27 +2775,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THANHTIEN", DbType="Decimal(18,0)")]
-		public System.Nullable<decimal> THANHTIEN
-		{
-			get
-			{
-				return this._THANHTIEN;
-			}
-			set
-			{
-				if ((this._THANHTIEN != value))
-				{
-					this.OnTHANHTIENChanging(value);
-					this.SendPropertyChanging();
-					this._THANHTIEN = value;
-					this.SendPropertyChanged("THANHTIEN");
-					this.OnTHANHTIENChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DATPHONG_SP_DATPHONG", Storage="_DATPHONG", ThisKey="MADATPHONG", OtherKey="MADATPHONG", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DATPHONG_SANPHAM_DATPHONG", Storage="_DATPHONG", ThisKey="MADATPHONG", OtherKey="MADATPHONG", IsForeignKey=true)]
 		public DATPHONG DATPHONG
 		{
 			get
@@ -3119,12 +2792,12 @@ namespace DTO
 					if ((previousValue != null))
 					{
 						this._DATPHONG.Entity = null;
-						previousValue.SP_DATPHONGs.Remove(this);
+						previousValue.SANPHAM_DATPHONGs.Remove(this);
 					}
 					this._DATPHONG.Entity = value;
 					if ((value != null))
 					{
-						value.SP_DATPHONGs.Add(this);
+						value.SANPHAM_DATPHONGs.Add(this);
 						this._MADATPHONG = value.MADATPHONG;
 					}
 					else
@@ -3136,41 +2809,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PHONG_SP_DATPHONG", Storage="_PHONG", ThisKey="MAPHONG", OtherKey="MAPHONG", IsForeignKey=true)]
-		public PHONG PHONG
-		{
-			get
-			{
-				return this._PHONG.Entity;
-			}
-			set
-			{
-				PHONG previousValue = this._PHONG.Entity;
-				if (((previousValue != value) 
-							|| (this._PHONG.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._PHONG.Entity = null;
-						previousValue.SP_DATPHONGs.Remove(this);
-					}
-					this._PHONG.Entity = value;
-					if ((value != null))
-					{
-						value.SP_DATPHONGs.Add(this);
-						this._MAPHONG = value.MAPHONG;
-					}
-					else
-					{
-						this._MAPHONG = default(string);
-					}
-					this.SendPropertyChanged("PHONG");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SANPHAM_SP_DATPHONG", Storage="_SANPHAM", ThisKey="MASP", OtherKey="MASP", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SANPHAM_SANPHAM_DATPHONG", Storage="_SANPHAM", ThisKey="MASP", OtherKey="MASP", IsForeignKey=true)]
 		public SANPHAM SANPHAM
 		{
 			get
@@ -3187,12 +2826,12 @@ namespace DTO
 					if ((previousValue != null))
 					{
 						this._SANPHAM.Entity = null;
-						previousValue.SP_DATPHONGs.Remove(this);
+						previousValue.SANPHAM_DATPHONGs.Remove(this);
 					}
 					this._SANPHAM.Entity = value;
 					if ((value != null))
 					{
-						value.SP_DATPHONGs.Add(this);
+						value.SANPHAM_DATPHONGs.Add(this);
 						this._MASP = value.MASP;
 					}
 					else
@@ -3469,69 +3108,6 @@ namespace DTO
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THIETBI_PHONG")]
-	public partial class THIETBI_PHONG
-	{
-		
-		private string _MATHIETBI;
-		
-		private string _MAPHONG;
-		
-		private System.Nullable<short> _SOLUONG;
-		
-		public THIETBI_PHONG()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MATHIETBI", DbType="Char(5)")]
-		public string MATHIETBI
-		{
-			get
-			{
-				return this._MATHIETBI;
-			}
-			set
-			{
-				if ((this._MATHIETBI != value))
-				{
-					this._MATHIETBI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAPHONG", DbType="Char(5)")]
-		public string MAPHONG
-		{
-			get
-			{
-				return this._MAPHONG;
-			}
-			set
-			{
-				if ((this._MAPHONG != value))
-				{
-					this._MAPHONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOLUONG", DbType="SmallInt")]
-		public System.Nullable<short> SOLUONG
-		{
-			get
-			{
-				return this._SOLUONG;
-			}
-			set
-			{
-				if ((this._SOLUONG != value))
-				{
-					this._SOLUONG = value;
-				}
 			}
 		}
 	}

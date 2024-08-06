@@ -45,13 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-
-    <Compile Include="KhachHangDAL.cs" />
     <Compile Include="LoaiPhongDAL.cs" />
     <Compile Include="ManHinhDAL.cs" />
     <Compile Include="NguoiDungDAL.cs" />
     <Compile Include="PhongDAL.cs" />
-
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SanPhamDAL.cs" />
     <Compile Include="TangDAL.cs" />

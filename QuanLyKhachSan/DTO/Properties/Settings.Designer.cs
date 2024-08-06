@@ -33,16 +33,5 @@ namespace DTO.Properties {
                 return ((string)(this["QL_KHACHSANConnectionString"]));
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=COMPUTEROFLONG;Initial Catalog=QL_KHACHSAN;Integrated Security=True;E" +
-            "ncrypt=False;TrustServerCertificate=True")]
-        public string QL_KHACHSANConnectionString1 {
-            get {
-                return ((string)(this["QL_KHACHSANConnectionString1"]));
-            }
-        }
     }
 }
