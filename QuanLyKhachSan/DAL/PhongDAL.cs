@@ -60,5 +60,12 @@ namespace DAL
         {
             return qlks.PHONGs.Where(ph => ph.HOATDONG == false).Select(ph => new { ph.MAPHONG, ph.TENPHONG, ph.TANG.MATANG, ph.TANG.TENTANG, ph.LOAIPHONG.DONGIA}).ToList<dynamic>();
         }
+
+        public void capNhatTrangThai(string maPhong, bool trangThai)
+        {
+            PHONG phong = layPhong(maPhong);
+            phong.HOATDONG = trangThai;
+            qlks.SubmitChanges();
+        }
     }
 }

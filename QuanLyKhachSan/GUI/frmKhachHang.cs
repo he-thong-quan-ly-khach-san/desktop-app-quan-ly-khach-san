@@ -15,6 +15,7 @@ namespace GUI
     public partial class frmKhachHang : Form
     {
         KhachHangBLL khBLL;
+        frmDatPhongTheoDoan objDP = (frmDatPhongTheoDoan)Application.OpenForms["frmDatPhongTheoDoan"];
         public frmKhachHang()
         {
             InitializeComponent();
@@ -80,7 +81,7 @@ namespace GUI
             txtDiaChi.Enabled = true;
             txtCCCD.Enabled = true;
             txtEmail.Enabled = true;
-
+            
         }
 
         private string MaKHTuDong()
@@ -198,6 +199,16 @@ namespace GUI
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void gridDS_DoubleClick(object sender, EventArgs e)
+        {
+            if (gridDS.GetFocusedRowCellValue("MAKH")!= null)
+            {
+                objDP.setKH(gridDS.GetFocusedRowCellValue("MAKH").ToString());
+                objDP.loadKH();
+                this.Close();
+            }
         }
     }
 }

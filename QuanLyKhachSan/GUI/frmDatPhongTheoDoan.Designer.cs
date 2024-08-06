@@ -170,7 +170,7 @@
             this.btnIn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1533, 35);
+            this.toolStrip1.Size = new System.Drawing.Size(1150, 28);
             this.toolStrip1.TabIndex = 13;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -179,7 +179,7 @@
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(84, 32);
+            this.btnThem.Size = new System.Drawing.Size(73, 25);
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -188,7 +188,7 @@
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(69, 32);
+            this.btnSua.Size = new System.Drawing.Size(60, 25);
             this.btnSua.Text = "Sửa";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -197,21 +197,21 @@
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(70, 32);
+            this.btnXoa.Size = new System.Drawing.Size(60, 25);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 35);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 28);
             // 
             // btnLuu
             // 
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(68, 32);
+            this.btnLuu.Size = new System.Drawing.Size(60, 25);
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
@@ -221,7 +221,7 @@
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(86, 32);
+            this.btnThoat.Size = new System.Drawing.Size(73, 25);
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
@@ -230,7 +230,7 @@
             this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
             this.btnHuy.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(71, 32);
+            this.btnHuy.Size = new System.Drawing.Size(62, 25);
             this.btnHuy.Text = "Hủy";
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
@@ -239,18 +239,18 @@
             this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
             this.btnIn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(52, 32);
+            this.btnIn.Size = new System.Drawing.Size(47, 25);
             this.btnIn.Text = "In";
             this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // tabDanhSach
             // 
             this.tabDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabDanhSach.Location = new System.Drawing.Point(0, 35);
-            this.tabDanhSach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabDanhSach.Location = new System.Drawing.Point(0, 28);
+            this.tabDanhSach.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabDanhSach.Name = "tabDanhSach";
             this.tabDanhSach.SelectedTabPage = this.pageDanhSach;
-            this.tabDanhSach.Size = new System.Drawing.Size(1533, 791);
+            this.tabDanhSach.Size = new System.Drawing.Size(1150, 643);
             this.tabDanhSach.TabIndex = 14;
             this.tabDanhSach.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.pageDanhSach,
@@ -259,9 +259,9 @@
             // pageDanhSach
             // 
             this.pageDanhSach.Controls.Add(this.splitContainerControl1);
-            this.pageDanhSach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pageDanhSach.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pageDanhSach.Name = "pageDanhSach";
-            this.pageDanhSach.Size = new System.Drawing.Size(1531, 761);
+            this.pageDanhSach.Size = new System.Drawing.Size(1148, 618);
             this.pageDanhSach.Text = "Danh sách";
             // 
             // splitContainerControl1
@@ -270,7 +270,7 @@
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Horizontal = false;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainerControl1.Name = "splitContainerControl1";
             // 
             // splitContainerControl1.Panel1
@@ -285,60 +285,63 @@
             // 
             this.splitContainerControl1.Panel2.Controls.Add(this.gcDanhSach);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1531, 761);
-            this.splitContainerControl1.SplitterPosition = 49;
+            this.splitContainerControl1.Size = new System.Drawing.Size(1148, 618);
+            this.splitContainerControl1.SplitterPosition = 40;
             this.splitContainerControl1.TabIndex = 0;
             // 
             // dtpDenNgay
             // 
             this.dtpDenNgay.CustomFormat = "dd/MM/yyyy";
             this.dtpDenNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDenNgay.Location = new System.Drawing.Point(641, 17);
-            this.dtpDenNgay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpDenNgay.Location = new System.Drawing.Point(481, 14);
+            this.dtpDenNgay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpDenNgay.Name = "dtpDenNgay";
-            this.dtpDenNgay.Size = new System.Drawing.Size(200, 23);
+            this.dtpDenNgay.Size = new System.Drawing.Size(151, 21);
             this.dtpDenNgay.TabIndex = 1;
             // 
             // dtpTuNgay
             // 
             this.dtpTuNgay.CustomFormat = "dd/MM/yyyy";
             this.dtpTuNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTuNgay.Location = new System.Drawing.Point(301, 17);
-            this.dtpTuNgay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpTuNgay.Location = new System.Drawing.Point(226, 14);
+            this.dtpTuNgay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpTuNgay.Name = "dtpTuNgay";
-            this.dtpTuNgay.Size = new System.Drawing.Size(200, 23);
+            this.dtpTuNgay.Size = new System.Drawing.Size(151, 21);
             this.dtpTuNgay.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(557, 22);
+            this.label2.Location = new System.Drawing.Point(418, 18);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 16);
+            this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Đến ngày";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(217, 22);
+            this.label1.Location = new System.Drawing.Point(163, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 16);
+            this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Từ ngày";
             // 
             // gcDanhSach
             // 
             this.gcDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gcDanhSach.Location = new System.Drawing.Point(0, 0);
             this.gcDanhSach.MainView = this.gridDS;
-            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gcDanhSach.Name = "gcDanhSach";
-            this.gcDanhSach.Size = new System.Drawing.Size(1527, 696);
+            this.gcDanhSach.Size = new System.Drawing.Size(1144, 564);
             this.gcDanhSach.TabIndex = 0;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridDS});
+            this.gcDanhSach.Click += new System.EventHandler(this.gcDanhSach_Click);
             // 
             // gridDS
             // 
@@ -355,6 +358,7 @@
             this.gridColumn2,
             this.gridColumn8,
             this.gridColumn14});
+            this.gridDS.DetailHeight = 284;
             this.gridDS.GridControl = this.gcDanhSach;
             this.gridDS.Name = "gridDS";
             // 
@@ -362,9 +366,9 @@
             // 
             this.gridColumn11.Caption = "Người tạo";
             this.gridColumn11.FieldName = "TENDANGNHAP";
-            this.gridColumn11.MinWidth = 25;
+            this.gridColumn11.MinWidth = 19;
             this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Width = 93;
+            this.gridColumn11.Width = 70;
             // 
             // gridColumn1
             // 
@@ -372,19 +376,19 @@
             this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.Caption = "Số hóa đơn";
             this.gridColumn1.FieldName = "MADATPHONG";
-            this.gridColumn1.MinWidth = 25;
+            this.gridColumn1.MinWidth = 19;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 137;
+            this.gridColumn1.Width = 103;
             // 
             // gridColumn10
             // 
             this.gridColumn10.Caption = "Mã khách hàng";
             this.gridColumn10.FieldName = "MAKH";
-            this.gridColumn10.MinWidth = 25;
+            this.gridColumn10.MinWidth = 19;
             this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Width = 93;
+            this.gridColumn10.Width = 70;
             // 
             // gridColumn4
             // 
@@ -392,11 +396,11 @@
             this.gridColumn4.AppearanceHeader.Options.UseFont = true;
             this.gridColumn4.Caption = "Tên khách hàng";
             this.gridColumn4.FieldName = "HOTENKH";
-            this.gridColumn4.MinWidth = 25;
+            this.gridColumn4.MinWidth = 19;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 2;
-            this.gridColumn4.Width = 188;
+            this.gridColumn4.Width = 141;
             // 
             // gridColumn9
             // 
@@ -404,11 +408,11 @@
             this.gridColumn9.AppearanceHeader.Options.UseFont = true;
             this.gridColumn9.Caption = "Đoàn";
             this.gridColumn9.FieldName = "THEODOAN";
-            this.gridColumn9.MinWidth = 25;
+            this.gridColumn9.MinWidth = 19;
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 1;
-            this.gridColumn9.Width = 67;
+            this.gridColumn9.Width = 50;
             // 
             // gridColumn3
             // 
@@ -416,11 +420,11 @@
             this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.Caption = "Ngày đặt";
             this.gridColumn3.FieldName = "NGAYDAT";
-            this.gridColumn3.MinWidth = 25;
+            this.gridColumn3.MinWidth = 19;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 3;
-            this.gridColumn3.Width = 160;
+            this.gridColumn3.Width = 120;
             // 
             // gridColumn5
             // 
@@ -428,11 +432,11 @@
             this.gridColumn5.AppearanceHeader.Options.UseFont = true;
             this.gridColumn5.Caption = "Ngày trả";
             this.gridColumn5.FieldName = "NGAYTRA";
-            this.gridColumn5.MinWidth = 25;
+            this.gridColumn5.MinWidth = 19;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 171;
+            this.gridColumn5.Width = 128;
             // 
             // gridColumn6
             // 
@@ -440,11 +444,11 @@
             this.gridColumn6.AppearanceHeader.Options.UseFont = true;
             this.gridColumn6.Caption = "Số người ở";
             this.gridColumn6.FieldName = "SONGUOIO";
-            this.gridColumn6.MinWidth = 25;
+            this.gridColumn6.MinWidth = 19;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
-            this.gridColumn6.Width = 87;
+            this.gridColumn6.Width = 65;
             // 
             // gridColumn7
             // 
@@ -452,11 +456,11 @@
             this.gridColumn7.AppearanceHeader.Options.UseFont = true;
             this.gridColumn7.Caption = "Trạng thái";
             this.gridColumn7.FieldName = "TRANGTHAI";
-            this.gridColumn7.MinWidth = 25;
+            this.gridColumn7.MinWidth = 19;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 7;
-            this.gridColumn7.Width = 89;
+            this.gridColumn7.Width = 67;
             // 
             // gridColumn2
             // 
@@ -464,11 +468,11 @@
             this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.Caption = "Số tiền";
             this.gridColumn2.FieldName = "SOTIEN";
-            this.gridColumn2.MinWidth = 25;
+            this.gridColumn2.MinWidth = 19;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 6;
-            this.gridColumn2.Width = 148;
+            this.gridColumn2.Width = 111;
             // 
             // gridColumn8
             // 
@@ -476,28 +480,28 @@
             this.gridColumn8.AppearanceHeader.Options.UseFont = true;
             this.gridColumn8.Caption = "Ghi chú";
             this.gridColumn8.FieldName = "GHICHU";
-            this.gridColumn8.MinWidth = 25;
+            this.gridColumn8.MinWidth = 19;
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 8;
-            this.gridColumn8.Width = 271;
+            this.gridColumn8.Width = 203;
             // 
             // gridColumn14
             // 
             this.gridColumn14.Caption = "del";
             this.gridColumn14.FieldName = "DISABLED";
-            this.gridColumn14.MinWidth = 25;
+            this.gridColumn14.MinWidth = 19;
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 9;
-            this.gridColumn14.Width = 65;
+            this.gridColumn14.Width = 49;
             // 
             // pageChiTiet
             // 
             this.pageChiTiet.Controls.Add(this.tableLayoutPanel1);
-            this.pageChiTiet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pageChiTiet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pageChiTiet.Name = "pageChiTiet";
-            this.pageChiTiet.Size = new System.Drawing.Size(1531, 761);
+            this.pageChiTiet.Size = new System.Drawing.Size(1148, 618);
             this.pageChiTiet.Text = "Chi tiết";
             // 
             // tableLayoutPanel1
@@ -511,21 +515,21 @@
             this.tableLayoutPanel1.Controls.Add(this.splitContainerControl2, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1531, 761);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1148, 618);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.gcPhong);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(3, 2);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupControl1.Location = new System.Drawing.Point(2, 2);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(453, 757);
+            this.groupControl1.Size = new System.Drawing.Size(340, 614);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Danh sách phòng trống";
             // 
@@ -533,12 +537,12 @@
             // 
             this.gcPhong.AllowDrop = true;
             this.gcPhong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcPhong.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gcPhong.Location = new System.Drawing.Point(2, 28);
+            this.gcPhong.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gcPhong.Location = new System.Drawing.Point(2, 23);
             this.gcPhong.MainView = this.gvPhong;
-            this.gcPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gcPhong.Name = "gcPhong";
-            this.gcPhong.Size = new System.Drawing.Size(449, 727);
+            this.gcPhong.Size = new System.Drawing.Size(336, 589);
             this.gcPhong.TabIndex = 0;
             this.gcPhong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPhong});
@@ -552,6 +556,7 @@
             this.MATANG,
             this.TENTANG,
             this.pDONGIA});
+            this.gvPhong.DetailHeight = 284;
             this.gvPhong.GridControl = this.gcPhong;
             this.gvPhong.GroupCount = 1;
             this.gvPhong.Name = "gvPhong";
@@ -563,9 +568,9 @@
             // 
             this.MAPHONG.Caption = "ID";
             this.MAPHONG.FieldName = "MAPHONG";
-            this.MAPHONG.MinWidth = 25;
+            this.MAPHONG.MinWidth = 19;
             this.MAPHONG.Name = "MAPHONG";
-            this.MAPHONG.Width = 93;
+            this.MAPHONG.Width = 70;
             // 
             // TENPHONG
             // 
@@ -573,19 +578,19 @@
             this.TENPHONG.AppearanceHeader.Options.UseFont = true;
             this.TENPHONG.Caption = "Tên phòng";
             this.TENPHONG.FieldName = "TENPHONG";
-            this.TENPHONG.MinWidth = 25;
+            this.TENPHONG.MinWidth = 19;
             this.TENPHONG.Name = "TENPHONG";
             this.TENPHONG.Visible = true;
             this.TENPHONG.VisibleIndex = 0;
-            this.TENPHONG.Width = 93;
+            this.TENPHONG.Width = 70;
             // 
             // MATANG
             // 
             this.MATANG.Caption = "Mã tầng";
             this.MATANG.FieldName = "MATANG";
-            this.MATANG.MinWidth = 25;
+            this.MATANG.MinWidth = 19;
             this.MATANG.Name = "MATANG";
-            this.MATANG.Width = 93;
+            this.MATANG.Width = 70;
             // 
             // TENTANG
             // 
@@ -593,42 +598,42 @@
             this.TENTANG.AppearanceHeader.Options.UseFont = true;
             this.TENTANG.Caption = "Tên tầng";
             this.TENTANG.FieldName = "TENTANG";
-            this.TENTANG.MinWidth = 25;
+            this.TENTANG.MinWidth = 19;
             this.TENTANG.Name = "TENTANG";
             this.TENTANG.Visible = true;
             this.TENTANG.VisibleIndex = 1;
-            this.TENTANG.Width = 93;
+            this.TENTANG.Width = 70;
             // 
             // pDONGIA
             // 
             this.pDONGIA.Caption = "Đơn giá";
             this.pDONGIA.FieldName = "DONGIA";
-            this.pDONGIA.MinWidth = 25;
+            this.pDONGIA.MinWidth = 19;
             this.pDONGIA.Name = "pDONGIA";
             this.pDONGIA.Visible = true;
             this.pDONGIA.VisibleIndex = 1;
-            this.pDONGIA.Width = 93;
+            this.pDONGIA.Width = 70;
             // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.gcSanPham);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(1150, 2);
-            this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupControl2.Location = new System.Drawing.Point(862, 2);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(378, 757);
+            this.groupControl2.Size = new System.Drawing.Size(284, 614);
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "Dịch vụ";
             // 
             // gcSanPham
             // 
             this.gcSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcSanPham.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gcSanPham.Location = new System.Drawing.Point(2, 28);
+            this.gcSanPham.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gcSanPham.Location = new System.Drawing.Point(2, 23);
             this.gcSanPham.MainView = this.gvSanPham;
-            this.gcSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcSanPham.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gcSanPham.Name = "gcSanPham";
-            this.gcSanPham.Size = new System.Drawing.Size(374, 727);
+            this.gcSanPham.Size = new System.Drawing.Size(280, 589);
             this.gcSanPham.TabIndex = 0;
             this.gcSanPham.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSanPham});
@@ -641,6 +646,7 @@
             this.TENSP,
             this.DONGIA,
             this.DAXOA});
+            this.gvSanPham.DetailHeight = 284;
             this.gvSanPham.GridControl = this.gcSanPham;
             this.gvSanPham.Name = "gvSanPham";
             this.gvSanPham.OptionsView.ShowGroupPanel = false;
@@ -649,44 +655,44 @@
             // 
             this.MASP.Caption = "Mã sản phẩm";
             this.MASP.FieldName = "MASP";
-            this.MASP.MinWidth = 25;
+            this.MASP.MinWidth = 19;
             this.MASP.Name = "MASP";
-            this.MASP.Width = 93;
+            this.MASP.Width = 70;
             // 
             // TENSP
             // 
             this.TENSP.Caption = "Tên sản phẩm";
             this.TENSP.FieldName = "TENSP";
-            this.TENSP.MinWidth = 25;
+            this.TENSP.MinWidth = 19;
             this.TENSP.Name = "TENSP";
             this.TENSP.Visible = true;
             this.TENSP.VisibleIndex = 0;
-            this.TENSP.Width = 93;
+            this.TENSP.Width = 70;
             // 
             // DONGIA
             // 
             this.DONGIA.Caption = "Đơn giá";
             this.DONGIA.FieldName = "DONGIA";
-            this.DONGIA.MinWidth = 25;
+            this.DONGIA.MinWidth = 19;
             this.DONGIA.Name = "DONGIA";
             this.DONGIA.Visible = true;
             this.DONGIA.VisibleIndex = 1;
-            this.DONGIA.Width = 93;
+            this.DONGIA.Width = 70;
             // 
             // DAXOA
             // 
             this.DAXOA.Caption = "del";
             this.DAXOA.FieldName = "DAXOA";
-            this.DAXOA.MinWidth = 25;
+            this.DAXOA.MinWidth = 19;
             this.DAXOA.Name = "DAXOA";
-            this.DAXOA.Width = 93;
+            this.DAXOA.Width = 70;
             // 
             // splitContainerControl2
             // 
             this.splitContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl2.Horizontal = false;
-            this.splitContainerControl2.Location = new System.Drawing.Point(462, 2);
-            this.splitContainerControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.splitContainerControl2.Location = new System.Drawing.Point(346, 2);
+            this.splitContainerControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainerControl2.Name = "splitContainerControl2";
             // 
             // splitContainerControl2.Panel1
@@ -714,8 +720,8 @@
             this.splitContainerControl2.Panel2.Controls.Add(this.groupControl4);
             this.splitContainerControl2.Panel2.Controls.Add(this.groupControl3);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(682, 757);
-            this.splitContainerControl2.SplitterPosition = 191;
+            this.splitContainerControl2.Size = new System.Drawing.Size(512, 614);
+            this.splitContainerControl2.SplitterPosition = 155;
             this.splitContainerControl2.TabIndex = 3;
             // 
             // spSoNguoi
@@ -725,40 +731,41 @@
             0,
             0,
             0});
-            this.spSoNguoi.Location = new System.Drawing.Point(420, 80);
-            this.spSoNguoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.spSoNguoi.Location = new System.Drawing.Point(315, 65);
+            this.spSoNguoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.spSoNguoi.Name = "spSoNguoi";
             this.spSoNguoi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spSoNguoi.Size = new System.Drawing.Size(125, 24);
+            this.spSoNguoi.Size = new System.Drawing.Size(94, 20);
             this.spSoNguoi.TabIndex = 7;
             // 
             // btnThemMoi
             // 
-            this.btnThemMoi.Location = new System.Drawing.Point(565, 26);
-            this.btnThemMoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThemMoi.Location = new System.Drawing.Point(424, 21);
+            this.btnThemMoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThemMoi.Name = "btnThemMoi";
-            this.btnThemMoi.Size = new System.Drawing.Size(75, 23);
+            this.btnThemMoi.Size = new System.Drawing.Size(56, 19);
             this.btnThemMoi.TabIndex = 6;
             this.btnThemMoi.Text = "Thêm mới";
             this.btnThemMoi.UseVisualStyleBackColor = true;
+            this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
             // 
             // txtGhiChu
             // 
-            this.txtGhiChu.Location = new System.Drawing.Point(117, 132);
-            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGhiChu.Location = new System.Drawing.Point(88, 107);
+            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(543, 46);
+            this.txtGhiChu.Size = new System.Drawing.Size(408, 38);
             this.txtGhiChu.TabIndex = 5;
             this.txtGhiChu.Text = "";
             // 
             // chkTheoDoan
             // 
             this.chkTheoDoan.AutoSize = true;
-            this.chkTheoDoan.Location = new System.Drawing.Point(549, 82);
-            this.chkTheoDoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkTheoDoan.Location = new System.Drawing.Point(412, 67);
+            this.chkTheoDoan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkTheoDoan.Name = "chkTheoDoan";
-            this.chkTheoDoan.Size = new System.Drawing.Size(90, 20);
+            this.chkTheoDoan.Size = new System.Drawing.Size(77, 17);
             this.chkTheoDoan.TabIndex = 4;
             this.chkTheoDoan.Text = "Theo đoàn";
             this.chkTheoDoan.UseVisualStyleBackColor = true;
@@ -767,27 +774,29 @@
             // 
             this.dtpNgayTra.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayTra.Location = new System.Drawing.Point(420, 55);
-            this.dtpNgayTra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpNgayTra.Location = new System.Drawing.Point(315, 45);
+            this.dtpNgayTra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpNgayTra.Name = "dtpNgayTra";
-            this.dtpNgayTra.Size = new System.Drawing.Size(200, 23);
+            this.dtpNgayTra.Size = new System.Drawing.Size(151, 21);
             this.dtpNgayTra.TabIndex = 3;
             // 
             // lblSonguoi
             // 
             this.lblSonguoi.AutoSize = true;
-            this.lblSonguoi.Location = new System.Drawing.Point(336, 84);
+            this.lblSonguoi.Location = new System.Drawing.Point(252, 68);
+            this.lblSonguoi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSonguoi.Name = "lblSonguoi";
-            this.lblSonguoi.Size = new System.Drawing.Size(58, 16);
+            this.lblSonguoi.Size = new System.Drawing.Size(49, 13);
             this.lblSonguoi.TabIndex = 2;
             this.lblSonguoi.Text = "Số người";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(336, 60);
+            this.label5.Location = new System.Drawing.Point(252, 49);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 16);
+            this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 2;
             this.label5.Text = "Ngày trả";
             // 
@@ -795,54 +804,57 @@
             // 
             this.dtpNgayDat.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayDat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayDat.Location = new System.Drawing.Point(117, 55);
-            this.dtpNgayDat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpNgayDat.Location = new System.Drawing.Point(88, 45);
+            this.dtpNgayDat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpNgayDat.Name = "dtpNgayDat";
-            this.dtpNgayDat.Size = new System.Drawing.Size(200, 23);
+            this.dtpNgayDat.Size = new System.Drawing.Size(151, 21);
             this.dtpNgayDat.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 60);
+            this.label4.Location = new System.Drawing.Point(26, 49);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 16);
+            this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 2;
             this.label4.Text = "Ngày đặt";
             // 
             // cboTrangThai
             // 
             this.cboTrangThai.FormattingEnabled = true;
-            this.cboTrangThai.Location = new System.Drawing.Point(117, 84);
-            this.cboTrangThai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboTrangThai.Location = new System.Drawing.Point(88, 68);
+            this.cboTrangThai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboTrangThai.Name = "cboTrangThai";
-            this.cboTrangThai.Size = new System.Drawing.Size(200, 24);
+            this.cboTrangThai.Size = new System.Drawing.Size(151, 21);
             this.cboTrangThai.TabIndex = 1;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 87);
+            this.label6.Location = new System.Drawing.Point(14, 71);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 16);
+            this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "Trạng thái";
             // 
             // cboKhachHang
             // 
             this.cboKhachHang.FormattingEnabled = true;
-            this.cboKhachHang.Location = new System.Drawing.Point(117, 25);
-            this.cboKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboKhachHang.Location = new System.Drawing.Point(88, 20);
+            this.cboKhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboKhachHang.Name = "cboKhachHang";
-            this.cboKhachHang.Size = new System.Drawing.Size(433, 24);
+            this.cboKhachHang.Size = new System.Drawing.Size(326, 21);
             this.cboKhachHang.TabIndex = 1;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(35, 135);
+            this.label7.Location = new System.Drawing.Point(26, 110);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 16);
+            this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 0;
             this.label7.Text = "Ghi chú";
             this.label7.Click += new System.EventHandler(this.label3_Click);
@@ -852,9 +864,10 @@
             this.lblHuy.AutoSize = true;
             this.lblHuy.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.lblHuy.ForeColor = System.Drawing.Color.Red;
-            this.lblHuy.Location = new System.Drawing.Point(645, 30);
+            this.lblHuy.Location = new System.Drawing.Point(484, 24);
+            this.lblHuy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHuy.Name = "lblHuy";
-            this.lblHuy.Size = new System.Drawing.Size(21, 21);
+            this.lblHuy.Size = new System.Drawing.Size(17, 17);
             this.lblHuy.TabIndex = 0;
             this.lblHuy.Text = "*";
             this.lblHuy.Click += new System.EventHandler(this.label3_Click);
@@ -862,9 +875,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 28);
+            this.label3.Location = new System.Drawing.Point(14, 23);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 16);
+            this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Khách hàng";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -874,10 +888,10 @@
             this.groupControl5.Controls.Add(this.lblTongTien);
             this.groupControl5.Controls.Add(this.label8);
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl5.Location = new System.Drawing.Point(0, 453);
-            this.groupControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupControl5.Location = new System.Drawing.Point(0, 368);
+            this.groupControl5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(682, 89);
+            this.groupControl5.Size = new System.Drawing.Size(512, 72);
             this.groupControl5.TabIndex = 2;
             this.groupControl5.Text = "Tổng thanh toán";
             // 
@@ -886,9 +900,10 @@
             this.lblTongTien.AutoSize = true;
             this.lblTongTien.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.lblTongTien.ForeColor = System.Drawing.Color.Red;
-            this.lblTongTien.Location = new System.Drawing.Point(255, 39);
+            this.lblTongTien.Location = new System.Drawing.Point(191, 32);
+            this.lblTongTien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTongTien.Name = "lblTongTien";
-            this.lblTongTien.Size = new System.Drawing.Size(0, 24);
+            this.lblTongTien.Size = new System.Drawing.Size(0, 19);
             this.lblTongTien.TabIndex = 0;
             this.lblTongTien.Click += new System.EventHandler(this.label3_Click);
             // 
@@ -897,9 +912,10 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(115, 39);
+            this.label8.Location = new System.Drawing.Point(86, 32);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(122, 24);
+            this.label8.Size = new System.Drawing.Size(101, 19);
             this.label8.TabIndex = 0;
             this.label8.Text = "TỔNG TIỀN";
             this.label8.Click += new System.EventHandler(this.label3_Click);
@@ -908,22 +924,22 @@
             // 
             this.groupControl4.Controls.Add(this.gcDVDat);
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl4.Location = new System.Drawing.Point(0, 199);
-            this.groupControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupControl4.Location = new System.Drawing.Point(0, 162);
+            this.groupControl4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(682, 254);
+            this.groupControl4.Size = new System.Drawing.Size(512, 206);
             this.groupControl4.TabIndex = 1;
             this.groupControl4.Text = "Dah sách dịch vụ";
             // 
             // gcDVDat
             // 
             this.gcDVDat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcDVDat.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gcDVDat.Location = new System.Drawing.Point(2, 28);
+            this.gcDVDat.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gcDVDat.Location = new System.Drawing.Point(2, 23);
             this.gcDVDat.MainView = this.gvDVDat;
-            this.gcDVDat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcDVDat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gcDVDat.Name = "gcDVDat";
-            this.gcDVDat.Size = new System.Drawing.Size(678, 224);
+            this.gcDVDat.Size = new System.Drawing.Size(508, 181);
             this.gcDVDat.TabIndex = 0;
             this.gcDVDat.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDVDat});
@@ -939,6 +955,7 @@
             this.spTrangThai,
             this.spMaPhong,
             this.spThanhTien});
+            this.gvDVDat.DetailHeight = 284;
             this.gvDVDat.GridControl = this.gcDVDat;
             this.gvDVDat.Name = "gvDVDat";
             this.gvDVDat.OptionsView.ShowFooter = true;
@@ -948,9 +965,9 @@
             // 
             this.spIDSP.Caption = "Mã sản phẩm";
             this.spIDSP.FieldName = "MASP";
-            this.spIDSP.MinWidth = 25;
+            this.spIDSP.MinWidth = 19;
             this.spIDSP.Name = "spIDSP";
-            this.spIDSP.Width = 93;
+            this.spIDSP.Width = 70;
             // 
             // spTenSP
             // 
@@ -958,12 +975,12 @@
             this.spTenSP.AppearanceHeader.Options.UseFont = true;
             this.spTenSP.Caption = "Tên sản phẩm";
             this.spTenSP.FieldName = "TENSP";
-            this.spTenSP.MinWidth = 25;
+            this.spTenSP.MinWidth = 19;
             this.spTenSP.Name = "spTenSP";
             this.spTenSP.OptionsColumn.AllowEdit = false;
             this.spTenSP.Visible = true;
             this.spTenSP.VisibleIndex = 0;
-            this.spTenSP.Width = 93;
+            this.spTenSP.Width = 70;
             // 
             // spTenPhong
             // 
@@ -971,12 +988,12 @@
             this.spTenPhong.AppearanceHeader.Options.UseFont = true;
             this.spTenPhong.Caption = "Phòng";
             this.spTenPhong.FieldName = "TENPHONG";
-            this.spTenPhong.MinWidth = 25;
+            this.spTenPhong.MinWidth = 19;
             this.spTenPhong.Name = "spTenPhong";
             this.spTenPhong.OptionsColumn.AllowEdit = false;
             this.spTenPhong.Visible = true;
             this.spTenPhong.VisibleIndex = 3;
-            this.spTenPhong.Width = 93;
+            this.spTenPhong.Width = 70;
             // 
             // spDonGia
             // 
@@ -984,12 +1001,12 @@
             this.spDonGia.AppearanceHeader.Options.UseFont = true;
             this.spDonGia.Caption = "Đơn giá";
             this.spDonGia.FieldName = "DONGIA";
-            this.spDonGia.MinWidth = 25;
+            this.spDonGia.MinWidth = 19;
             this.spDonGia.Name = "spDonGia";
             this.spDonGia.OptionsColumn.AllowEdit = false;
             this.spDonGia.Visible = true;
             this.spDonGia.VisibleIndex = 1;
-            this.spDonGia.Width = 93;
+            this.spDonGia.Width = 70;
             // 
             // spSoLuong
             // 
@@ -997,21 +1014,21 @@
             this.spSoLuong.AppearanceHeader.Options.UseFont = true;
             this.spSoLuong.Caption = "Số lượng";
             this.spSoLuong.FieldName = "SOLUONG";
-            this.spSoLuong.MinWidth = 25;
+            this.spSoLuong.MinWidth = 19;
             this.spSoLuong.Name = "spSoLuong";
             this.spSoLuong.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SOLUONG", "{0:0.##}")});
             this.spSoLuong.Visible = true;
             this.spSoLuong.VisibleIndex = 2;
-            this.spSoLuong.Width = 93;
+            this.spSoLuong.Width = 70;
             // 
             // spTrangThai
             // 
             this.spTrangThai.Caption = "Trạng thái";
             this.spTrangThai.FieldName = "DAXOA";
-            this.spTrangThai.MinWidth = 25;
+            this.spTrangThai.MinWidth = 19;
             this.spTrangThai.Name = "spTrangThai";
-            this.spTrangThai.Width = 93;
+            this.spTrangThai.Width = 70;
             // 
             // spMaPhong
             // 
@@ -1019,30 +1036,28 @@
             this.spMaPhong.AppearanceHeader.Options.UseFont = true;
             this.spMaPhong.Caption = "Mã phòng";
             this.spMaPhong.FieldName = "MAPHONG";
-            this.spMaPhong.MinWidth = 25;
+            this.spMaPhong.MinWidth = 19;
             this.spMaPhong.Name = "spMaPhong";
-            this.spMaPhong.Width = 93;
+            this.spMaPhong.Width = 70;
             // 
             // spThanhTien
             // 
             this.spThanhTien.Caption = "Thành tiền";
             this.spThanhTien.FieldName = "THANHTIEN";
-            this.spThanhTien.MinWidth = 27;
             this.spThanhTien.Name = "spThanhTien";
             this.spThanhTien.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THANHTIEN", "{0:n0}")});
             this.spThanhTien.Visible = true;
             this.spThanhTien.VisibleIndex = 4;
-            this.spThanhTien.Width = 100;
             // 
             // groupControl3
             // 
             this.groupControl3.Controls.Add(this.gcPhongDat);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
-            this.groupControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupControl3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(682, 199);
+            this.groupControl3.Size = new System.Drawing.Size(512, 162);
             this.groupControl3.TabIndex = 0;
             this.groupControl3.Text = "Danh sách phòng đặt";
             // 
@@ -1050,12 +1065,12 @@
             // 
             this.gcPhongDat.AllowDrop = true;
             this.gcPhongDat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcPhongDat.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gcPhongDat.Location = new System.Drawing.Point(2, 28);
+            this.gcPhongDat.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gcPhongDat.Location = new System.Drawing.Point(2, 23);
             this.gcPhongDat.MainView = this.gvPhongDat;
-            this.gcPhongDat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcPhongDat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gcPhongDat.Name = "gcPhongDat";
-            this.gcPhongDat.Size = new System.Drawing.Size(678, 169);
+            this.gcPhongDat.Size = new System.Drawing.Size(508, 137);
             this.gcPhongDat.TabIndex = 0;
             this.gcPhongDat.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPhongDat});
@@ -1070,6 +1085,7 @@
             this.dpDonGia,
             this.dpMaTang,
             this.dpTenTang});
+            this.gvPhongDat.DetailHeight = 284;
             this.gvPhongDat.GridControl = this.gcPhongDat;
             this.gvPhongDat.Name = "gvPhongDat";
             this.gvPhongDat.OptionsBehavior.Editable = false;
@@ -1080,60 +1096,60 @@
             // 
             this.dpMaPhong.Caption = "Mã phòng";
             this.dpMaPhong.FieldName = "MAPHONG";
-            this.dpMaPhong.MinWidth = 25;
+            this.dpMaPhong.MinWidth = 19;
             this.dpMaPhong.Name = "dpMaPhong";
-            this.dpMaPhong.Width = 93;
+            this.dpMaPhong.Width = 70;
             // 
             // dpTenPhong
             // 
             this.dpTenPhong.Caption = "Tên phòng";
             this.dpTenPhong.FieldName = "TENPHONG";
-            this.dpTenPhong.MinWidth = 25;
+            this.dpTenPhong.MinWidth = 19;
             this.dpTenPhong.Name = "dpTenPhong";
             this.dpTenPhong.Visible = true;
             this.dpTenPhong.VisibleIndex = 0;
-            this.dpTenPhong.Width = 125;
+            this.dpTenPhong.Width = 94;
             // 
             // dpDonGia
             // 
             this.dpDonGia.Caption = "Đơn giá";
             this.dpDonGia.FieldName = "DONGIA";
-            this.dpDonGia.MinWidth = 25;
+            this.dpDonGia.MinWidth = 19;
             this.dpDonGia.Name = "dpDonGia";
             this.dpDonGia.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DONGIA", "{0:0.##}")});
             this.dpDonGia.Visible = true;
             this.dpDonGia.VisibleIndex = 1;
-            this.dpDonGia.Width = 256;
+            this.dpDonGia.Width = 192;
             // 
             // dpMaTang
             // 
             this.dpMaTang.Caption = "Mã tầng";
             this.dpMaTang.FieldName = "MATANG";
-            this.dpMaTang.MinWidth = 25;
+            this.dpMaTang.MinWidth = 19;
             this.dpMaTang.Name = "dpMaTang";
             this.dpMaTang.Visible = true;
             this.dpMaTang.VisibleIndex = 3;
-            this.dpMaTang.Width = 93;
+            this.dpMaTang.Width = 70;
             // 
             // dpTenTang
             // 
             this.dpTenTang.Caption = "Tên tầng";
             this.dpTenTang.FieldName = "TENTANG";
-            this.dpTenTang.MinWidth = 25;
+            this.dpTenTang.MinWidth = 19;
             this.dpTenTang.Name = "dpTenTang";
             this.dpTenTang.Visible = true;
             this.dpTenTang.VisibleIndex = 2;
-            this.dpTenTang.Width = 269;
+            this.dpTenTang.Width = 202;
             // 
             // frmDatPhongTheoDoan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1533, 826);
+            this.ClientSize = new System.Drawing.Size(1150, 671);
             this.Controls.Add(this.tabDanhSach);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmDatPhongTheoDoan";
             this.Text = "Đặt phòng theo đoàn";
             this.toolStrip1.ResumeLayout(false);

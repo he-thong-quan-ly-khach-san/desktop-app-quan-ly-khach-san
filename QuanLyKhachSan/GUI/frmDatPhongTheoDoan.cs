@@ -26,6 +26,9 @@ namespace GUI
         PhongBLL phongBLL;
         KhachHangBLL khachHangBLL;
         GridHitInfo downHitInfo = null;
+        DatPhongBLL dpBLL;
+        Phong_DattPhongBLL phongDattPhongBLL;
+        SP_DatPhongBLL sp_DatPhongBLL;
         string _idPhong;
         string _tenPhong;
         List<OBJ_DPSP> lstDPSP;
@@ -46,10 +49,13 @@ namespace GUI
 
         private void FrmDatPhongTheoDoan_Load(object sender, EventArgs e)
         {
+            sp_DatPhongBLL = new SP_DatPhongBLL();
+            phongDattPhongBLL = new Phong_DattPhongBLL();
             lstDPSP = new List<OBJ_DPSP>();
             sanPhamBLL = new SanPhamBLL();
             khachHangBLL = new KhachHangBLL();
             phongBLL = new PhongBLL();
+            dpBLL = new DatPhongBLL();
             xuLyControl();
             dtpTuNgay.Value = HamXuLy.NgayDauThang(dtpTuNgay.Value.Year, dtpTuNgay.Value.Month);
             dtpDenNgay.Value = DateTime.Now;
@@ -80,8 +86,9 @@ namespace GUI
             gvSanPham.OptionsBehavior.Editable = false;
         }
 
-        private void loadKH()
+        public void loadKH()
         {
+            khachHangBLL = new KhachHangBLL();
             cboKhachHang.DataSource = khachHangBLL.layDSKHBLL();
             cboKhachHang.DisplayMember = "HOTENKH";
             cboKhachHang.ValueMember = "MAKH";
@@ -121,8 +128,84 @@ namespace GUI
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-
+            
+            _them = false;
             xuLyControl();
+        }
+
+        void saveData()
+        {
+            if (_them)
+            {
+                DATPHONG dp = new DATPHONG();
+                PHONG_DATPHONG pdp = new PHONG_DATPHONG();
+                SP_DATPHONG sdp = new SP_DATPHONG();
+                dp.NGAYDAT = dtpNgayDat.Value;
+                dp.NGAYTRA = dtpNgayTra.Value;
+                dp.SONGUOIO = short.Parse(spSoNguoi.EditValue.ToString());
+                dp.TRANGTHAI = bool.Parse(cboTrangThai.SelectedValue.ToString());
+                dp.SOTIEN = decimal.Parse(lblTongTien.Text);
+                dp.GHICHU = txtGhiChu.Text;
+                dp.THEODOAN = chkTheoDoan.Checked;
+                dp.DISABLED = false;
+                //dp.TENDANGNHAP = frmDangNhap.tenDangNhap;
+                var datphong = dpBLL.themDPBLL(dp);
+                for (int i = 0;i<gvPhongDat.RowCount;i++)
+                {
+                    pdp = new PHONG_DATPHONG();
+                    pdp.MADATPHONG = dp.MADATPHONG;
+                    pdp.MAPHONG = gvPhongDat.GetRowCellValue(i, "MAPHONG").ToString();
+                    pdp.SONGAYO = (short?)(dtpNgayTra.Value.Day - dtpNgayDat.Value.Day);
+                    pdp.DONGIA = decimal.Parse(gvPhongDat.GetRowCellValue(i, "DONGIA").ToString());
+                    phongDattPhongBLL.addBLL(pdp);
+                    phongBLL.capNhatTrangThaiBLL(pdp.MAPHONG, true);
+                    if (gvDVDat.RowCount > 0)
+                    {
+                        for (int j = 0; j < gvDVDat.RowCount; j++)
+                        {
+                            if (pdp.MAPHONG == gvDVDat.GetRowCellValue(j,"MAPHONG").ToString())
+                            {
+                                sdp.MADATPHONG = dp.MADATPHONG;
+                                sdp.MAPHONG = gvDVDat.GetRowCellValue(j, "MAPHONG").ToString();
+                                sdp.MASP = gvDVDat.GetRowCellValue(j, "MASP").ToString();
+                                sdp.DONGIA = decimal.Parse(gvDVDat.GetRowCellValue(j, "DONGIA").ToString());
+                                sdp.SOLUONG = int.Parse(gvDVDat.GetRowCellValue(j, "SOLUONG").ToString());
+                                sdp.THANHTIEN = sdp.SOLUONG * sdp.DONGIA;
+                                sp_DatPhongBLL.addBLL(sdp);
+                            }
+                            else
+                            {
+                                sdp = new SP_DATPHONG();
+                                sdp.MADATPHONG = dp.MADATPHONG.ToString();
+                                sdp.MAPHONG = pdp.MAPHONG;
+                                sp_DatPhongBLL.addBLL(sdp);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        sdp = new SP_DATPHONG();
+                        sdp.MADATPHONG = dp.MADATPHONG.ToString();
+                        sdp.MAPHONG = pdp.MAPHONG;
+                        sp_DatPhongBLL.addBLL(sdp);
+                    }
+
+                }
+            }
+            else
+            {
+                DATPHONG dp = dpBLL.getDPBLL(maDPhong);
+                PHONG_DATPHONG pdp;
+                SP_DATPHONG dpsp;
+                dp.NGAYDAT = dtpNgayDat.Value;
+                dp.NGAYTRA = dtpNgayTra.Value;
+                dp.SONGUOIO = short.Parse(spSoNguoi.EditValue.ToString());
+                dp.TRANGTHAI = bool.Parse(cboTrangThai.SelectedValue.ToString());
+                dp.SOTIEN = decimal.Parse(lblTongTien.Text);
+                dp.GHICHU = txtGhiChu.Text;
+                //dp.TENDANGNHAP = frmDangNhap.tenDangNhap;
+                var _dp = dpBLL.suaBLL(dp);
+            }
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -172,6 +255,7 @@ namespace GUI
             dtpNgayTra.Enabled = true;
             chkTheoDoan.Enabled = true;
             spSoNguoi.Enabled = true;
+            btnThemMoi.Enabled = true;
         }
 
 
@@ -400,6 +484,32 @@ namespace GUI
             {
                 t = decimal.Parse(gvDVDat.Columns["THANHTIEN"].SummaryItem.SummaryValue.ToString());
                 lblTongTien.Text = (decimal.Parse(gvPhongDat.Columns["DONGIA"].SummaryItem.SummaryValue.ToString()) + t).ToString();
+            }
+        }
+
+        private void btnThemMoi_Click(object sender, EventArgs e)
+        {
+            frmKhachHang frm = new frmKhachHang();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
+        }
+        public void setKH(string maKH)
+        {
+            var kh = khachHangBLL.layKHBLL(maKH);
+            cboKhachHang.SelectedValue = kh.MAKH;
+            cboKhachHang.Text = kh.HOTENKH;
+        }
+        string maDPhong=string.Empty;
+        private void gcDanhSach_Click(object sender, EventArgs e)
+        {
+            var gridView = sender as DevExpress.XtraGrid.Views.Grid.GridView;
+            if (gridDS.RowCount > 0 && !_them)
+            {
+                _them = false;
+                maDPhong = gridDS.GetFocusedRowCellValue("MAPHONG_DATPHONG").ToString();
+
+                btnSua.Enabled = true;
+                btnXoa.Enabled = true;
             }
         }
     }

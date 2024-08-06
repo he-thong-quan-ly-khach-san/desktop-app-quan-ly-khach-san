@@ -42,6 +42,10 @@ namespace BLL
         {
             return phongDAL.layPhongTrongDAL();
         }
+        public void capNhatTrangThaiBLL(string maPhong, bool TrangThai)
+        {
+            return phongDAL.capNhatTrangThai(maPhong, TrangThai);
+        }
 
     }
 }

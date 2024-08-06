@@ -222,6 +222,7 @@
             this.gridDS.GridControl = this.gcDS;
             this.gridDS.Name = "gridDS";
             this.gridDS.Click += new System.EventHandler(this.gridDS_Click);
+            this.gridDS.DoubleClick += new System.EventHandler(this.gridDS_DoubleClick);
             // 
             // toolStripSeparator1
             // 
