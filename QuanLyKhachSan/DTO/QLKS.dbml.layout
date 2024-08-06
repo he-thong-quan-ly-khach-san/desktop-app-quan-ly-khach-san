@@ -90,6 +90,7 @@
       <DataClassMoniker Name="/QLKSDataContext/THIETBI" />
       <nestedChildShapes>
         <elementListCompartment Id="09750d14-8ecf-4ac4-9783-611e4f9b88a0" absoluteBounds="3.515, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+
       </nestedChildShapes>
     </classShape>
     <associationConnector edgePoints="[(2.75 : 9.81330485026042); (3.5 : 9.81330485026042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
@@ -132,6 +133,7 @@
       <nodes>
         <classShapeMoniker Id="89f9446d-1717-4205-b245-cb0fddd2bb0e" />
         <classShapeMoniker Id="65dac4a3-b0ce-4fef-8470-16bd3e52f9f3" />
+
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(1.75 : 6.875); (1.75 : 5.77089680989583); (5.72796794085537 : 5.77089680989583 : JumpStart); (5.95833333333333 : 5.77089680989583 : JumpEnd); (11.125 : 5.77089680989583); (11.125 : 5.31814697265625); (11.1979166666667 : 5.31814697265625 : JumpStart); (11.3645833333333 : 5.31814697265625 : JumpEnd); (11.5 : 5.31814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">

@@ -52,9 +52,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="QLKS.cs">
-      <DependentUpon>QLKS.dbml</DependentUpon>
-    </Compile>
     <Compile Include="QLKS.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

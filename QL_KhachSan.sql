@@ -1,560 +1,550 @@
-USE master
-CREATE DATABASE QL_KHACHSAN
+USE [master]
 GO
-USE QL_KHACHSAN
+/****** Object:  Database [QL_KHACHSAN]    Script Date: 8/5/2024 10:08:16 PM ******/
+CREATE DATABASE [QL_KHACHSAN]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'QL_KHACHSAN', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\QL_KHACHSAN.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'QL_KHACHSAN_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\QL_KHACHSAN_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT
 GO
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('DATPHONG') and o.name = 'FK_DATPHONG_RELATIONS_SANPHAM')
-alter table DATPHONG
-   drop constraint FK_DATPHONG_RELATIONS_SANPHAM
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('DATPHONG') and o.name = 'FK_DATPHONG_RELATIONS_PHONG')
-alter table DATPHONG
-   drop constraint FK_DATPHONG_RELATIONS_PHONG
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('DATPHONG') and o.name = 'FK_DATPHONG_RELATIONS_KHACHHAN')
-alter table DATPHONG
-   drop constraint FK_DATPHONG_RELATIONS_KHACHHAN
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('DATPHONG') and o.name = 'FK_DATPHONG_RELATIONS_QL_NGUOI')
-alter table DATPHONG
-   drop constraint FK_DATPHONG_RELATIONS_QL_NGUOI
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('PHONG') and o.name = 'FK_PHONG_RELATIONS_TANG')
-alter table PHONG
-   drop constraint FK_PHONG_RELATIONS_TANG
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('PHONG') and o.name = 'FK_PHONG_RELATIONS_LOAIPHON')
-alter table PHONG
-   drop constraint FK_PHONG_RELATIONS_LOAIPHON
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('QL_NGUOIDUNG_NHOMNGUOIDUNG') and o.name = 'FK_QL_NGUOI_RELATIONS_QL_NGUOI')
-alter table QL_NGUOIDUNG_NHOMNGUOIDUNG
-   drop constraint FK_QL_NGUOI_RELATIONS_QL_NGUOI
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('QL_NGUOIDUNG_NHOMNGUOIDUNG') and o.name = 'FK_QL_NGUOI_RELATIONS_QL_NHOMN')
-alter table QL_NGUOIDUNG_NHOMNGUOIDUNG
-   drop constraint FK_QL_NGUOI_RELATIONS_QL_NHOMN
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('QL_PHANQUYEN') and o.name = 'FK_QL_PHANQ_REFERENCE_DM_MANHI')
-alter table QL_PHANQUYEN
-   drop constraint FK_QL_PHANQ_REFERENCE_DM_MANHI
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('QL_PHANQUYEN') and o.name = 'FK_QL_PHANQ_REFERENCE_QL_NHOMN')
-alter table QL_PHANQUYEN
-   drop constraint FK_QL_PHANQ_REFERENCE_QL_NHOMN
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('THIETBI_PHONG') and o.name = 'FK_THIETBI__RELATIONS_THIETBI')
-alter table THIETBI_PHONG
-   drop constraint FK_THIETBI__RELATIONS_THIETBI
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('THIETBI_PHONG') and o.name = 'FK_THIETBI__RELATIONS_PHONG')
-alter table THIETBI_PHONG
-   drop constraint FK_THIETBI__RELATIONS_PHONG
-go
-
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('DATPHONG')
-            and   name  = 'RELATIONSHIP_12_FK'
-            and   indid > 0
-            and   indid < 255)
-   drop index DATPHONG.RELATIONSHIP_12_FK
-go
-
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('DATPHONG')
-            and   name  = 'RELATIONSHIP_4_FK'
-            and   indid > 0
-            and   indid < 255)
-   drop index DATPHONG.RELATIONSHIP_4_FK
-go
-
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('DATPHONG')
-            and   name  = 'RELATIONSHIP_3_FK'
-            and   indid > 0
-            and   indid < 255)
-   drop index DATPHONG.RELATIONSHIP_3_FK
-go
-
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('DATPHONG')
-            and   name  = 'RELATIONSHIP_2_FK'
-            and   indid > 0
-            and   indid < 255)
-   drop index DATPHONG.RELATIONSHIP_2_FK
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('DATPHONG')
-            and   type = 'U')
-   drop table DATPHONG
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('DM_MANHINH')
-            and   type = 'U')
-   drop table DM_MANHINH
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('KHACHHANG')
-            and   type = 'U')
-   drop table KHACHHANG
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('LOAIPHONG')
-            and   type = 'U')
-   drop table LOAIPHONG
-go
-
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('PHONG')
-            and   name  = 'RELATIONSHIP_7_FK'
-            and   indid > 0
-            and   indid < 255)
-   drop index PHONG.RELATIONSHIP_7_FK
-go
-
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('PHONG')
-            and   name  = 'RELATIONSHIP_1_FK'
-            and   indid > 0
-            and   indid < 255)
-   drop index PHONG.RELATIONSHIP_1_FK
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('PHONG')
-            and   type = 'U')
-   drop table PHONG
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('QL_NGUOIDUNG')
-            and   type = 'U')
-   drop table QL_NGUOIDUNG
-go
-
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('QL_NGUOIDUNG_NHOMNGUOIDUNG')
-            and   name  = 'RELATIONSHIP_9_FK'
-            and   indid > 0
-            and   indid < 255)
-   drop index QL_NGUOIDUNG_NHOMNGUOIDUNG.RELATIONSHIP_9_FK
-go
-
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('QL_NGUOIDUNG_NHOMNGUOIDUNG')
-            and   name  = 'RELATIONSHIP_8_FK'
-            and   indid > 0
-            and   indid < 255)
-   drop index QL_NGUOIDUNG_NHOMNGUOIDUNG.RELATIONSHIP_8_FK
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('QL_NGUOIDUNG_NHOMNGUOIDUNG')
-            and   type = 'U')
-   drop table QL_NGUOIDUNG_NHOMNGUOIDUNG
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('QL_NHOMNGUOIDUNG')
-            and   type = 'U')
-   drop table QL_NHOMNGUOIDUNG
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('QL_PHANQUYEN')
-            and   type = 'U')
-   drop table QL_PHANQUYEN
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('SANPHAM')
-            and   type = 'U')
-   drop table SANPHAM
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('TANG')
-            and   type = 'U')
-   drop table TANG
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('THIETBI')
-            and   type = 'U')
-   drop table THIETBI
-go
-
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('THIETBI_PHONG')
-            and   name  = 'RELATIONSHIP_6_FK'
-            and   indid > 0
-            and   indid < 255)
-   drop index THIETBI_PHONG.RELATIONSHIP_6_FK
-go
-
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('THIETBI_PHONG')
-            and   name  = 'RELATIONSHIP_5_FK'
-            and   indid > 0
-            and   indid < 255)
-   drop index THIETBI_PHONG.RELATIONSHIP_5_FK
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('THIETBI_PHONG')
-            and   type = 'U')
-   drop table THIETBI_PHONG
-go
-
-/*==============================================================*/
-/* Table: DATPHONG                                              */
-/*==============================================================*/
-create table DATPHONG (
-   MADATPHONG           char(10)             not null,
-   TENDANGNHAP          varchar(40)          null,
-   MAPHONG              char(5)              null,
-   MASP                 char(5)              null,
-   MAKH                 char(10)             null,
-   NGAYDAT              datetime             null,
-   NGAYTRA              datetime             null,
-   SONGAYO              smallint             null,
-   constraint PK_DATPHONG primary key nonclustered (MADATPHONG)
-)
-go
-
-/*==============================================================*/
-/* Index: RELATIONSHIP_2_FK                                     */
-/*==============================================================*/
-create index RELATIONSHIP_2_FK on DATPHONG (
-MAPHONG ASC
-)
-go
-
-/*==============================================================*/
-/* Index: RELATIONSHIP_3_FK                                     */
-/*==============================================================*/
-create index RELATIONSHIP_3_FK on DATPHONG (
-MAKH ASC
-)
-go
-
-/*==============================================================*/
-/* Index: RELATIONSHIP_4_FK                                     */
-/*==============================================================*/
-create index RELATIONSHIP_4_FK on DATPHONG (
-TENDANGNHAP ASC
-)
-go
-
-/*==============================================================*/
-/* Index: RELATIONSHIP_12_FK                                    */
-/*==============================================================*/
-create index RELATIONSHIP_12_FK on DATPHONG (
-MASP ASC
-)
-go
-
-/*==============================================================*/
-/* Table: DM_MANHINH                                            */
-/*==============================================================*/
-create table DM_MANHINH (
-   MAMH                 char(5)              not null,
-   TENMH                nvarchar(100)        null,
-   constraint PK_DM_MANHINH primary key nonclustered (MAMH)
-)
-go
-
-/*==============================================================*/
-/* Table: KHACHHANG                                             */
-/*==============================================================*/
-create table KHACHHANG (
-   MAKH                 char(10)             not null,
-   HOTENKH              nvarchar(50)         null,
-   CCCD                 varchar(12)          null,
-   DIENTHOAI            varchar(12)          null,
-   EMAIL                varchar(100)         null,
-   DIACHI               nvarchar(200)        null,
-   constraint PK_KHACHHANG primary key nonclustered (MAKH)
-)
-go
-
-/*==============================================================*/
-/* Table: LOAIPHONG                                             */
-/*==============================================================*/
-create table LOAIPHONG (
-   MALOAIPHONG          char(5)              not null,
-   TENLOAIPHONG         nvarchar(100)        null,
-   DONGIA               money                null,
-   SONGUOI              smallint             null,
-   SOGIUONG             smallint             null,
-   constraint PK_LOAIPHONG primary key nonclustered (MALOAIPHONG)
-)
-go
-
-/*==============================================================*/
-/* Table: PHONG                                                 */
-/*==============================================================*/
-create table PHONG (
-   MAPHONG              char(5)              not null,
-   MALOAIPHONG          char(5)              null,
-   MATANG               char(3)              null,
-   TENPHONG             nvarchar(15)         null,
-   HOATDONG             bit                  null,
-   constraint PK_PHONG primary key nonclustered (MAPHONG)
-)
-go
-
-/*==============================================================*/
-/* Index: RELATIONSHIP_1_FK                                     */
-/*==============================================================*/
-create index RELATIONSHIP_1_FK on PHONG (
-MATANG ASC
-)
-go
-
-/*==============================================================*/
-/* Index: RELATIONSHIP_7_FK                                     */
-/*==============================================================*/
-create index RELATIONSHIP_7_FK on PHONG (
-MALOAIPHONG ASC
-)
-go
-
-/*==============================================================*/
-/* Table: QL_NGUOIDUNG                                          */
-/*==============================================================*/
-create table QL_NGUOIDUNG (
-   TENDANGNHAP          varchar(40)          not null,
-   MATKHAU              varchar(40)          null,
-   HOATDONG             bit                  null,
-   constraint PK_QL_NGUOIDUNG primary key nonclustered (TENDANGNHAP)
-)
-go
-
-/*==============================================================*/
-/* Table: QL_NGUOIDUNG_NHOMNGUOIDUNG                            */
-/*==============================================================*/
-create table QL_NGUOIDUNG_NHOMNGUOIDUNG (
-   MANHOMND             char(5)              not null,
-   TENDANGNHAP          varchar(40)          not null,
-   GHICHU               nvarchar(100)        null,
-   constraint PK_QL_NGUOIDUNG_NHOMNGUOIDUNG primary key (MANHOMND, TENDANGNHAP)
-)
-go
-
-/*==============================================================*/
-/* Index: RELATIONSHIP_8_FK                                     */
-/*==============================================================*/
-create index RELATIONSHIP_8_FK on QL_NGUOIDUNG_NHOMNGUOIDUNG (
-TENDANGNHAP ASC
-)
-go
-
-/*==============================================================*/
-/* Index: RELATIONSHIP_9_FK                                     */
-/*==============================================================*/
-create index RELATIONSHIP_9_FK on QL_NGUOIDUNG_NHOMNGUOIDUNG (
-MANHOMND ASC
-)
-go
-
-/*==============================================================*/
-/* Table: QL_NHOMNGUOIDUNG                                      */
-/*==============================================================*/
-create table QL_NHOMNGUOIDUNG (
-   MANHOMND             char(5)              not null,
-   TENNHOMND            varchar(30)          null,
-   GHICHU               varchar(200)         null,
-   constraint PK_QL_NHOMNGUOIDUNG primary key nonclustered (MANHOMND)
-)
-go
-
-/*==============================================================*/
-/* Table: QL_PHANQUYEN                                          */
-/*==============================================================*/
-create table QL_PHANQUYEN (
-   MAMH                 char(5)              not null,
-   MANHOMND             char(5)              not null,
-   COQUYEN              bit                  null,
-   constraint PK_QL_PHANQUYEN primary key nonclustered (MAMH, MANHOMND)
-)
-go
-
-/*==============================================================*/
-/* Table: SANPHAM                                               */
-/*==============================================================*/
-create table SANPHAM (
-   MASP                 char(5)              not null,
-   TENSP                nvarchar(100)        null,
-   constraint PK_SANPHAM primary key nonclustered (MASP)
-)
-go
-
-/*==============================================================*/
-/* Table: TANG                                                  */
-/*==============================================================*/
-create table TANG (
-   MATANG               char(3)              not null,
-   TENTANG              nvarchar(50)         null,
-   constraint PK_TANG primary key nonclustered (MATANG)
-)
-go
-
-/*==============================================================*/
-/* Table: THIETBI                                               */
-/*==============================================================*/
-create table THIETBI (
-   MATHIETBI            char(5)              not null,
-   TENTHIETBI           nvarchar(100)        null,
-   DONGIA               money                null,
-   constraint PK_THIETBI primary key nonclustered (MATHIETBI)
-)
-go
-
-/*==============================================================*/
-/* Table: THIETBI_PHONG                                         */
-/*==============================================================*/
-create table THIETBI_PHONG (
-   MATHIETBI            char(5)              null,
-   MAPHONG              char(5)              null,
-   SOLUONG              smallint             null
-)
-go
-
-/*==============================================================*/
-/* Index: RELATIONSHIP_5_FK                                     */
-/*==============================================================*/
-create index RELATIONSHIP_5_FK on THIETBI_PHONG (
-MATHIETBI ASC
-)
-go
-
-/*==============================================================*/
-/* Index: RELATIONSHIP_6_FK                                     */
-/*==============================================================*/
-create index RELATIONSHIP_6_FK on THIETBI_PHONG (
-MAPHONG ASC
-)
-go
-
-alter table DATPHONG
-   add constraint FK_DATPHONG_RELATIONS_SANPHAM foreign key (MASP)
-      references SANPHAM (MASP)
-go
-
-alter table DATPHONG
-   add constraint FK_DATPHONG_RELATIONS_PHONG foreign key (MAPHONG)
-      references PHONG (MAPHONG)
-go
-
-alter table DATPHONG
-   add constraint FK_DATPHONG_RELATIONS_KHACHHAN foreign key (MAKH)
-      references KHACHHANG (MAKH)
-go
-
-alter table DATPHONG
-   add constraint FK_DATPHONG_RELATIONS_QL_NGUOI foreign key (TENDANGNHAP)
-      references QL_NGUOIDUNG (TENDANGNHAP)
-go
-
-alter table PHONG
-   add constraint FK_PHONG_RELATIONS_TANG foreign key (MATANG)
-      references TANG (MATANG)
-go
-
-alter table PHONG
-   add constraint FK_PHONG_RELATIONS_LOAIPHON foreign key (MALOAIPHONG)
-      references LOAIPHONG (MALOAIPHONG)
-go
-
-alter table QL_NGUOIDUNG_NHOMNGUOIDUNG
-   add constraint FK_QL_NGUOI_RELATIONS_QL_NGUOI foreign key (TENDANGNHAP)
-      references QL_NGUOIDUNG (TENDANGNHAP)
-go
-
-alter table QL_NGUOIDUNG_NHOMNGUOIDUNG
-   add constraint FK_QL_NGUOI_RELATIONS_QL_NHOMN foreign key (MANHOMND)
-      references QL_NHOMNGUOIDUNG (MANHOMND)
-go
-
-alter table QL_PHANQUYEN
-   add constraint FK_QL_PHANQ_REFERENCE_DM_MANHI foreign key (MAMH)
-      references DM_MANHINH (MAMH)
-go
-
-alter table QL_PHANQUYEN
-   add constraint FK_QL_PHANQ_REFERENCE_QL_NHOMN foreign key (MANHOMND)
-      references QL_NHOMNGUOIDUNG (MANHOMND)
-go
-
-alter table THIETBI_PHONG
-   add constraint FK_THIETBI__RELATIONS_THIETBI foreign key (MATHIETBI)
-      references THIETBI (MATHIETBI)
-go
-
-alter table THIETBI_PHONG
-   add constraint FK_THIETBI__RELATIONS_PHONG foreign key (MAPHONG)
-      references PHONG (MAPHONG)
-go
+ALTER DATABASE [QL_KHACHSAN] SET COMPATIBILITY_LEVEL = 150
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [QL_KHACHSAN].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [QL_KHACHSAN] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET  ENABLE_BROKER 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET RECOVERY FULL 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET  MULTI_USER 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [QL_KHACHSAN] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [QL_KHACHSAN] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'QL_KHACHSAN', N'ON'
+GO
+ALTER DATABASE [QL_KHACHSAN] SET QUERY_STORE = OFF
+GO
+USE [QL_KHACHSAN]
+GO
+/****** Object:  Table [dbo].[DATPHONG]    Script Date: 8/5/2024 10:08:17 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[DATPHONG](
+	[MADATPHONG] [char](10) NOT NULL,
+	[TENDANGNHAP] [varchar](40) NULL,
+	[MAKH] [char](10) NULL,
+	[NGAYDAT] [datetime] NULL,
+	[NGAYTRA] [datetime] NULL,
+	[SONGUOIO] [smallint] NULL,
+	[TRANGTHAI] [bit] NULL,
+	[DISABLED] [bit] NULL,
+	[THEODOAN] [bit] NULL,
+	[GHICHU] [nvarchar](100) NULL,
+	[NGAYTAO] [datetime] NULL,
+	[NGAYCAPNHAT] [datetime] NULL,
+	[CAPNHATBOI] [int] NULL,
+	[SOTIEN] [money] NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[DM_MANHINH]    Script Date: 8/5/2024 10:08:17 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[DM_MANHINH](
+	[MAMH] [char](5) NOT NULL,
+	[TENMH] [nvarchar](100) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[KHACHHANG]    Script Date: 8/5/2024 10:08:17 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[KHACHHANG](
+	[MAKH] [char](10) NOT NULL,
+	[HOTENKH] [nvarchar](50) NULL,
+	[CCCD] [varchar](12) NULL,
+	[DIENTHOAI] [varchar](12) NULL,
+	[EMAIL] [varchar](100) NULL,
+	[DIACHI] [nvarchar](200) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[LOAIPHONG]    Script Date: 8/5/2024 10:08:17 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[LOAIPHONG](
+	[MALOAIPHONG] [char](5) NOT NULL,
+	[TENLOAIPHONG] [nvarchar](100) NULL,
+	[DONGIA] [money] NULL,
+	[SONGUOI] [smallint] NULL,
+	[SOGIUONG] [smallint] NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PHONG]    Script Date: 8/5/2024 10:08:17 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PHONG](
+	[MAPHONG] [char](5) NOT NULL,
+	[MALOAIPHONG] [char](5) NULL,
+	[MATANG] [char](3) NULL,
+	[TENPHONG] [nvarchar](15) NULL,
+	[HOATDONG] [bit] NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PHONG_DATPHONG]    Script Date: 8/5/2024 10:08:17 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PHONG_DATPHONG](
+	[MAPHONG_DATPHONG] [char](10) NOT NULL,
+	[MAPHONG] [char](5) NULL,
+	[MADATPHONG] [char](10) NULL,
+ CONSTRAINT [PK_PHONG_DATPHONG] PRIMARY KEY CLUSTERED 
+(
+	[MAPHONG_DATPHONG] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[QL_NGUOIDUNG]    Script Date: 8/5/2024 10:08:17 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[QL_NGUOIDUNG](
+	[TENDANGNHAP] [varchar](40) NOT NULL,
+	[MATKHAU] [varchar](40) NULL,
+	[HOATDONG] [bit] NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[QL_NGUOIDUNG_NHOMNGUOIDUNG]    Script Date: 8/5/2024 10:08:17 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[QL_NGUOIDUNG_NHOMNGUOIDUNG](
+	[MANHOMND] [char](5) NOT NULL,
+	[TENDANGNHAP] [varchar](40) NOT NULL,
+	[GHICHU] [nvarchar](100) NULL,
+ CONSTRAINT [PK_QL_NGUOIDUNG_NHOMNGUOIDUNG] PRIMARY KEY CLUSTERED 
+(
+	[MANHOMND] ASC,
+	[TENDANGNHAP] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[QL_NHOMNGUOIDUNG]    Script Date: 8/5/2024 10:08:17 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[QL_NHOMNGUOIDUNG](
+	[MANHOMND] [char](5) NOT NULL,
+	[TENNHOMND] [varchar](30) NULL,
+	[GHICHU] [varchar](200) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[QL_PHANQUYEN]    Script Date: 8/5/2024 10:08:17 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[QL_PHANQUYEN](
+	[MAMH] [char](5) NOT NULL,
+	[MANHOMND] [char](5) NOT NULL,
+	[COQUYEN] [bit] NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SANPHAM]    Script Date: 8/5/2024 10:08:17 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SANPHAM](
+	[MASP] [char](5) NOT NULL,
+	[TENSP] [nvarchar](100) NULL,
+	[DONGIA] [money] NULL,
+	[DAXOA] [bit] NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SP_DATPHONG]    Script Date: 8/5/2024 10:08:17 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SP_DATPHONG](
+	[MASPDP] [char](10) NOT NULL,
+	[MASP] [char](5) NULL,
+	[MAPHONG] [char](5) NULL,
+	[MADATPHONG] [char](10) NULL,
+	[NGAY] [datetime] NULL,
+	[DONGIA] [decimal](18, 0) NULL,
+	[SOLUONG] [int] NULL,
+	[THANHTIEN] [decimal](18, 0) NULL,
+ CONSTRAINT [PK_SP_DATPHONG] PRIMARY KEY CLUSTERED 
+(
+	[MASPDP] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[TANG]    Script Date: 8/5/2024 10:08:17 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TANG](
+	[MATANG] [char](3) NOT NULL,
+	[TENTANG] [nvarchar](50) NULL,
+	[HOATDONG] [bit] NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[THIETBI]    Script Date: 8/5/2024 10:08:17 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[THIETBI](
+	[MATHIETBI] [char](5) NOT NULL,
+	[TENTHIETBI] [nvarchar](100) NULL,
+	[DONGIA] [money] NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[THIETBI_PHONG]    Script Date: 8/5/2024 10:08:17 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[THIETBI_PHONG](
+	[MATHIETBI] [char](5) NULL,
+	[MAPHONG] [char](5) NULL,
+	[SOLUONG] [smallint] NULL
+) ON [PRIMARY]
+GO
+INSERT [dbo].[KHACHHANG] ([MAKH], [HOTENKH], [CCCD], [DIENTHOAI], [EMAIL], [DIACHI]) VALUES (N'KH00000001', N'Lê Hồng Nhân', N'202020202020', N'037280194', N'nhangaren2605@gmail.com', N'ap 1 xa tan hoa')
+INSERT [dbo].[KHACHHANG] ([MAKH], [HOTENKH], [CCCD], [DIENTHOAI], [EMAIL], [DIACHI]) VALUES (N'KH00000002', N'Nguyễn Văn A', N'293837465621', N'0393847562', N'?ghj@adrkfhw.fg', N'ap 2 xa ádasd')
+GO
+INSERT [dbo].[LOAIPHONG] ([MALOAIPHONG], [TENLOAIPHONG], [DONGIA], [SONGUOI], [SOGIUONG]) VALUES (N'LP001', N'Phòng đơn', 100000.0000, 1, 1)
+INSERT [dbo].[LOAIPHONG] ([MALOAIPHONG], [TENLOAIPHONG], [DONGIA], [SONGUOI], [SOGIUONG]) VALUES (N'LP002', N'Phòng đôi', 200000.0000, 2, 2)
+GO
+INSERT [dbo].[PHONG] ([MAPHONG], [MALOAIPHONG], [MATANG], [TENPHONG], [HOATDONG]) VALUES (N'PH101', N'LP001', N'T01', N'Phòng 101', 0)
+INSERT [dbo].[PHONG] ([MAPHONG], [MALOAIPHONG], [MATANG], [TENPHONG], [HOATDONG]) VALUES (N'PH102', N'LP001', N'T01', N'Phòng 102', 0)
+INSERT [dbo].[PHONG] ([MAPHONG], [MALOAIPHONG], [MATANG], [TENPHONG], [HOATDONG]) VALUES (N'PH201', N'LP002', N'T02', N'Phòng 201', 0)
+INSERT [dbo].[PHONG] ([MAPHONG], [MALOAIPHONG], [MATANG], [TENPHONG], [HOATDONG]) VALUES (N'PH301', N'LP002', N'T03', N'Phòng 301', 1)
+INSERT [dbo].[PHONG] ([MAPHONG], [MALOAIPHONG], [MATANG], [TENPHONG], [HOATDONG]) VALUES (N'PH401', N'LP001', N'T04', N'Phòng 401', 1)
+INSERT [dbo].[PHONG] ([MAPHONG], [MALOAIPHONG], [MATANG], [TENPHONG], [HOATDONG]) VALUES (N'PH501', N'LP001', N'T05', N'Phòng 501', 0)
+GO
+INSERT [dbo].[QL_NGUOIDUNG] ([TENDANGNHAP], [MATKHAU], [HOATDONG]) VALUES (N'Admin', N'123', 1)
+INSERT [dbo].[QL_NGUOIDUNG] ([TENDANGNHAP], [MATKHAU], [HOATDONG]) VALUES (N'tk1', N'123', 1)
+INSERT [dbo].[QL_NGUOIDUNG] ([TENDANGNHAP], [MATKHAU], [HOATDONG]) VALUES (N'LHngNhn', N'19734682', 1)
+INSERT [dbo].[QL_NGUOIDUNG] ([TENDANGNHAP], [MATKHAU], [HOATDONG]) VALUES (N'Test2', N'123556', NULL)
+GO
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DONGIA], [DAXOA]) VALUES (N'SP001', N'Coca', 15000.0000, 0)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DONGIA], [DAXOA]) VALUES (N'SP002', N'PEPSI', 15000.0000, 0)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DONGIA], [DAXOA]) VALUES (N'SP003', N'Pepsi chanh không calo', 15000.0000, 0)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DONGIA], [DAXOA]) VALUES (N'SP004', N'Sting đỏ', 17000.0000, 0)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DONGIA], [DAXOA]) VALUES (N'SP005', N'Lays nhỏ', 12000.0000, 1)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DONGIA], [DAXOA]) VALUES (N'SP006', N'Nước suối Aquafina', 10000.0000, 0)
+GO
+INSERT [dbo].[TANG] ([MATANG], [TENTANG], [HOATDONG]) VALUES (N'T01', N'Tầng 1', NULL)
+INSERT [dbo].[TANG] ([MATANG], [TENTANG], [HOATDONG]) VALUES (N'T02', N'Tầng 2', NULL)
+INSERT [dbo].[TANG] ([MATANG], [TENTANG], [HOATDONG]) VALUES (N'T03', N'Tầng 3', NULL)
+INSERT [dbo].[TANG] ([MATANG], [TENTANG], [HOATDONG]) VALUES (N'T04', N'Tầng 4', NULL)
+INSERT [dbo].[TANG] ([MATANG], [TENTANG], [HOATDONG]) VALUES (N'T05', N'Tầng 5', NULL)
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [PK_DATPHONG]    Script Date: 8/5/2024 10:08:17 PM ******/
+ALTER TABLE [dbo].[DATPHONG] ADD  CONSTRAINT [PK_DATPHONG] PRIMARY KEY NONCLUSTERED 
+(
+	[MADATPHONG] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [RELATIONSHIP_3_FK]    Script Date: 8/5/2024 10:08:17 PM ******/
+CREATE NONCLUSTERED INDEX [RELATIONSHIP_3_FK] ON [dbo].[DATPHONG]
+(
+	[MAKH] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [RELATIONSHIP_4_FK]    Script Date: 8/5/2024 10:08:17 PM ******/
+CREATE NONCLUSTERED INDEX [RELATIONSHIP_4_FK] ON [dbo].[DATPHONG]
+(
+	[TENDANGNHAP] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [PK_DM_MANHINH]    Script Date: 8/5/2024 10:08:17 PM ******/
+ALTER TABLE [dbo].[DM_MANHINH] ADD  CONSTRAINT [PK_DM_MANHINH] PRIMARY KEY NONCLUSTERED 
+(
+	[MAMH] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [PK_KHACHHANG]    Script Date: 8/5/2024 10:08:17 PM ******/
+ALTER TABLE [dbo].[KHACHHANG] ADD  CONSTRAINT [PK_KHACHHANG] PRIMARY KEY NONCLUSTERED 
+(
+	[MAKH] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [PK_LOAIPHONG]    Script Date: 8/5/2024 10:08:17 PM ******/
+ALTER TABLE [dbo].[LOAIPHONG] ADD  CONSTRAINT [PK_LOAIPHONG] PRIMARY KEY NONCLUSTERED 
+(
+	[MALOAIPHONG] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [PK_PHONG]    Script Date: 8/5/2024 10:08:17 PM ******/
+ALTER TABLE [dbo].[PHONG] ADD  CONSTRAINT [PK_PHONG] PRIMARY KEY NONCLUSTERED 
+(
+	[MAPHONG] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [RELATIONSHIP_1_FK]    Script Date: 8/5/2024 10:08:17 PM ******/
+CREATE NONCLUSTERED INDEX [RELATIONSHIP_1_FK] ON [dbo].[PHONG]
+(
+	[MATANG] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [RELATIONSHIP_7_FK]    Script Date: 8/5/2024 10:08:17 PM ******/
+CREATE NONCLUSTERED INDEX [RELATIONSHIP_7_FK] ON [dbo].[PHONG]
+(
+	[MALOAIPHONG] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [PK_QL_NGUOIDUNG]    Script Date: 8/5/2024 10:08:17 PM ******/
+ALTER TABLE [dbo].[QL_NGUOIDUNG] ADD  CONSTRAINT [PK_QL_NGUOIDUNG] PRIMARY KEY NONCLUSTERED 
+(
+	[TENDANGNHAP] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [RELATIONSHIP_8_FK]    Script Date: 8/5/2024 10:08:17 PM ******/
+CREATE NONCLUSTERED INDEX [RELATIONSHIP_8_FK] ON [dbo].[QL_NGUOIDUNG_NHOMNGUOIDUNG]
+(
+	[TENDANGNHAP] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [RELATIONSHIP_9_FK]    Script Date: 8/5/2024 10:08:17 PM ******/
+CREATE NONCLUSTERED INDEX [RELATIONSHIP_9_FK] ON [dbo].[QL_NGUOIDUNG_NHOMNGUOIDUNG]
+(
+	[MANHOMND] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [PK_QL_NHOMNGUOIDUNG]    Script Date: 8/5/2024 10:08:17 PM ******/
+ALTER TABLE [dbo].[QL_NHOMNGUOIDUNG] ADD  CONSTRAINT [PK_QL_NHOMNGUOIDUNG] PRIMARY KEY NONCLUSTERED 
+(
+	[MANHOMND] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [PK_QL_PHANQUYEN]    Script Date: 8/5/2024 10:08:17 PM ******/
+ALTER TABLE [dbo].[QL_PHANQUYEN] ADD  CONSTRAINT [PK_QL_PHANQUYEN] PRIMARY KEY NONCLUSTERED 
+(
+	[MAMH] ASC,
+	[MANHOMND] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [PK_SANPHAM]    Script Date: 8/5/2024 10:08:17 PM ******/
+ALTER TABLE [dbo].[SANPHAM] ADD  CONSTRAINT [PK_SANPHAM] PRIMARY KEY NONCLUSTERED 
+(
+	[MASP] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [PK_TANG]    Script Date: 8/5/2024 10:08:17 PM ******/
+ALTER TABLE [dbo].[TANG] ADD  CONSTRAINT [PK_TANG] PRIMARY KEY NONCLUSTERED 
+(
+	[MATANG] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [PK_THIETBI]    Script Date: 8/5/2024 10:08:17 PM ******/
+ALTER TABLE [dbo].[THIETBI] ADD  CONSTRAINT [PK_THIETBI] PRIMARY KEY NONCLUSTERED 
+(
+	[MATHIETBI] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [RELATIONSHIP_5_FK]    Script Date: 8/5/2024 10:08:17 PM ******/
+CREATE NONCLUSTERED INDEX [RELATIONSHIP_5_FK] ON [dbo].[THIETBI_PHONG]
+(
+	[MATHIETBI] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [RELATIONSHIP_6_FK]    Script Date: 8/5/2024 10:08:17 PM ******/
+CREATE NONCLUSTERED INDEX [RELATIONSHIP_6_FK] ON [dbo].[THIETBI_PHONG]
+(
+	[MAPHONG] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[SANPHAM] ADD  CONSTRAINT [DF_SANPHAM_DAXOA]  DEFAULT ((0)) FOR [DAXOA]
+GO
+ALTER TABLE [dbo].[DATPHONG]  WITH CHECK ADD  CONSTRAINT [FK_DATPHONG_RELATIONS_KHACHHAN] FOREIGN KEY([MAKH])
+REFERENCES [dbo].[KHACHHANG] ([MAKH])
+GO
+ALTER TABLE [dbo].[DATPHONG] CHECK CONSTRAINT [FK_DATPHONG_RELATIONS_KHACHHAN]
+GO
+ALTER TABLE [dbo].[DATPHONG]  WITH CHECK ADD  CONSTRAINT [FK_DATPHONG_RELATIONS_QL_NGUOI] FOREIGN KEY([TENDANGNHAP])
+REFERENCES [dbo].[QL_NGUOIDUNG] ([TENDANGNHAP])
+GO
+ALTER TABLE [dbo].[DATPHONG] CHECK CONSTRAINT [FK_DATPHONG_RELATIONS_QL_NGUOI]
+GO
+ALTER TABLE [dbo].[PHONG]  WITH CHECK ADD  CONSTRAINT [FK_PHONG_RELATIONS_LOAIPHON] FOREIGN KEY([MALOAIPHONG])
+REFERENCES [dbo].[LOAIPHONG] ([MALOAIPHONG])
+GO
+ALTER TABLE [dbo].[PHONG] CHECK CONSTRAINT [FK_PHONG_RELATIONS_LOAIPHON]
+GO
+ALTER TABLE [dbo].[PHONG]  WITH CHECK ADD  CONSTRAINT [FK_PHONG_RELATIONS_TANG] FOREIGN KEY([MATANG])
+REFERENCES [dbo].[TANG] ([MATANG])
+GO
+ALTER TABLE [dbo].[PHONG] CHECK CONSTRAINT [FK_PHONG_RELATIONS_TANG]
+GO
+ALTER TABLE [dbo].[PHONG_DATPHONG]  WITH CHECK ADD  CONSTRAINT [FK_PHONG_DATPHONG_DATPHONG] FOREIGN KEY([MADATPHONG])
+REFERENCES [dbo].[DATPHONG] ([MADATPHONG])
+GO
+ALTER TABLE [dbo].[PHONG_DATPHONG] CHECK CONSTRAINT [FK_PHONG_DATPHONG_DATPHONG]
+GO
+ALTER TABLE [dbo].[PHONG_DATPHONG]  WITH CHECK ADD  CONSTRAINT [FK_PHONG_DATPHONG_PHONG] FOREIGN KEY([MAPHONG])
+REFERENCES [dbo].[PHONG] ([MAPHONG])
+GO
+ALTER TABLE [dbo].[PHONG_DATPHONG] CHECK CONSTRAINT [FK_PHONG_DATPHONG_PHONG]
+GO
+ALTER TABLE [dbo].[QL_NGUOIDUNG_NHOMNGUOIDUNG]  WITH CHECK ADD  CONSTRAINT [FK_QL_NGUOI_RELATIONS_QL_NGUOI] FOREIGN KEY([TENDANGNHAP])
+REFERENCES [dbo].[QL_NGUOIDUNG] ([TENDANGNHAP])
+GO
+ALTER TABLE [dbo].[QL_NGUOIDUNG_NHOMNGUOIDUNG] CHECK CONSTRAINT [FK_QL_NGUOI_RELATIONS_QL_NGUOI]
+GO
+ALTER TABLE [dbo].[QL_NGUOIDUNG_NHOMNGUOIDUNG]  WITH CHECK ADD  CONSTRAINT [FK_QL_NGUOI_RELATIONS_QL_NHOMN] FOREIGN KEY([MANHOMND])
+REFERENCES [dbo].[QL_NHOMNGUOIDUNG] ([MANHOMND])
+GO
+ALTER TABLE [dbo].[QL_NGUOIDUNG_NHOMNGUOIDUNG] CHECK CONSTRAINT [FK_QL_NGUOI_RELATIONS_QL_NHOMN]
+GO
+ALTER TABLE [dbo].[QL_PHANQUYEN]  WITH CHECK ADD  CONSTRAINT [FK_QL_PHANQ_REFERENCE_DM_MANHI] FOREIGN KEY([MAMH])
+REFERENCES [dbo].[DM_MANHINH] ([MAMH])
+GO
+ALTER TABLE [dbo].[QL_PHANQUYEN] CHECK CONSTRAINT [FK_QL_PHANQ_REFERENCE_DM_MANHI]
+GO
+ALTER TABLE [dbo].[QL_PHANQUYEN]  WITH CHECK ADD  CONSTRAINT [FK_QL_PHANQ_REFERENCE_QL_NHOMN] FOREIGN KEY([MANHOMND])
+REFERENCES [dbo].[QL_NHOMNGUOIDUNG] ([MANHOMND])
+GO
+ALTER TABLE [dbo].[QL_PHANQUYEN] CHECK CONSTRAINT [FK_QL_PHANQ_REFERENCE_QL_NHOMN]
+GO
+ALTER TABLE [dbo].[SP_DATPHONG]  WITH CHECK ADD  CONSTRAINT [FK_SP_DATPHONG_DATPHONG] FOREIGN KEY([MADATPHONG])
+REFERENCES [dbo].[DATPHONG] ([MADATPHONG])
+GO
+ALTER TABLE [dbo].[SP_DATPHONG] CHECK CONSTRAINT [FK_SP_DATPHONG_DATPHONG]
+GO
+ALTER TABLE [dbo].[SP_DATPHONG]  WITH CHECK ADD  CONSTRAINT [FK_SP_DATPHONG_PHONG] FOREIGN KEY([MAPHONG])
+REFERENCES [dbo].[PHONG] ([MAPHONG])
+GO
+ALTER TABLE [dbo].[SP_DATPHONG] CHECK CONSTRAINT [FK_SP_DATPHONG_PHONG]
+GO
+ALTER TABLE [dbo].[SP_DATPHONG]  WITH CHECK ADD  CONSTRAINT [FK_SP_DATPHONG_SANPHAM] FOREIGN KEY([MASP])
+REFERENCES [dbo].[SANPHAM] ([MASP])
+GO
+ALTER TABLE [dbo].[SP_DATPHONG] CHECK CONSTRAINT [FK_SP_DATPHONG_SANPHAM]
+GO
+ALTER TABLE [dbo].[THIETBI_PHONG]  WITH CHECK ADD  CONSTRAINT [FK_THIETBI__RELATIONS_PHONG] FOREIGN KEY([MAPHONG])
+REFERENCES [dbo].[PHONG] ([MAPHONG])
+GO
+ALTER TABLE [dbo].[THIETBI_PHONG] CHECK CONSTRAINT [FK_THIETBI__RELATIONS_PHONG]
+GO
+ALTER TABLE [dbo].[THIETBI_PHONG]  WITH CHECK ADD  CONSTRAINT [FK_THIETBI__RELATIONS_THIETBI] FOREIGN KEY([MATHIETBI])
+REFERENCES [dbo].[THIETBI] ([MATHIETBI])
+GO
+ALTER TABLE [dbo].[THIETBI_PHONG] CHECK CONSTRAINT [FK_THIETBI__RELATIONS_THIETBI]
+GO
+USE [master]
+GO
+ALTER DATABASE [QL_KHACHSAN] SET  READ_WRITE 
+GO
