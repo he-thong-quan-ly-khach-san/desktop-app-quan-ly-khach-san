@@ -69,7 +69,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HamXuLy.cs" />
     <Compile Include="frmCauHinhKetNoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,7 +177,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManHinh.resx">
       <DependentUpon>frmManHinh.cs</DependentUpon>
@@ -246,10 +244,6 @@
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{e54ebe11-99aa-4780-a652-b8e2b25bd809}</Project>
       <Name>BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{6dacf3a8-48e0-4795-8804-8f34d0b9417b}</Project>
-      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{bea79ea5-8f55-4a57-94b3-7c5bd571ccbd}</Project>

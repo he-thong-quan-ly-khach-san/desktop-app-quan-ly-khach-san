@@ -39,7 +39,6 @@ namespace GUI
             spBLL = new SanPhamBLL();
             loadData();
             xuLyControl();
-            
         }
         bool _them = false;
         void loadData()

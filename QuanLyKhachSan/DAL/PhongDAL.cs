@@ -56,9 +56,6 @@ namespace DAL
         {
             return qlks.PHONGs.Where(ph => ph.MATANG == tang.MATANG).ToList<PHONG>();
         }
-        public List<dynamic> layPhongTrongDAL()
-        {
-            return qlks.PHONGs.Where(ph => ph.HOATDONG == false).Select(ph => new { ph.MAPHONG, ph.TENPHONG, ph.TANG.MATANG, ph.TANG.TENTANG, ph.LOAIPHONG.DONGIA}).ToList<dynamic>();
-        }
+
     }
 }

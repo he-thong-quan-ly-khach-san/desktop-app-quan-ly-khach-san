@@ -38,10 +38,6 @@ namespace BLL
         {
             return phongDAL.layPhong(maPhong);
         }
-        public List<dynamic> layPhongTrongBLL()
-        {
-            return phongDAL.layPhongTrongDAL();
-        }
 
     }
 }

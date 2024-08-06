@@ -41,11 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="KhachHangBLL.cs" />
     <Compile Include="LoaiPhongBLL.cs" />
     <Compile Include="ManHinhBLL.cs" />
     <Compile Include="NguoiDungBLL.cs" />
-    <Compile Include="OBJ_DPSP.cs" />
     <Compile Include="PhongBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SanPhamBLL.cs" />
@@ -53,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{6DACF3A8-48E0-4795-8804-8F34D0B9417B}</Project>
+      <Project>{6dacf3a8-48e0-4795-8804-8f34d0b9417b}</Project>
       <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
