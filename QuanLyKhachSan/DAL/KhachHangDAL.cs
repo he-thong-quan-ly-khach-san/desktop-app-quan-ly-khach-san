@@ -9,54 +9,43 @@ namespace DAL
 {
     public class KhachHangDAL
     {
-
-        private readonly QLKSDataContext qlks;
-        public KhachHangDAL() 
-        {
-            qlks = new QLKSDataContext();
-        }
-        public void ThemKhachHang(KHACHHANG kh)
+        QLKSDataContext qlks;
+        public KhachHangDAL() { qlks = new QLKSDataContext(); }
+        public List<KHACHHANG> layDSKH() { return qlks.KHACHHANGs.Select(kh=>kh).ToList<KHACHHANG>(); }
+        
+        public void themKhachHang(KHACHHANG kh)
         {
             qlks.KHACHHANGs.InsertOnSubmit(kh);
             qlks.SubmitChanges();
         }
-
-        public List<KHACHHANG> LayTatCaKhachHang()
+        public void suaKhachHangDAL(KHACHHANG kh)
         {
-            var list = qlks.KHACHHANGs.ToList();
-            
-            return list;
+            KHACHHANG tCu = qlks.KHACHHANGs.Single(t => t.MAKH == kh.MAKH);
+            tCu.HOTENKH = kh.HOTENKH;
+            tCu.DIACHI = kh.DIACHI;
+            tCu.CCCD = kh.CCCD;
+            tCu.EMAIL = kh.EMAIL;
+            tCu.DIENTHOAI = kh.DIENTHOAI;
+            qlks.SubmitChanges();
         }
 
-        public KHACHHANG LayKhachHangTheoID(string id)
+        public bool xoaKhachHangDAL(KHACHHANG kh)
         {
-            return qlks.KHACHHANGs.FirstOrDefault(kh => kh.MAKH == id);
-        }
-
-        public void CapNhatKhachHang(KHACHHANG kh)
-        {
-            var khachHang = qlks.KHACHHANGs.FirstOrDefault(k => k.MAKH == kh.MAKH);
-            if (khachHang != null)
+            try
             {
-                khachHang.HOTENKH = kh.HOTENKH;
-                khachHang.DIACHI = kh.DIACHI;
-                khachHang.DIENTHOAI = kh.DIENTHOAI;
-                khachHang.CCCD = kh.CCCD;
-                khachHang.EMAIL = kh.EMAIL;
+                KHACHHANG khCu = qlks.KHACHHANGs.Single(s => s.MAKH == kh.MAKH);
+                qlks.KHACHHANGs.DeleteOnSubmit(khCu);
                 qlks.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
-
-        // Xóa khách hàng
-        public void XoaKhachHang(string id)
+        public KHACHHANG layKhachHang(String maKhachHang)
         {
-            var khachHang = qlks.KHACHHANGs.FirstOrDefault(kh => kh.MAKH == id);
-            if (khachHang != null)
-            {
-                qlks.KHACHHANGs.DeleteOnSubmit(khachHang);
-                qlks.SubmitChanges();
-            }
+            return qlks.KHACHHANGs.FirstOrDefault(t => t.MAKH == maKhachHang);
         }
-
     }
 }

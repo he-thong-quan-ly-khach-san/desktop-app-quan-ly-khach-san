@@ -12,5 +12,16 @@ namespace BLL
         KhachHangDAL khachHangDAL;
         public KhachHangBLL() { khachHangDAL = new KhachHangDAL(); }
         public List<KHACHHANG> layDSKHBLL() { return khachHangDAL.layDSKH(); }
+
+        public void suaKHBLL(KHACHHANG kh)
+        { khachHangDAL.suaKhachHangDAL(kh); }
+        public void themKHBLL(KHACHHANG kh)
+        { khachHangDAL.themKhachHang(kh); }
+        public bool xoaKHBLL(KHACHHANG kh)
+        { return khachHangDAL.xoaKhachHangDAL(kh); }
+        public KHACHHANG layKHBLL(string maKH)
+        {
+            return khachHangDAL.layKhachHang(maKH);
+        }
     }
 }
