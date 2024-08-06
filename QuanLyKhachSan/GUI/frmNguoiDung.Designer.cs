@@ -36,19 +36,19 @@
             this.btnXoa = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnLuu = new System.Windows.Forms.ToolStripButton();
-            this.gridNguoiDung = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridControlNguoiDung = new DevExpress.XtraGrid.GridControl();
+            this.gridNguoiDung = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.chkHoatDong = new System.Windows.Forms.CheckBox();
+            this.txtMatKhau = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlNguoiDung)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridNguoiDung)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -118,23 +118,26 @@
             this.btnLuu.Size = new System.Drawing.Size(68, 32);
             this.btnLuu.Text = "Lưu";
             // 
+            // gridControlNguoiDung
+            // 
+            this.gridControlNguoiDung.AllowDrop = true;
+            this.gridControlNguoiDung.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlNguoiDung.Location = new System.Drawing.Point(2, 28);
+            this.gridControlNguoiDung.MainView = this.gridNguoiDung;
+            this.gridControlNguoiDung.Name = "gridControlNguoiDung";
+            this.gridControlNguoiDung.Size = new System.Drawing.Size(1240, 571);
+            this.gridControlNguoiDung.TabIndex = 0;
+            this.gridControlNguoiDung.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridNguoiDung});
+            // 
             // gridNguoiDung
             // 
-            this.gridNguoiDung.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridNguoiDung.Location = new System.Drawing.Point(2, 28);
-            this.gridNguoiDung.MainView = this.gridView1;
+            this.gridNguoiDung.GridControl = this.gridControlNguoiDung;
             this.gridNguoiDung.Name = "gridNguoiDung";
-            this.gridNguoiDung.Size = new System.Drawing.Size(1240, 571);
-            this.gridNguoiDung.TabIndex = 0;
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridNguoiDung;
-            this.gridView1.Name = "gridView1";
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.gridNguoiDung);
+            this.groupControl1.Controls.Add(this.gridControlNguoiDung);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupControl1.Location = new System.Drawing.Point(0, 197);
             this.groupControl1.Name = "groupControl1";
@@ -164,23 +167,22 @@
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "Thông tin";
             // 
-            // label1
+            // chkHoatDong
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tên đăng nhập";
+            this.chkHoatDong.AutoSize = true;
+            this.chkHoatDong.Location = new System.Drawing.Point(158, 125);
+            this.chkHoatDong.Name = "chkHoatDong";
+            this.chkHoatDong.Size = new System.Drawing.Size(87, 20);
+            this.chkHoatDong.TabIndex = 2;
+            this.chkHoatDong.Text = "Hoạt động";
+            this.chkHoatDong.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // txtMatKhau
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Mật khẩu";
+            this.txtMatKhau.Location = new System.Drawing.Point(145, 83);
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.Size = new System.Drawing.Size(241, 23);
+            this.txtMatKhau.TabIndex = 1;
             // 
             // label3
             // 
@@ -191,22 +193,23 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Trạng thái hoạt động";
             // 
-            // txtMatKhau
+            // label2
             // 
-            this.txtMatKhau.Location = new System.Drawing.Point(145, 83);
-            this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(241, 23);
-            this.txtMatKhau.TabIndex = 1;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 16);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Mật khẩu";
             // 
-            // chkHoatDong
+            // label1
             // 
-            this.chkHoatDong.AutoSize = true;
-            this.chkHoatDong.Location = new System.Drawing.Point(158, 125);
-            this.chkHoatDong.Name = "chkHoatDong";
-            this.chkHoatDong.Size = new System.Drawing.Size(87, 20);
-            this.chkHoatDong.TabIndex = 2;
-            this.chkHoatDong.Text = "Hoạt động";
-            this.chkHoatDong.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tên đăng nhập";
             // 
             // frmNguoiDung
             // 
@@ -220,8 +223,8 @@
             this.Text = "Người dùng";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlNguoiDung)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridNguoiDung)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
@@ -241,8 +244,8 @@
         private System.Windows.Forms.ToolStripButton btnXoa;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton btnLuu;
-        private DevExpress.XtraGrid.GridControl gridNguoiDung;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gridControlNguoiDung;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridNguoiDung;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private System.Windows.Forms.TextBox txtTenDangNhap;
         private DevExpress.XtraEditors.GroupControl groupControl2;

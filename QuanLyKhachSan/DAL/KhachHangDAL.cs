@@ -9,6 +9,7 @@ namespace DAL
 {
     public class KhachHangDAL
     {
+
         private readonly QLKSDataContext qlks;
         public KhachHangDAL() 
         {
@@ -56,5 +57,6 @@ namespace DAL
                 qlks.SubmitChanges();
             }
         }
+
     }
 }

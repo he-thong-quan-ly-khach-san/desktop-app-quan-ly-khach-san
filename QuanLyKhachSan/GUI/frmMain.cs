@@ -8,7 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BLL;
+using DTO;
 namespace GUI
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
@@ -17,29 +18,52 @@ namespace GUI
         {
             InitializeComponent();
             btnThoat.ItemClick += BtnThoat_ItemClick;
-            testLoadPhong();
+            tangBLL = new TangBLL();
+            phongBLL = new PhongBLL();
+            //testLoadPhong();
             loadForm();
+            loadDSPhong();
         }
-
+        static string tenDangNhap;
+        TangBLL tangBLL;
+        PhongBLL phongBLL;
         void loadForm()
         {
+
             this.WindowState = FormWindowState.Maximized;
+            tenDangNhap = frmDangNhap.tenDangNhap;
             btnNguoiDung.ItemClick += BtnNguoiDung_ItemClick;
             btnNhomNguoiDung.ItemClick += BtnNhomNguoiDung_ItemClick;
+            btnManHinh.ItemClick += BtnManHinh_ItemClick;
+            if (tenDangNhap.Equals("null"))
+            {
+                lblXinChao.Caption = string.Empty;
+            }
+            else
+            {
+                lblXinChao.Caption = "Xin chào " + tenDangNhap; 
+            }
+        }
+        private void LoadForm<T>() where T : Form, new()
+        {
+            T frm = new T();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
+        }
+        private void BtnManHinh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadForm<frmManHinh>();
+
         }
 
         private void BtnNhomNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmNhomNguoiDung frm = new frmNhomNguoiDung();
-            frm.StartPosition = FormStartPosition.CenterScreen;
-            frm.ShowDialog();
+            LoadForm<frmNhomNguoiDung>();
         }
 
         private void BtnNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmNguoiDung frm = new frmNguoiDung();
-            frm.StartPosition = FormStartPosition.CenterScreen;
-            frm.ShowDialog();
+            LoadForm<frmNguoiDung>();
         }
 
         private void BtnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -64,6 +88,39 @@ namespace GUI
 
         string phong;
         string tang;
+        
+        void loadDSPhong()
+        {
+            List<TANG> lstTang = tangBLL.layDanhSachTangBLL();
+            gControl.Gallery.ItemImageLayout = DevExpress.Utils.Drawing.ImageLayoutMode.ZoomInside;
+            gControl.Gallery.ImageSize = new Size(64, 64);
+            gControl.Gallery.ShowItemText = true;
+            gControl.Gallery.ShowGroupCaption = true;
+            foreach(TANG tang in lstTang)
+            {
+                var galleryItemGroup = new GalleryItemGroup
+                {
+                    Caption = tang.TENTANG.ToString(),
+                    CaptionAlignment = GalleryItemGroupCaptionAlignment.Stretch
+                };
+                List<PHONG> phongList = phongBLL.loadPhongTheoTang(tang);
+                foreach(PHONG phong in phongList)
+                {
+                    var gc_item = new GalleryItem();
+                    gc_item.Caption = phong.TENPHONG.ToString();
+                    if (phong.HOATDONG == false)
+                    {
+                        gc_item.ImageOptions.Image = imgListGiuong.Images[0];
+                    }
+                    else
+                    {
+                        gc_item.ImageOptions.Image = imgListGiuong.Images[1];
+                    }
+                    galleryItemGroup.Items.Add(gc_item);
+                }
+                gControl.Gallery.Groups.Add(galleryItemGroup);
+            }
+        }
         void testLoadPhong()
         {
             var lstTang = new List<dynamic>
@@ -155,10 +212,26 @@ namespace GUI
 
         }
 
-
-        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmDanhSachKhachHang frm = new frmDanhSachKhachHang();
+            frmPhong frm = new frmPhong();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
+        }
+
+        private void btnNguoiDung_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnManHinh_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnSanPhamDV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmSanPham frm = new frmSanPham();
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.ShowDialog();
         }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="dsKS" targetNamespace="http://tempuri.org/dsKS.xsd" xmlns:mstns="http://tempuri.org/dsKS.xsd" xmlns="http://tempuri.org/dsKS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="btnManHinhdsKS" targetNamespace="http://tempuri.org/dsKS.xsd" xmlns:mstns="http://tempuri.org/dsKS.xsd" xmlns="http://tempuri.org/dsKS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -69,27 +69,27 @@ SELECT TenDangNhap, MatKhau, HoatDong FROM QL_NguoiDung WHERE (TenDangNhap = @Te
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="dsKS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="dsKS" msprop:Generator_DataSetName="dsKS">
+  <xs:element name="btnManHinhdsKS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="btnManHinhdsKS" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="btnManHinhdsKS">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="QL_NguoiDung" msprop:Generator_RowEvHandlerName="QL_NguoiDungRowChangeEventHandler" msprop:Generator_RowDeletedName="QL_NguoiDungRowDeleted" msprop:Generator_RowDeletingName="QL_NguoiDungRowDeleting" msprop:Generator_RowEvArgName="QL_NguoiDungRowChangeEvent" msprop:Generator_TablePropName="QL_NguoiDung" msprop:Generator_RowChangedName="QL_NguoiDungRowChanged" msprop:Generator_RowChangingName="QL_NguoiDungRowChanging" msprop:Generator_TableClassName="QL_NguoiDungDataTable" msprop:Generator_RowClassName="QL_NguoiDungRow" msprop:Generator_TableVarName="tableQL_NguoiDung" msprop:Generator_UserTableName="QL_NguoiDung">
+        <xs:element name="QL_NguoiDung" msprop:Generator_RowClassName="QL_NguoiDungRow" msprop:Generator_RowEvHandlerName="QL_NguoiDungRowChangeEventHandler" msprop:Generator_RowDeletedName="QL_NguoiDungRowDeleted" msprop:Generator_RowDeletingName="QL_NguoiDungRowDeleting" msprop:Generator_RowEvArgName="QL_NguoiDungRowChangeEvent" msprop:Generator_TablePropName="QL_NguoiDung" msprop:Generator_RowChangedName="QL_NguoiDungRowChanged" msprop:Generator_UserTableName="QL_NguoiDung" msprop:Generator_RowChangingName="QL_NguoiDungRowChanging" msprop:Generator_TableClassName="QL_NguoiDungDataTable" msprop:Generator_TableVarName="tableQL_NguoiDung">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="TenDangNhap" msprop:Generator_ColumnPropNameInRow="TenDangNhap" msprop:Generator_ColumnPropNameInTable="TenDangNhapColumn" msprop:Generator_ColumnVarNameInTable="columnTenDangNhap" msprop:Generator_UserColumnName="TenDangNhap">
+              <xs:element name="TenDangNhap" msprop:Generator_UserColumnName="TenDangNhap" msprop:Generator_ColumnPropNameInTable="TenDangNhapColumn" msprop:Generator_ColumnPropNameInRow="TenDangNhap" msprop:Generator_ColumnVarNameInTable="columnTenDangNhap">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="MatKhau" msprop:Generator_ColumnPropNameInRow="MatKhau" msprop:Generator_ColumnPropNameInTable="MatKhauColumn" msprop:Generator_ColumnVarNameInTable="columnMatKhau" msprop:Generator_UserColumnName="MatKhau" minOccurs="0">
+              <xs:element name="MatKhau" msprop:Generator_UserColumnName="MatKhau" msprop:Generator_ColumnPropNameInTable="MatKhauColumn" msprop:Generator_ColumnPropNameInRow="MatKhau" msprop:Generator_ColumnVarNameInTable="columnMatKhau" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="HoatDong" msprop:Generator_ColumnPropNameInRow="HoatDong" msprop:Generator_ColumnPropNameInTable="HoatDongColumn" msprop:Generator_ColumnVarNameInTable="columnHoatDong" msprop:Generator_UserColumnName="HoatDong" type="xs:boolean" minOccurs="0" />
+              <xs:element name="HoatDong" msprop:Generator_UserColumnName="HoatDong" msprop:Generator_ColumnPropNameInTable="HoatDongColumn" msprop:Generator_ColumnPropNameInRow="HoatDong" msprop:Generator_ColumnVarNameInTable="columnHoatDong" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

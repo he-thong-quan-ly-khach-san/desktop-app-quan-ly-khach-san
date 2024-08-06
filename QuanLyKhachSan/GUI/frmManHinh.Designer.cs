@@ -29,15 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManHinh));
-            this.chkHoatDong = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.gridNguoiDung = new DevExpress.XtraGrid.GridControl();
+            this.fridManHinh = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnXoa = new System.Windows.Forms.ToolStripButton();
@@ -50,29 +48,10 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridNguoiDung)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fridManHinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // chkHoatDong
-            // 
-            this.chkHoatDong.AutoSize = true;
-            this.chkHoatDong.Location = new System.Drawing.Point(158, 125);
-            this.chkHoatDong.Name = "chkHoatDong";
-            this.chkHoatDong.Size = new System.Drawing.Size(87, 20);
-            this.chkHoatDong.TabIndex = 2;
-            this.chkHoatDong.Text = "Hoạt động";
-            this.chkHoatDong.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 126);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 16);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Trạng thái hoạt động";
             // 
             // label2
             // 
@@ -94,9 +73,7 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.chkHoatDong);
             this.groupControl2.Controls.Add(this.txtMatKhau);
-            this.groupControl2.Controls.Add(this.label3);
             this.groupControl2.Controls.Add(this.label2);
             this.groupControl2.Controls.Add(this.txtTenDangNhap);
             this.groupControl2.Controls.Add(this.label1);
@@ -123,28 +100,29 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.gridNguoiDung);
+            this.groupControl1.Controls.Add(this.fridManHinh);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupControl1.Location = new System.Drawing.Point(0, 197);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(1263, 601);
             this.groupControl1.TabIndex = 4;
-            this.groupControl1.Text = "Danh sách người dùng";
+            this.groupControl1.Tag = "";
+            this.groupControl1.Text = "Danh sách màn hình";
             // 
-            // gridNguoiDung
+            // fridManHinh
             // 
-            this.gridNguoiDung.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridNguoiDung.Location = new System.Drawing.Point(2, 28);
-            this.gridNguoiDung.MainView = this.gridView1;
-            this.gridNguoiDung.Name = "gridNguoiDung";
-            this.gridNguoiDung.Size = new System.Drawing.Size(1259, 571);
-            this.gridNguoiDung.TabIndex = 0;
-            this.gridNguoiDung.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.fridManHinh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fridManHinh.Location = new System.Drawing.Point(2, 28);
+            this.fridManHinh.MainView = this.gridView1;
+            this.fridManHinh.Name = "fridManHinh";
+            this.fridManHinh.Size = new System.Drawing.Size(1259, 571);
+            this.fridManHinh.TabIndex = 0;
+            this.fridManHinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
-            this.gridView1.GridControl = this.gridNguoiDung;
+            this.gridView1.GridControl = this.fridManHinh;
             this.gridView1.Name = "gridView1";
             // 
             // toolStripSeparator1
@@ -225,7 +203,7 @@
             this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridNguoiDung)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fridManHinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -235,16 +213,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.CheckBox chkHoatDong;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.TextBox txtTenDangNhap;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraGrid.GridControl gridNguoiDung;
+        private DevExpress.XtraGrid.GridControl fridManHinh;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton btnXoa;

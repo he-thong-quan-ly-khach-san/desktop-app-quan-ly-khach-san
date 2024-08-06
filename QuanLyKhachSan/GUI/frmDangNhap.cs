@@ -13,6 +13,7 @@ namespace GUI
     public partial class frmDangNhap : Form
     {
         XuLyDangNhap CauHinh;
+        public static string tenDangNhap = "null";
         public frmDangNhap()
         {
             InitializeComponent();
@@ -96,6 +97,7 @@ namespace GUI
             }
             if (Program.MainForm == null || Program.MainForm.IsDisposed)
             {
+                tenDangNhap = txtTenDangNhap.Text;
                 Program.MainForm = new frmMain();
             }
             this.Visible = false;
