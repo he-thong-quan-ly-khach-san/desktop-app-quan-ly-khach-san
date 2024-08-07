@@ -15,5 +15,7 @@ namespace BLL
         public DATPHONG getDPBLL(string maDP) { return datPhongDAl.getDatPhong(maDP); }
         public DATPHONG suaBLL(DATPHONG dp) { return datPhongDAl.sua(dp); }
         public List<DATPHONG> LayDSBLL() { return datPhongDAl.layDS(); }
+        public List<dynamic> LayDSBLL(DateTime tuNgay, DateTime denNgay) {  return datPhongDAl.layDS(tuNgay, denNgay); }
+        public void xoaBLL(DATPHONG dp) { datPhongDAl.xoa(dp); }
     }
 }

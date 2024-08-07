@@ -210,7 +210,7 @@ namespace GUI
 
         private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -233,6 +233,27 @@ namespace GUI
         private void btnSanPhamDV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmSanPham frm = new frmSanPham();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
+        }
+
+        private void btnDatPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmDatPhongTheoDoan frm = new frmDatPhongTheoDoan();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
+        }
+
+        private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmTang frm = new frmTang();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmDatPhongTheoDoan frm = new frmDatPhongTheoDoan();
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.ShowDialog();
         }

@@ -46,7 +46,6 @@
     <Compile Include="LoaiPhongBLL.cs" />
     <Compile Include="ManHinhBLL.cs" />
     <Compile Include="NguoiDungBLL.cs" />
-    <Compile Include="OBJ_DPSP.cs" />
     <Compile Include="PhongBLL.cs" />
     <Compile Include="Phong_DattPhongBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

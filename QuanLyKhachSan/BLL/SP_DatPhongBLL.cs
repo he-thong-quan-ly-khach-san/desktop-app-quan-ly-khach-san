@@ -14,5 +14,6 @@ namespace BLL
         public void addBLL(SP_DATPHONG spdp) { sP_DatPhongDAL.add(spdp); }
         public void xoaAllBLL(string maDatPhong) { sP_DatPhongDAL.xoaAll(maDatPhong); }
         public List<SP_DATPHONG> LayDSBLL() { return sP_DatPhongDAL.layDS(); }
+        public List<OBJ_DPSP> layDSTheoDP(string maDatPhong) { return sP_DatPhongDAL.layDSTheoDP(maDatPhong); }
     }
 }

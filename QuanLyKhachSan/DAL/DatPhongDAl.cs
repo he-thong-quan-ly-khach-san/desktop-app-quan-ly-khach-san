@@ -29,6 +29,13 @@ namespace DAL
             }
             else { return null; }
         }
+        public void xoa(DATPHONG dp)
+        {
+            DATPHONG dpXoa = qlks.DATPHONGs.FirstOrDefault(p=>p.MADATPHONG==dp.MADATPHONG);
+            dpXoa.DISABLED = true;
+            qlks.SubmitChanges();
+        }
         public List<DATPHONG> layDS() { return qlks.DATPHONGs.Select(dp => dp).ToList<DATPHONG>(); }
+        public List<dynamic> layDS(DateTime tuNgay, DateTime denNgay) { return qlks.DATPHONGs.Where(dp=>dp.NGAYDAT >= tuNgay && dp.NGAYDAT < denNgay && dp.DISABLED == false).Select(dp => new {dp.MADATPHONG, dp.MAKH, dp.KHACHHANG.HOTENKH, dp.SOTIEN, dp.NGAYTAO, dp.NGAYDAT, dp.NGAYTRA, dp.THEODOAN, dp.SONGUOIO, dp.CAPNHATBOI, dp.DISABLED, dp.NGAYCAPNHAT, dp.TRANGTHAI, dp.GHICHU}).ToList<dynamic>();}
     }
 }

@@ -1,4 +1,5 @@
-﻿using DTO;
+﻿
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,5 +28,27 @@ namespace DAL
             }
         }
         public List<SP_DATPHONG> layDS() { return qlks.SP_DATPHONGs.Select(dp => dp).ToList<SP_DATPHONG>(); }
+        public List<OBJ_DPSP> layDSTheoDP(string maDatPhong)
+        {
+            var list = qlks.SP_DATPHONGs.Where(sdp=>sdp.MADATPHONG == maDatPhong);
+            List<OBJ_DPSP> lstdpsp = new List<OBJ_DPSP>();
+            OBJ_DPSP dpsp;
+            foreach (var dp in list)
+            {
+                dpsp = new OBJ_DPSP();
+                dpsp.MADATPHONG = dp.MADATPHONG;
+                dpsp.MAPHONG = dp.MAPHONG;
+                var p = qlks.PHONGs.FirstOrDefault(ph=>ph.MAPHONG == dpsp.MAPHONG);
+                dpsp.TENPHONG = p.TENPHONG;
+                dpsp.MASPDP = dp.MASPDP;
+                var sp = qlks.SANPHAMs.FirstOrDefault(s => s.MASP == dp.MASP);
+                dpsp.TENSP = sp.TENSP;
+                dpsp.SOLUONG = dp.SOLUONG;
+                dpsp.DONGIA = dp.DONGIA;
+                dpsp.THANHTIEN = dp.THANHTIEN;
+                lstdpsp.Add(dpsp);
+            }
+            return lstdpsp;
+        }
     }
 }

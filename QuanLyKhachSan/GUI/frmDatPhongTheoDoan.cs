@@ -18,6 +18,7 @@ using DevExpress.DataAccess.Native.Data;
 using DevExpress.XtraGrid;
 using System.Diagnostics;
 using static DevExpress.Utils.Drawing.Helpers.NativeMethods;
+using DevExpress.XtraRichEdit.Internal;
 namespace GUI
 {
     public partial class frmDatPhongTheoDoan : Form
@@ -66,12 +67,22 @@ namespace GUI
 
         private void loadData()
         {
+            loadDSDat();
             loadKH();
             loadSP();
             //loadPhongTrong();
             cboTrangThai.DataSource = TrangThaiDatPhong.layDSTrangThai();
             cboTrangThai.DisplayMember = "_display";
             cboTrangThai.ValueMember = "_value";
+        }
+
+        private void loadDSDat()
+        {
+            _them = false;
+            gcDanhSach.DataSource = dpBLL.LayDSBLL(dtpTuNgay.Value, dtpDenNgay.Value.AddDays(1));
+            gridDS.OptionsBehavior.Editable = false;
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
         }
 
         private void loadPhongTrong()
@@ -125,7 +136,12 @@ namespace GUI
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            
+            if (MessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                DATPHONG dp = dpBLL.getDPBLL(maDPhong);
+                dpBLL.xoaBLL(dp);
+                loadDSDat();
+            }
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -171,7 +187,7 @@ namespace GUI
                 dp.THEODOAN = chkTheoDoan.Checked;
                 dp.DISABLED = false;
                 maDPhong = dp.MADATPHONG;
-                //dp.TENDANGNHAP = frmDangNhap.tenDangNhap;
+                dp.TENDANGNHAP = frmDangNhap.tenDangNhap;
                 var datphong = dpBLL.themDPBLL(dp);
                 for (int i = 0;i<gvPhongDat.RowCount;i++)
                 {
@@ -200,14 +216,17 @@ namespace GUI
                                 sdp.NGAY = DateTime.Now;
                                 sp_DatPhongBLL.addBLL(sdp);
                             }
-                            else
-                            {
-                                sdp = new SP_DATPHONG();
-                                sdp.MADATPHONG = dp.MADATPHONG.ToString();
-                                sdp.MAPHONG = pdp.MAPHONG;
-                                sp_DatPhongBLL.addBLL(sdp);
-                            }
+                            //else
+                            //{
+                            //    sdp = new SP_DATPHONG();
+                            //    sdp.MADATPHONG = dp.MADATPHONG.ToString();
+                            //    sdp.MAPHONG = pdp.MAPHONG;
+                            //    sp_DatPhongBLL.addBLL(sdp);
+                            //}
                         }
+                        loadDSDat();
+                        MessageBox.Show("Đặt phòng thành công!");
+                        return;
                     }
                     else
                     {
@@ -218,6 +237,7 @@ namespace GUI
                     }
 
                 }
+                loadDSDat();
                 MessageBox.Show("Đặt phòng thành công!");
 
             }
@@ -267,6 +287,7 @@ namespace GUI
                                 dpsp.MADATPHONG = dp.MADATPHONG.ToString();
                                 dpsp.MAPHONG = pdp.MAPHONG;
                                 sp_DatPhongBLL.addBLL(dpsp);
+
                             }
                         }
                     }
@@ -279,6 +300,8 @@ namespace GUI
                     }
 
                 }
+                MessageBox.Show("Sửa thành công");
+                loadDSDat();
             }
         }
 
@@ -576,15 +599,94 @@ namespace GUI
         string maDPhong=string.Empty;
         private void gcDanhSach_Click(object sender, EventArgs e)
         {
+            enableCacControl();
             var gridView = sender as DevExpress.XtraGrid.Views.Grid.GridView;
             if (gridDS.RowCount > 0 && !_them)
             {
+                if(gridDS.GetFocusedRowCellValue("MAPHONG_DATPHONG") == null)
+                { return; }
                 _them = false;
                 maDPhong = gridDS.GetFocusedRowCellValue("MAPHONG_DATPHONG").ToString();
 
                 btnSua.Enabled = true;
                 btnXoa.Enabled = true;
             }
+        }
+
+        private void dtpTuNgay_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpTuNgay.Value > dtpDenNgay.Value)
+            {
+                MessageBox.Show("Giá trị ngày không hợp lệ!");
+                return;
+            }
+            loadDSDat();
+        }
+
+        private void dtpTuNgay_Leave(object sender, EventArgs e)
+        {
+            if (dtpTuNgay.Value > dtpDenNgay.Value)
+            {
+                MessageBox.Show("Giá trị ngày không hợp lệ!");
+                return;
+            }
+            loadDSDat();
+        }
+
+        private void dtpDenNgay_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpTuNgay.Value > dtpDenNgay.Value)
+            {
+                MessageBox.Show("Giá trị ngày không hợp lệ!");
+                return;
+            }
+            loadDSDat();
+        }
+
+        private void dtpDenNgay_Leave(object sender, EventArgs e)
+        {
+            if (dtpTuNgay.Value > dtpDenNgay.Value)
+            {
+                MessageBox.Show("Giá trị ngày không hợp lệ!");
+                return;
+            }
+            loadDSDat();
+        }
+        void loadDP()
+        {
+            gcPhongDat.DataSource = HamXuLy.layDuLieu("select PHONG.MAPHONG, TENPHONG, LOAIPHONG.DONGIA, PHONG.MATANG, TENTANG  from PHONG "
+            + "inner join TANG on PHONG.MATANG = TANG.MATANG "
+            + "inner join LOAIPHONG on PHONG.MALOAIPHONG = LOAIPHONG.MALOAIPHONG "
+            + "inner join PHONG_DATPHONG on PHONG.MAPHONG = PHONG_DATPHONG.MAPHONG"
+            + "WHERE PHONG_DATPHONG.MAPHONG_DATPHONG = '"+maDPhong+"'");
+        }
+        void loadSPDat()
+        {
+            gcDVDat.DataSource = sp_DatPhongBLL.layDSTheoDP(maDPhong);
+        }
+        void clickDS()
+        {
+            maDPhong = gridDS.GetFocusedRowCellValue("MADATPHONG").ToString();
+            var dp = dpBLL.getDPBLL(maDPhong);
+            cboKhachHang.SelectedValue = dp.MAKH;
+            dtpNgayDat.Value = dp.NGAYDAT.Value;
+            dtpNgayTra.Value = dp.NGAYTRA.Value;
+            spSoNguoi.Text = dp.SONGUOIO.ToString();
+            cboTrangThai.SelectedValue = dp.TRANGTHAI;
+            txtGhiChu.Text = dp.GHICHU.ToString();
+            lblTongTien.Text = dp.SOTIEN.Value.ToString("N0");
+            loadSPDat();
+        }
+        private void gridDS_Click(object sender, EventArgs e)
+        {
+            clickDS();
+
+        }
+
+        private void gridDS_DoubleClick(object sender, EventArgs e)
+        {
+            clickDS();
+            tabDanhSach.SelectedTabPage = pageChiTiet;
         }
     }
 }

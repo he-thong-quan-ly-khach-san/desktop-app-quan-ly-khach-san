@@ -44,7 +44,6 @@
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
@@ -100,7 +99,6 @@
             this.barButtonItem7,
             this.barButtonItem8,
             this.btnThoat,
-            this.barButtonItem10,
             this.barButtonItem11,
             this.barButtonItem12,
             this.barButtonItem6,
@@ -108,7 +106,7 @@
             this.btnSanPhamDV,
             this.barButtonItem3});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 22;
+            this.ribbonControl1.MaxItemId = 23;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageHeaderItemLinks.Add(this.btnThoat);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -197,14 +195,6 @@
             this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
             this.btnThoat.Name = "btnThoat";
             // 
-            // barButtonItem10
-            // 
-            this.barButtonItem10.Caption = "Quản lý thiết bị";
-            this.barButtonItem10.Id = 14;
-            this.barButtonItem10.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.LargeImage")));
-            this.barButtonItem10.Name = "barButtonItem10";
-            this.barButtonItem10.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem10_ItemClick);
-            // 
             // barButtonItem11
             // 
             this.barButtonItem11.Caption = "Quản lý loại phòng";
@@ -219,6 +209,7 @@
             this.barButtonItem12.Id = 16;
             this.barButtonItem12.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.LargeImage")));
             this.barButtonItem12.Name = "barButtonItem12";
+            this.barButtonItem12.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem12_ItemClick);
             // 
             // barButtonItem6
             // 
@@ -248,6 +239,7 @@
             this.barButtonItem3.Id = 21;
             this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
             this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -291,7 +283,6 @@
             // ribbonPageGroup6
             // 
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem6);
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem10);
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem11);
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem12);
             this.ribbonPageGroup6.ItemLinks.Add(this.btnSanPhamDV);
@@ -406,7 +397,6 @@
         private DevExpress.XtraBars.Ribbon.GalleryControlClient galleryControlClient1;
         private System.Windows.Forms.ImageList imgListGiuong;
         private DevExpress.XtraBars.BarButtonItem btnThoat;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
