@@ -14,6 +14,7 @@ namespace DAL
         public DATPHONG themDP(DATPHONG dp)
         {
             qlks.DATPHONGs.InsertOnSubmit(dp);
+            qlks.SubmitChanges();
             return dp;
         }
         public DATPHONG getDatPhong(string maDP) { return qlks.DATPHONGs.FirstOrDefault(p=>p.MADATPHONG ==  maDP); }
@@ -28,5 +29,6 @@ namespace DAL
             }
             else { return null; }
         }
+        public List<DATPHONG> layDS() { return qlks.DATPHONGs.Select(dp => dp).ToList<DATPHONG>(); }
     }
 }

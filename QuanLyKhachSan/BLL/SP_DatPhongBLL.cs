@@ -12,5 +12,7 @@ namespace BLL
         SP_DatPhongDAL sP_DatPhongDAL;
         public SP_DatPhongBLL() { sP_DatPhongDAL = new SP_DatPhongDAL(); }
         public void addBLL(SP_DATPHONG spdp) { sP_DatPhongDAL.add(spdp); }
+        public void xoaAllBLL(string maDatPhong) { sP_DatPhongDAL.xoaAll(maDatPhong); }
+        public List<SP_DATPHONG> LayDSBLL() { return sP_DatPhongDAL.layDS(); }
     }
 }

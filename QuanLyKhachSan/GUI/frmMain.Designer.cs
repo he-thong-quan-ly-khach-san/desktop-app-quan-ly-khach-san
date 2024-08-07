@@ -50,12 +50,14 @@
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.lblXinChao = new DevExpress.XtraBars.BarStaticItem();
             this.btnSanPhamDV = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -63,8 +65,6 @@
             this.gControl = new DevExpress.XtraBars.Ribbon.GalleryControl();
             this.galleryControlClient1 = new DevExpress.XtraBars.Ribbon.GalleryControlClient();
             this.imgListGiuong = new System.Windows.Forms.ImageList(this.components);
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gControl)).BeginInit();
@@ -242,6 +242,13 @@
             this.btnSanPhamDV.Name = "btnSanPhamDV";
             this.btnSanPhamDV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSanPhamDV_ItemClick);
             // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Đặt phòng theo đoàn";
+            this.barButtonItem3.Id = 21;
+            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -274,6 +281,13 @@
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "Danh mục quản lý";
             // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem8);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Quản lý khách hàng";
+            // 
             // ribbonPageGroup6
             // 
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem6);
@@ -284,12 +298,11 @@
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Danh mục phòng";
             // 
-            // ribbonPageGroup2
+            // ribbonPageGroup3
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem7);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem8);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Quản lý khách hàng";
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "Chức năng";
             // 
             // ribbonPage4
             // 
@@ -339,19 +352,6 @@
             this.imgListGiuong.TransparentColor = System.Drawing.Color.Transparent;
             this.imgListGiuong.Images.SetKeyName(0, "bluebed.png");
             this.imgListGiuong.Images.SetKeyName(1, "redbed.png");
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem3);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "Chức năng";
-            // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "Đặt phòng theo đoàn";
-            this.barButtonItem3.Id = 21;
-            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.barButtonItem3.Name = "barButtonItem3";
             // 
             // frmMain
             // 
@@ -403,7 +403,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
-        private DevExpress.XtraBars.Ribbon.GalleryControl gControl;
         private DevExpress.XtraBars.Ribbon.GalleryControlClient galleryControlClient1;
         private System.Windows.Forms.ImageList imgListGiuong;
         private DevExpress.XtraBars.BarButtonItem btnThoat;
@@ -415,5 +414,6 @@
         private DevExpress.XtraBars.BarButtonItem btnSanPhamDV;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        public DevExpress.XtraBars.Ribbon.GalleryControl gControl;
     }
 }

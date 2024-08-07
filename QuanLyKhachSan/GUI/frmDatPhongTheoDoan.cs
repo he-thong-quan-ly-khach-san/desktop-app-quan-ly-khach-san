@@ -17,6 +17,7 @@ using DevExpress.XtraExport.Helpers;
 using DevExpress.DataAccess.Native.Data;
 using DevExpress.XtraGrid;
 using System.Diagnostics;
+using static DevExpress.Utils.Drawing.Helpers.NativeMethods;
 namespace GUI
 {
     public partial class frmDatPhongTheoDoan : Form
@@ -34,6 +35,7 @@ namespace GUI
         List<OBJ_DPSP> lstDPSP;
         System.Data.DataTable dtPhongTrong;
         System.Data.DataTable dtPhongDat;
+        frmMain objMain = (frmMain)Application.OpenForms["frmMain"];
         public frmDatPhongTheoDoan()
         {
             InitializeComponent();
@@ -128,11 +130,29 @@ namespace GUI
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            
+            saveData();
             _them = false;
             xuLyControl();
+            objMain.loadDSPhong();
+        }
+        
+        string phatSinhMaDP()
+        {
+            List<DATPHONG> list = new List<DATPHONG>();
+            list = dpBLL.LayDSBLL();
+            return "DP"+list.Count.ToString("D8");
+        }
+        string phatSinhMaPDP()
+        {
+            List<PHONG_DATPHONG> lst = phongDattPhongBLL.LayDSBLL();
+            return "PDP" + lst.Count.ToString("D7");
         }
 
+        string phatSinhMaSPDP()
+        {
+            List<SP_DATPHONG> lst = sp_DatPhongBLL.LayDSBLL();
+            return "SDP" + lst.Count.ToString("D7");
+        }
         void saveData()
         {
             if (_them)
@@ -140,6 +160,8 @@ namespace GUI
                 DATPHONG dp = new DATPHONG();
                 PHONG_DATPHONG pdp = new PHONG_DATPHONG();
                 SP_DATPHONG sdp = new SP_DATPHONG();
+                dp.MADATPHONG = phatSinhMaDP();
+                dp.MAKH = cboKhachHang.SelectedValue.ToString();
                 dp.NGAYDAT = dtpNgayDat.Value;
                 dp.NGAYTRA = dtpNgayTra.Value;
                 dp.SONGUOIO = short.Parse(spSoNguoi.EditValue.ToString());
@@ -148,11 +170,13 @@ namespace GUI
                 dp.GHICHU = txtGhiChu.Text;
                 dp.THEODOAN = chkTheoDoan.Checked;
                 dp.DISABLED = false;
+                maDPhong = dp.MADATPHONG;
                 //dp.TENDANGNHAP = frmDangNhap.tenDangNhap;
                 var datphong = dpBLL.themDPBLL(dp);
                 for (int i = 0;i<gvPhongDat.RowCount;i++)
                 {
                     pdp = new PHONG_DATPHONG();
+                    pdp.MAPHONG_DATPHONG = phatSinhMaPDP();
                     pdp.MADATPHONG = dp.MADATPHONG;
                     pdp.MAPHONG = gvPhongDat.GetRowCellValue(i, "MAPHONG").ToString();
                     pdp.SONGAYO = (short?)(dtpNgayTra.Value.Day - dtpNgayDat.Value.Day);
@@ -165,12 +189,15 @@ namespace GUI
                         {
                             if (pdp.MAPHONG == gvDVDat.GetRowCellValue(j,"MAPHONG").ToString())
                             {
+                                sdp = new SP_DATPHONG();
                                 sdp.MADATPHONG = dp.MADATPHONG;
                                 sdp.MAPHONG = gvDVDat.GetRowCellValue(j, "MAPHONG").ToString();
                                 sdp.MASP = gvDVDat.GetRowCellValue(j, "MASP").ToString();
+                                sdp.MASPDP = phatSinhMaSPDP();
                                 sdp.DONGIA = decimal.Parse(gvDVDat.GetRowCellValue(j, "DONGIA").ToString());
                                 sdp.SOLUONG = int.Parse(gvDVDat.GetRowCellValue(j, "SOLUONG").ToString());
                                 sdp.THANHTIEN = sdp.SOLUONG * sdp.DONGIA;
+                                sdp.NGAY = DateTime.Now;
                                 sp_DatPhongBLL.addBLL(sdp);
                             }
                             else
@@ -191,6 +218,8 @@ namespace GUI
                     }
 
                 }
+                MessageBox.Show("Đặt phòng thành công!");
+
             }
             else
             {
@@ -203,8 +232,53 @@ namespace GUI
                 dp.TRANGTHAI = bool.Parse(cboTrangThai.SelectedValue.ToString());
                 dp.SOTIEN = decimal.Parse(lblTongTien.Text);
                 dp.GHICHU = txtGhiChu.Text;
+                maDPhong = dp.MADATPHONG;
                 //dp.TENDANGNHAP = frmDangNhap.tenDangNhap;
                 var _dp = dpBLL.suaBLL(dp);
+                phongDattPhongBLL.xoaAllBLL(dp.MADATPHONG);
+                sp_DatPhongBLL.xoaAllBLL(dp.MADATPHONG);
+                for (int i = 0; i < gvPhongDat.RowCount; i++)
+                {
+                    pdp = new PHONG_DATPHONG();
+                    pdp.MADATPHONG = dp.MADATPHONG;
+                    pdp.MAPHONG = gvPhongDat.GetRowCellValue(i, "MAPHONG").ToString();
+                    pdp.SONGAYO = (short?)(dtpNgayTra.Value.Day - dtpNgayDat.Value.Day);
+                    pdp.DONGIA = decimal.Parse(gvPhongDat.GetRowCellValue(i, "DONGIA").ToString());
+                    phongDattPhongBLL.addBLL(pdp);
+                    phongBLL.capNhatTrangThaiBLL(pdp.MAPHONG, true);
+                    if (gvDVDat.RowCount > 0)
+                    {
+                        for (int j = 0; j < gvDVDat.RowCount; j++)
+                        {
+                            if (pdp.MAPHONG == gvDVDat.GetRowCellValue(j, "MAPHONG").ToString())
+                            {
+                                dpsp = new SP_DATPHONG();
+                                dpsp.MADATPHONG = dp.MADATPHONG;
+                                dpsp.MAPHONG = gvDVDat.GetRowCellValue(j, "MAPHONG").ToString();
+                                dpsp.MASP = gvDVDat.GetRowCellValue(j, "MASP").ToString();
+                                dpsp.DONGIA = decimal.Parse(gvDVDat.GetRowCellValue(j, "DONGIA").ToString());
+                                dpsp.SOLUONG = int.Parse(gvDVDat.GetRowCellValue(j, "SOLUONG").ToString());
+                                dpsp.THANHTIEN = dpsp.SOLUONG * dpsp.DONGIA;
+                                sp_DatPhongBLL.addBLL(dpsp);
+                            }
+                            else
+                            {
+                                dpsp = new SP_DATPHONG();
+                                dpsp.MADATPHONG = dp.MADATPHONG.ToString();
+                                dpsp.MAPHONG = pdp.MAPHONG;
+                                sp_DatPhongBLL.addBLL(dpsp);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        dpsp = new SP_DATPHONG();
+                        dpsp.MADATPHONG = dp.MADATPHONG.ToString();
+                        dpsp.MAPHONG = pdp.MAPHONG;
+                        sp_DatPhongBLL.addBLL(dpsp);
+                    }
+
+                }
             }
         }
 

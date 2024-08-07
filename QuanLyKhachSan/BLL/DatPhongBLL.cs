@@ -14,5 +14,6 @@ namespace BLL
         public DATPHONG themDPBLL(DATPHONG dp) { return datPhongDAl.themDP(dp); }
         public DATPHONG getDPBLL(string maDP) { return datPhongDAl.getDatPhong(maDP); }
         public DATPHONG suaBLL(DATPHONG dp) { return datPhongDAl.sua(dp); }
+        public List<DATPHONG> LayDSBLL() { return datPhongDAl.layDS(); }
     }
 }

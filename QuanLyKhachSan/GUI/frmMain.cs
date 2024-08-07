@@ -89,8 +89,9 @@ namespace GUI
         string phong;
         string tang;
         
-        void loadDSPhong()
+        public void loadDSPhong()
         {
+            gControl.Gallery.Groups.Clear();
             List<TANG> lstTang = tangBLL.layDanhSachTangBLL();
             gControl.Gallery.ItemImageLayout = DevExpress.Utils.Drawing.ImageLayoutMode.ZoomInside;
             gControl.Gallery.ImageSize = new Size(64, 64);
