@@ -14,6 +14,10 @@ namespace GUI
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+
+        QLKSDataContext qlks;
+
+        int soLuongTHongBao = 0;
         public frmMain()
         {
             InitializeComponent();
@@ -24,12 +28,14 @@ namespace GUI
             loadForm();
             loadDSPhong();
         }
-        static string tenDangNhap;
+        public static string tenDangNhap;
         TangBLL tangBLL;
         PhongBLL phongBLL;
         void loadForm()
         {
-
+            timer1.Start();
+            qlks = new QLKSDataContext();
+            soLuongTHongBao = qlks.DATPHONG_WEBs.Select(dp=>dp).ToList().Count;
             this.WindowState = FormWindowState.Maximized;
             tenDangNhap = frmDangNhap.tenDangNhap;
             btnNguoiDung.ItemClick += BtnNguoiDung_ItemClick;
@@ -256,6 +262,30 @@ namespace GUI
             frmDatPhongTheoDoan frm = new frmDatPhongTheoDoan();
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.ShowDialog();
+        }
+
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmKhachHang FRM = new frmKhachHang();
+            FRM.StartPosition = FormStartPosition.CenterScreen;
+            FRM.ShowDialog();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            int capNhatSoLuongThonGbao = qlks.DATPHONG_WEBs.Select(x=>x).ToList().Count;
+            if (capNhatSoLuongThonGbao > soLuongTHongBao)
+            {
+                soLuongTHongBao = qlks.DATPHONG_WEBs.Select(x => x).ToList().Count;
+                MessageBox.Show("Có đơn đặt phòng online!!");
+            }
+        }
+
+        private void btnThongBao_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmThongBao FRM = new frmThongBao();
+            FRM.StartPosition=FormStartPosition.CenterScreen;
+            FRM .ShowDialog();
         }
     }
 }

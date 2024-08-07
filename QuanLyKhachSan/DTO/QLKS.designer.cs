@@ -72,6 +72,9 @@ namespace DTO
     partial void InsertPHONG_DATPHONG(PHONG_DATPHONG instance);
     partial void UpdatePHONG_DATPHONG(PHONG_DATPHONG instance);
     partial void DeletePHONG_DATPHONG(PHONG_DATPHONG instance);
+    partial void InsertDATPHONG_WEB(DATPHONG_WEB instance);
+    partial void UpdateDATPHONG_WEB(DATPHONG_WEB instance);
+    partial void DeleteDATPHONG_WEB(DATPHONG_WEB instance);
     #endregion
 		
 		public QLKSDataContext() : 
@@ -221,6 +224,14 @@ namespace DTO
 			get
 			{
 				return this.GetTable<PHONG_DATPHONG>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DATPHONG_WEB> DATPHONG_WEBs
+		{
+			get
+			{
+				return this.GetTable<DATPHONG_WEB>();
 			}
 		}
 	}
@@ -3463,6 +3474,188 @@ namespace DTO
 		{
 			this.SendPropertyChanging();
 			entity.PHONG_DATPHONG = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DATPHONG_WEB")]
+	public partial class DATPHONG_WEB : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _TEN_KHACHHANG;
+		
+		private System.Nullable<System.DateTime> _NGAYDEN;
+		
+		private System.Nullable<System.DateTime> _NGAYDI;
+		
+		private string _SODIENTHOAI;
+		
+		private System.Nullable<bool> _TRANGTHAI;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnTEN_KHACHHANGChanging(string value);
+    partial void OnTEN_KHACHHANGChanged();
+    partial void OnNGAYDENChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYDENChanged();
+    partial void OnNGAYDIChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYDIChanged();
+    partial void OnSODIENTHOAIChanging(string value);
+    partial void OnSODIENTHOAIChanged();
+    partial void OnTRANGTHAIChanging(System.Nullable<bool> value);
+    partial void OnTRANGTHAIChanged();
+    #endregion
+		
+		public DATPHONG_WEB()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TEN_KHACHHANG", DbType="NVarChar(50)")]
+		public string TEN_KHACHHANG
+		{
+			get
+			{
+				return this._TEN_KHACHHANG;
+			}
+			set
+			{
+				if ((this._TEN_KHACHHANG != value))
+				{
+					this.OnTEN_KHACHHANGChanging(value);
+					this.SendPropertyChanging();
+					this._TEN_KHACHHANG = value;
+					this.SendPropertyChanged("TEN_KHACHHANG");
+					this.OnTEN_KHACHHANGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYDEN", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYDEN
+		{
+			get
+			{
+				return this._NGAYDEN;
+			}
+			set
+			{
+				if ((this._NGAYDEN != value))
+				{
+					this.OnNGAYDENChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYDEN = value;
+					this.SendPropertyChanged("NGAYDEN");
+					this.OnNGAYDENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYDI", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYDI
+		{
+			get
+			{
+				return this._NGAYDI;
+			}
+			set
+			{
+				if ((this._NGAYDI != value))
+				{
+					this.OnNGAYDIChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYDI = value;
+					this.SendPropertyChanged("NGAYDI");
+					this.OnNGAYDIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SODIENTHOAI", DbType="Char(15)")]
+		public string SODIENTHOAI
+		{
+			get
+			{
+				return this._SODIENTHOAI;
+			}
+			set
+			{
+				if ((this._SODIENTHOAI != value))
+				{
+					this.OnSODIENTHOAIChanging(value);
+					this.SendPropertyChanging();
+					this._SODIENTHOAI = value;
+					this.SendPropertyChanged("SODIENTHOAI");
+					this.OnSODIENTHOAIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRANGTHAI", DbType="Bit")]
+		public System.Nullable<bool> TRANGTHAI
+		{
+			get
+			{
+				return this._TRANGTHAI;
+			}
+			set
+			{
+				if ((this._TRANGTHAI != value))
+				{
+					this.OnTRANGTHAIChanging(value);
+					this.SendPropertyChanging();
+					this._TRANGTHAI = value;
+					this.SendPropertyChanged("TRANGTHAI");
+					this.OnTRANGTHAIChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

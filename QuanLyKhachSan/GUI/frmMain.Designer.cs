@@ -64,6 +64,9 @@
             this.gControl = new DevExpress.XtraBars.Ribbon.GalleryControl();
             this.galleryControlClient1 = new DevExpress.XtraBars.Ribbon.GalleryControlClient();
             this.imgListGiuong = new System.Windows.Forms.ImageList(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThongBao = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gControl)).BeginInit();
@@ -84,6 +87,7 @@
             // 
             // ribbonControl1
             // 
+            this.ribbonControl1.CaptionBarItemLinks.Add(this.btnThongBao);
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -104,9 +108,11 @@
             this.barButtonItem6,
             this.lblXinChao,
             this.btnSanPhamDV,
-            this.barButtonItem3});
+            this.barButtonItem3,
+            this.barButtonItem9,
+            this.btnThongBao});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 23;
+            this.ribbonControl1.MaxItemId = 25;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageHeaderItemLinks.Add(this.btnThoat);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -180,6 +186,7 @@
             this.barButtonItem7.Id = 10;
             this.barButtonItem7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem7.ImageOptions.SvgImage")));
             this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
             // 
             // barButtonItem8
             // 
@@ -344,6 +351,25 @@
             this.imgListGiuong.Images.SetKeyName(0, "bluebed.png");
             this.imgListGiuong.Images.SetKeyName(1, "redbed.png");
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 50;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // barButtonItem9
+            // 
+            this.barButtonItem9.Caption = "barButtonItem9";
+            this.barButtonItem9.Id = 23;
+            this.barButtonItem9.Name = "barButtonItem9";
+            // 
+            // btnThongBao
+            // 
+            this.btnThongBao.Caption = "Thông báo";
+            this.btnThongBao.Id = 24;
+            this.btnThongBao.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThongBao.ImageOptions.SvgImage")));
+            this.btnThongBao.Name = "btnThongBao";
+            this.btnThongBao.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongBao_ItemClick);
+            // 
             // frmMain
             // 
             this.Appearance.Options.UseFont = true;
@@ -405,5 +431,8 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         public DevExpress.XtraBars.Ribbon.GalleryControl gControl;
+        private System.Windows.Forms.Timer timer1;
+        private DevExpress.XtraBars.BarButtonItem btnThongBao;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
     }
 }

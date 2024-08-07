@@ -187,7 +187,7 @@ namespace GUI
                 dp.THEODOAN = chkTheoDoan.Checked;
                 dp.DISABLED = false;
                 maDPhong = dp.MADATPHONG;
-                dp.TENDANGNHAP = frmDangNhap.tenDangNhap;
+                dp.TENDANGNHAP = frmMain.tenDangNhap;
                 var datphong = dpBLL.themDPBLL(dp);
                 for (int i = 0;i<gvPhongDat.RowCount;i++)
                 {
@@ -216,13 +216,13 @@ namespace GUI
                                 sdp.NGAY = DateTime.Now;
                                 sp_DatPhongBLL.addBLL(sdp);
                             }
-                            //else
-                            //{
-                            //    sdp = new SP_DATPHONG();
-                            //    sdp.MADATPHONG = dp.MADATPHONG.ToString();
-                            //    sdp.MAPHONG = pdp.MAPHONG;
-                            //    sp_DatPhongBLL.addBLL(sdp);
-                            //}
+                            else
+                            {
+                                sdp = new SP_DATPHONG();
+                                sdp.MADATPHONG = dp.MADATPHONG.ToString();
+                                sdp.MAPHONG = pdp.MAPHONG;
+                                sp_DatPhongBLL.addBLL(sdp);
+                            }
                         }
                         loadDSDat();
                         MessageBox.Show("Đặt phòng thành công!");

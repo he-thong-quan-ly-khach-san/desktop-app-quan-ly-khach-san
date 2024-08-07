@@ -261,7 +261,7 @@
             this.pageDanhSach.Controls.Add(this.splitContainerControl1);
             this.pageDanhSach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pageDanhSach.Name = "pageDanhSach";
-            this.pageDanhSach.Size = new System.Drawing.Size(1531, 761);
+            this.pageDanhSach.Size = new System.Drawing.Size(1531, 763);
             this.pageDanhSach.Text = "Danh sách";
             // 
             // splitContainerControl1
@@ -285,7 +285,7 @@
             // 
             this.splitContainerControl1.Panel2.Controls.Add(this.gcDanhSach);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1531, 761);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1531, 763);
             this.splitContainerControl1.SplitterPosition = 49;
             this.splitContainerControl1.TabIndex = 0;
             // 
@@ -339,7 +339,7 @@
             this.gcDanhSach.MainView = this.gridDS;
             this.gcDanhSach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcDanhSach.Name = "gcDanhSach";
-            this.gcDanhSach.Size = new System.Drawing.Size(1527, 696);
+            this.gcDanhSach.Size = new System.Drawing.Size(1527, 698);
             this.gcDanhSach.TabIndex = 0;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridDS});
@@ -504,7 +504,7 @@
             this.pageChiTiet.Controls.Add(this.tableLayoutPanel1);
             this.pageChiTiet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pageChiTiet.Name = "pageChiTiet";
-            this.pageChiTiet.Size = new System.Drawing.Size(1531, 761);
+            this.pageChiTiet.Size = new System.Drawing.Size(1531, 763);
             this.pageChiTiet.Text = "Chi tiết";
             // 
             // tableLayoutPanel1
@@ -522,7 +522,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1531, 761);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1531, 763);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl1
@@ -532,7 +532,7 @@
             this.groupControl1.Location = new System.Drawing.Point(3, 2);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(453, 757);
+            this.groupControl1.Size = new System.Drawing.Size(453, 759);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Danh sách phòng trống";
             // 
@@ -545,7 +545,7 @@
             this.gcPhong.MainView = this.gvPhong;
             this.gcPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcPhong.Name = "gcPhong";
-            this.gcPhong.Size = new System.Drawing.Size(449, 727);
+            this.gcPhong.Size = new System.Drawing.Size(449, 729);
             this.gcPhong.TabIndex = 0;
             this.gcPhong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPhong});
@@ -623,7 +623,7 @@
             this.groupControl2.Location = new System.Drawing.Point(1150, 2);
             this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(378, 757);
+            this.groupControl2.Size = new System.Drawing.Size(378, 759);
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "Dịch vụ";
             // 
@@ -635,7 +635,7 @@
             this.gcSanPham.MainView = this.gvSanPham;
             this.gcSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcSanPham.Name = "gcSanPham";
-            this.gcSanPham.Size = new System.Drawing.Size(374, 727);
+            this.gcSanPham.Size = new System.Drawing.Size(374, 729);
             this.gcSanPham.TabIndex = 0;
             this.gcSanPham.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSanPham});
@@ -721,7 +721,7 @@
             this.splitContainerControl2.Panel2.Controls.Add(this.groupControl4);
             this.splitContainerControl2.Panel2.Controls.Add(this.groupControl3);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(682, 757);
+            this.splitContainerControl2.Size = new System.Drawing.Size(682, 759);
             this.splitContainerControl2.SplitterPosition = 191;
             this.splitContainerControl2.TabIndex = 3;
             // 

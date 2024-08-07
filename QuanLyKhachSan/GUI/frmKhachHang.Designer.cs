@@ -77,118 +77,112 @@
             this.groupControl2.Controls.Add(this.label2);
             this.groupControl2.Controls.Add(this.label1);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl2.Location = new System.Drawing.Point(0, 28);
-            this.groupControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupControl2.Location = new System.Drawing.Point(0, 35);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(863, 132);
+            this.groupControl2.Size = new System.Drawing.Size(1151, 162);
             this.groupControl2.TabIndex = 5;
             this.groupControl2.Text = "Thông tin";
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(109, 101);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDiaChi.Location = new System.Drawing.Point(145, 124);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(477, 21);
+            this.txtDiaChi.Size = new System.Drawing.Size(635, 23);
             this.txtDiaChi.TabIndex = 3;
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(404, 56);
-            this.txtSDT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSDT.Location = new System.Drawing.Point(539, 69);
+            this.txtSDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(182, 21);
+            this.txtSDT.Size = new System.Drawing.Size(241, 23);
             this.txtSDT.TabIndex = 3;
             // 
             // txtCCCD
             // 
-            this.txtCCCD.Location = new System.Drawing.Point(404, 27);
-            this.txtCCCD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCCCD.Location = new System.Drawing.Point(539, 33);
+            this.txtCCCD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCCCD.Name = "txtCCCD";
-            this.txtCCCD.Size = new System.Drawing.Size(182, 21);
+            this.txtCCCD.Size = new System.Drawing.Size(241, 23);
             this.txtCCCD.TabIndex = 3;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(109, 77);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Location = new System.Drawing.Point(145, 95);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(182, 21);
+            this.txtEmail.Size = new System.Drawing.Size(241, 23);
             this.txtEmail.TabIndex = 3;
             // 
             // txtTenKH
             // 
-            this.txtTenKH.Location = new System.Drawing.Point(109, 54);
-            this.txtTenKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTenKH.Location = new System.Drawing.Point(145, 66);
+            this.txtTenKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenKH.Name = "txtTenKH";
-            this.txtTenKH.Size = new System.Drawing.Size(182, 21);
+            this.txtTenKH.Size = new System.Drawing.Size(241, 23);
             this.txtTenKH.TabIndex = 3;
             // 
             // txtMaKH
             // 
-            this.txtMaKH.Location = new System.Drawing.Point(109, 30);
-            this.txtMaKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaKH.Location = new System.Drawing.Point(145, 37);
+            this.txtMaKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(182, 21);
+            this.txtMaKH.Size = new System.Drawing.Size(241, 23);
             this.txtMaKH.TabIndex = 3;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(304, 58);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(405, 71);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 13);
+            this.label5.Size = new System.Drawing.Size(82, 16);
             this.label5.TabIndex = 2;
             this.label5.Text = "Số điện thoại";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 103);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(12, 127);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 13);
+            this.label4.Size = new System.Drawing.Size(46, 16);
             this.label4.TabIndex = 2;
             this.label4.Text = "Địa chỉ";
             // 
             // aaa
             // 
             this.aaa.AutoSize = true;
-            this.aaa.Location = new System.Drawing.Point(9, 80);
-            this.aaa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.aaa.Location = new System.Drawing.Point(12, 98);
             this.aaa.Name = "aaa";
-            this.aaa.Size = new System.Drawing.Size(31, 13);
+            this.aaa.Size = new System.Drawing.Size(38, 16);
             this.aaa.TabIndex = 2;
             this.aaa.Text = "Email";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(304, 29);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(405, 36);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 13);
+            this.label3.Size = new System.Drawing.Size(77, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Số căn cước";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 56);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(12, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 13);
+            this.label2.Size = new System.Drawing.Size(98, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tên khách hàng";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 32);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(12, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.Size = new System.Drawing.Size(93, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Mã khách hàng";
             // 
@@ -196,29 +190,28 @@
             // 
             this.groupControl1.Controls.Add(this.gcDS);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControl1.Location = new System.Drawing.Point(0, 165);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupControl1.Location = new System.Drawing.Point(0, 203);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(863, 488);
+            this.groupControl1.Size = new System.Drawing.Size(1151, 601);
             this.groupControl1.TabIndex = 4;
             this.groupControl1.Text = "Danh sách khách hàng";
             // 
             // gcDS
             // 
             this.gcDS.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcDS.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.gcDS.Location = new System.Drawing.Point(2, 23);
+            this.gcDS.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcDS.Location = new System.Drawing.Point(2, 28);
             this.gcDS.MainView = this.gridDS;
-            this.gcDS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gcDS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcDS.Name = "gcDS";
-            this.gcDS.Size = new System.Drawing.Size(859, 463);
+            this.gcDS.Size = new System.Drawing.Size(1147, 571);
             this.gcDS.TabIndex = 0;
             this.gcDS.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridDS});
             // 
             // gridDS
             // 
-            this.gridDS.DetailHeight = 284;
             this.gridDS.GridControl = this.gcDS;
             this.gridDS.Name = "gridDS";
             this.gridDS.Click += new System.EventHandler(this.gridDS_Click);
@@ -227,14 +220,14 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 28);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 35);
             // 
             // btnXoa
             // 
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(60, 25);
+            this.btnXoa.Size = new System.Drawing.Size(70, 32);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -243,7 +236,7 @@
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(60, 25);
+            this.btnSua.Size = new System.Drawing.Size(69, 32);
             this.btnSua.Text = "Sửa";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -252,7 +245,7 @@
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(73, 25);
+            this.btnThem.Size = new System.Drawing.Size(84, 32);
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -270,7 +263,7 @@
             this.btnHuy});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(863, 28);
+            this.toolStrip1.Size = new System.Drawing.Size(1151, 35);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -279,7 +272,7 @@
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(60, 25);
+            this.btnLuu.Size = new System.Drawing.Size(68, 32);
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
@@ -289,7 +282,7 @@
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(73, 25);
+            this.btnThoat.Size = new System.Drawing.Size(86, 32);
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
@@ -298,19 +291,19 @@
             this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
             this.btnHuy.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(62, 25);
+            this.btnHuy.Size = new System.Drawing.Size(71, 32);
             this.btnHuy.Text = "Hủy";
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // frmKhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 653);
+            this.ClientSize = new System.Drawing.Size(1151, 804);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmKhachHang";
             this.Text = "Khách hàng";
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();

@@ -1,4 +1,5 @@
 ﻿using DevExpress.Utils.DirectXPaint;
+using DevExpress.XtraWaitForm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,7 @@ namespace GUI
             Application.SetCompatibleTextRenderingDefault(false);
             formDN = new frmDangNhap();
             formCN = new frmCauHinhKetNoi();
-            Application.Run(new frmDatPhongTheoDoan());
+            Application.Run(formDN);
         }
     }
 }
