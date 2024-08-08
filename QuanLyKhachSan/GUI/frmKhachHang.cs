@@ -98,15 +98,27 @@ namespace GUI
         private void gridDS_Click(object sender, EventArgs e)
         {
             var gridView = sender as DevExpress.XtraGrid.Views.Grid.GridView;
+
             if (gridDS.RowCount > 0 && !_them)
             {
                 _them = false;
                 txtMaKH.Text = gridDS.GetFocusedRowCellValue("MAKH").ToString();
                 txtTenKH.Text = gridDS.GetFocusedRowCellValue("HOTENKH").ToString();
-                txtDiaChi.Text = gridDS.GetFocusedRowCellValue("DIACHI").ToString(); 
                 txtSDT.Text = gridDS.GetFocusedRowCellValue("DIENTHOAI").ToString();
+                if (gridDS.GetFocusedRowCellValue("DIACHI") == null )
+                {
+                    txtDiaChi.Text = string.Empty;
+                    txtCCCD.Text = string.Empty;
+                    txtEmail.Text = string.Empty;
+                    return;
+                }
+                txtDiaChi.Text = gridDS.GetFocusedRowCellValue("DIACHI").ToString();
                 txtCCCD.Text = gridDS.GetFocusedRowCellValue("CCCD").ToString();
                 txtEmail.Text = gridDS.GetFocusedRowCellValue("EMAIL").ToString();
+
+
+
+
                 btnSua.Enabled = true;
                 btnXoa.Enabled = true;
             }

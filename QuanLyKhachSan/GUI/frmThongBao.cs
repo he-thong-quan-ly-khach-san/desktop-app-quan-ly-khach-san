@@ -37,7 +37,7 @@ namespace GUI
                 kHACHHANG.MAKH = MaKHTuDong();
                 string ten = gvThongTin.GetFocusedRowCellValue("TEN_KHACHHANG").ToString();
                 kHACHHANG.HOTENKH = ten;
-                kHACHHANG.DIENTHOAI = kHACHHANG.HOTENKH = gvThongTin.GetFocusedRowCellValue("SODIENTHOAI").ToString();
+                kHACHHANG.DIENTHOAI  = gvThongTin.GetFocusedRowCellValue("SODIENTHOAI").ToString();
                 qlks.KHACHHANGs.InsertOnSubmit(kHACHHANG);
                 qlks.SubmitChanges();
                 MessageBox.Show("Đã thêm khách hàng vào hệ thống");

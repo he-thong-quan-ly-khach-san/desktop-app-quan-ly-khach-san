@@ -1082,6 +1082,7 @@
             this.gvPhongDat.Name = "gvPhongDat";
             this.gvPhongDat.OptionsBehavior.Editable = false;
             this.gvPhongDat.OptionsView.ShowFooter = true;
+            this.gvPhongDat.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvPhongDat_CellValueChanged);
             this.gvPhongDat.RowCountChanged += new System.EventHandler(this.gvPhongDat_RowCountChanged);
             // 
             // dpMaPhong
