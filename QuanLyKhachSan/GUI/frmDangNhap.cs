@@ -100,6 +100,7 @@ namespace GUI
                 tenDangNhap = txtTenDangNhap.Text;
                 Program.MainForm = new frmMain();
             }
+            tenDangNhap = txtTenDangNhap.Text;
             this.Visible = false;
             Program.MainForm.Show();
         }
