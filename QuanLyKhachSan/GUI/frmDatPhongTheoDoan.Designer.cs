@@ -37,8 +37,7 @@
             this.btnLuu = new System.Windows.Forms.ToolStripButton();
             this.btnThoat = new System.Windows.Forms.ToolStripButton();
             this.btnHuy = new System.Windows.Forms.ToolStripButton();
-            this.btnIn = new System.Windows.Forms.ToolStripButton();
-            this.tabDanhSach = new DevExpress.XtraTab.XtraTabControl();
+            this.pageChiTiet = new DevExpress.XtraTab.XtraTabControl();
             this.pageDanhSach = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.dtpDenNgay = new System.Windows.Forms.DateTimePicker();
@@ -59,7 +58,7 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.pageChiTiet = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.gcPhong = new DevExpress.XtraGrid.GridControl();
@@ -70,53 +69,48 @@
             this.TENTANG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pDONGIA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.gcSanPham = new DevExpress.XtraGrid.GridControl();
-            this.gvSanPham = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MASP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENSP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DONGIA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DAXOA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.spSoNguoi = new DevExpress.XtraEditors.SpinEdit();
             this.btnThemMoi = new System.Windows.Forms.Button();
-            this.txtGhiChu = new System.Windows.Forms.RichTextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.chkTheoDoan = new System.Windows.Forms.CheckBox();
-            this.dtpNgayTra = new System.Windows.Forms.DateTimePicker();
-            this.lblSonguoi = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.dtpNgayDat = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.cboTrangThai = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cboKhachHang = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lblHuy = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
-            this.lblTongTien = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.gcDVDat = new DevExpress.XtraGrid.GridControl();
             this.gvDVDat = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.spIDSP = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.spTenSP = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.spTenPhong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.spDonGia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.spSoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.spTrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.spMaPhong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.spThanhTien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.gcPhongDat = new DevExpress.XtraGrid.GridControl();
             this.gvPhongDat = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.dpMaPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dpTenPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dpDonGia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dpMaTang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dpTenTang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.spIDSP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.spTenSP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.spDonGia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.spTrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.spMaPhong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.spTenPhong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.spSoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabDanhSach)).BeginInit();
-            this.tabDanhSach.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pageChiTiet)).BeginInit();
+            this.pageChiTiet.SuspendLayout();
             this.pageDanhSach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
@@ -134,15 +128,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcSanPham)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvSanPham)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2.Panel1)).BeginInit();
             this.splitContainerControl2.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2.Panel2)).BeginInit();
             this.splitContainerControl2.Panel2.SuspendLayout();
             this.splitContainerControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spSoNguoi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
@@ -166,8 +159,7 @@
             this.toolStripSeparator1,
             this.btnLuu,
             this.btnThoat,
-            this.btnHuy,
-            this.btnIn});
+            this.btnHuy});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1533, 35);
@@ -181,7 +173,6 @@
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(84, 32);
             this.btnThem.Text = "Thêm";
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -190,7 +181,6 @@
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(69, 32);
             this.btnSua.Text = "Sửa";
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -199,7 +189,6 @@
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(70, 32);
             this.btnXoa.Text = "Xóa";
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // toolStripSeparator1
             // 
@@ -213,7 +202,6 @@
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(68, 32);
             this.btnLuu.Text = "Lưu";
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnThoat
             // 
@@ -223,18 +211,17 @@
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(86, 32);
             this.btnThoat.Text = "Thoát";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnHuy
             // 
+            this.btnHuy.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
             this.btnHuy.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(71, 32);
             this.btnHuy.Text = "Hủy";
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
-            // btnIn
+            // pageChiTiet
             // 
             this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
             this.btnIn.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -254,7 +241,7 @@
             this.tabDanhSach.TabIndex = 14;
             this.tabDanhSach.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.pageDanhSach,
-            this.pageChiTiet});
+            this.xtraTabPage2});
             // 
             // pageDanhSach
             // 
@@ -499,7 +486,7 @@
             this.gridColumn14.VisibleIndex = 9;
             this.gridColumn14.Width = 65;
             // 
-            // pageChiTiet
+            // xtraTabPage2
             // 
             this.pageChiTiet.Controls.Add(this.tableLayoutPanel1);
             this.pageChiTiet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -538,7 +525,6 @@
             // 
             // gcPhong
             // 
-            this.gcPhong.AllowDrop = true;
             this.gcPhong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcPhong.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcPhong.Location = new System.Drawing.Point(2, 28);
@@ -549,7 +535,6 @@
             this.gcPhong.TabIndex = 0;
             this.gcPhong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPhong});
-            this.gcPhong.DoubleClick += new System.EventHandler(this.gcPhong_DoubleClick);
             // 
             // gvPhong
             // 
@@ -560,11 +545,7 @@
             this.TENTANG,
             this.pDONGIA});
             this.gvPhong.GridControl = this.gcPhong;
-            this.gvPhong.GroupCount = 1;
             this.gvPhong.Name = "gvPhong";
-            this.gvPhong.OptionsBehavior.Editable = false;
-            this.gvPhong.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.TENTANG, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // MAPHONG
             // 
@@ -618,7 +599,7 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.gcSanPham);
+            this.groupControl2.Controls.Add(this.gridControl1);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(1150, 2);
             this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -627,7 +608,7 @@
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "Dịch vụ";
             // 
-            // gcSanPham
+            // gridControl1
             // 
             this.gcSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcSanPham.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -641,9 +622,9 @@
             this.gvSanPham});
             this.gcSanPham.DoubleClick += new System.EventHandler(this.gcSanPham_DoubleClick);
             // 
-            // gvSanPham
+            // gridView1
             // 
-            this.gvSanPham.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.MASP,
             this.TENSP,
             this.DONGIA,
@@ -698,16 +679,14 @@
             // 
             // splitContainerControl2.Panel1
             // 
-            this.splitContainerControl2.Panel1.Controls.Add(this.spSoNguoi);
             this.splitContainerControl2.Panel1.Controls.Add(this.btnThemMoi);
-            this.splitContainerControl2.Panel1.Controls.Add(this.txtGhiChu);
+            this.splitContainerControl2.Panel1.Controls.Add(this.richTextBox1);
             this.splitContainerControl2.Panel1.Controls.Add(this.chkTheoDoan);
-            this.splitContainerControl2.Panel1.Controls.Add(this.dtpNgayTra);
-            this.splitContainerControl2.Panel1.Controls.Add(this.lblSonguoi);
+            this.splitContainerControl2.Panel1.Controls.Add(this.dateTimePicker2);
             this.splitContainerControl2.Panel1.Controls.Add(this.label5);
-            this.splitContainerControl2.Panel1.Controls.Add(this.dtpNgayDat);
+            this.splitContainerControl2.Panel1.Controls.Add(this.dateTimePicker1);
             this.splitContainerControl2.Panel1.Controls.Add(this.label4);
-            this.splitContainerControl2.Panel1.Controls.Add(this.cboTrangThai);
+            this.splitContainerControl2.Panel1.Controls.Add(this.comboBox1);
             this.splitContainerControl2.Panel1.Controls.Add(this.label6);
             this.splitContainerControl2.Panel1.Controls.Add(this.cboKhachHang);
             this.splitContainerControl2.Panel1.Controls.Add(this.label7);
@@ -751,7 +730,7 @@
             this.btnThemMoi.UseVisualStyleBackColor = true;
             this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
             // 
-            // txtGhiChu
+            // richTextBox1
             // 
             this.txtGhiChu.Location = new System.Drawing.Point(117, 132);
             this.txtGhiChu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -771,7 +750,7 @@
             this.chkTheoDoan.Text = "Theo đoàn";
             this.chkTheoDoan.UseVisualStyleBackColor = true;
             // 
-            // dtpNgayTra
+            // dateTimePicker2
             // 
             this.dtpNgayTra.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -799,7 +778,7 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Ngày trả";
             // 
-            // dtpNgayDat
+            // dateTimePicker1
             // 
             this.dtpNgayDat.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayDat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -818,7 +797,7 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Ngày đặt";
             // 
-            // cboTrangThai
+            // comboBox1
             // 
             this.cboTrangThai.FormattingEnabled = true;
             this.cboTrangThai.Location = new System.Drawing.Point(117, 84);
@@ -879,7 +858,6 @@
             // 
             // groupControl5
             // 
-            this.groupControl5.Controls.Add(this.lblTongTien);
             this.groupControl5.Controls.Add(this.label8);
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl5.Location = new System.Drawing.Point(0, 453);
@@ -941,7 +919,6 @@
             this.gvDVDat.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.spIDSP,
             this.spTenSP,
-            this.spTenPhong,
             this.spDonGia,
             this.spSoLuong,
             this.spTrangThai,
@@ -1056,7 +1033,6 @@
             // 
             // gcPhongDat
             // 
-            this.gcPhongDat.AllowDrop = true;
             this.gcPhongDat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcPhongDat.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcPhongDat.Location = new System.Drawing.Point(2, 28);
@@ -1067,8 +1043,6 @@
             this.gcPhongDat.TabIndex = 0;
             this.gcPhongDat.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPhongDat});
-            this.gcPhongDat.Click += new System.EventHandler(this.gcPhongDat_Click);
-            this.gcPhongDat.DoubleClick += new System.EventHandler(this.gcPhongDat_DoubleClick);
             // 
             // gvPhongDat
             // 
@@ -1076,7 +1050,6 @@
             this.dpMaPhong,
             this.dpTenPhong,
             this.dpDonGia,
-            this.dpMaTang,
             this.dpTenTang});
             this.gvPhongDat.GridControl = this.gcPhongDat;
             this.gvPhongDat.Name = "gvPhongDat";
@@ -1109,8 +1082,6 @@
             this.dpDonGia.FieldName = "DONGIA";
             this.dpDonGia.MinWidth = 25;
             this.dpDonGia.Name = "dpDonGia";
-            this.dpDonGia.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DONGIA", "{0:0.##}")});
             this.dpDonGia.Visible = true;
             this.dpDonGia.VisibleIndex = 1;
             this.dpDonGia.Width = 256;
@@ -1147,8 +1118,8 @@
             this.Text = "Đặt phòng theo đoàn";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabDanhSach)).EndInit();
-            this.tabDanhSach.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pageChiTiet)).EndInit();
+            this.pageChiTiet.ResumeLayout(false);
             this.pageDanhSach.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();
             this.splitContainerControl1.Panel1.ResumeLayout(false);
@@ -1167,8 +1138,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvPhong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gcSanPham)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvSanPham)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2.Panel1)).EndInit();
             this.splitContainerControl2.Panel1.ResumeLayout(false);
             this.splitContainerControl2.Panel1.PerformLayout();
@@ -1176,7 +1147,6 @@
             this.splitContainerControl2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
             this.splitContainerControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.spSoNguoi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
             this.groupControl5.PerformLayout();
@@ -1203,8 +1173,8 @@
         private System.Windows.Forms.ToolStripButton btnLuu;
         private System.Windows.Forms.ToolStripButton btnThoat;
         private System.Windows.Forms.ToolStripButton btnHuy;
-        private DevExpress.XtraTab.XtraTabControl tabDanhSach;
-        private DevExpress.XtraTab.XtraTabPage pageChiTiet;
+        private DevExpress.XtraTab.XtraTabControl pageChiTiet;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraTab.XtraTabPage pageDanhSach;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private System.Windows.Forms.DateTimePicker dtpTuNgay;
@@ -1234,8 +1204,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn TENTANG;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraGrid.GridControl gcSanPham;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvSanPham;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn MASP;
         private DevExpress.XtraGrid.Columns.GridColumn TENSP;
         private DevExpress.XtraGrid.Columns.GridColumn DONGIA;
@@ -1243,13 +1213,14 @@
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl2;
         private System.Windows.Forms.ComboBox cboKhachHang;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dtpNgayTra;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dtpNgayDat;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cboTrangThai;
+        private System.Windows.Forms.CheckBox chkTheoDoan;
+        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RichTextBox txtGhiChu;
+        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnThemMoi;
         private System.Windows.Forms.Label lblHuy;
@@ -1273,12 +1244,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn spTrangThai;
         private DevExpress.XtraGrid.Columns.GridColumn spMaPhong;
         private DevExpress.XtraGrid.Columns.GridColumn spTenPhong;
-        private System.Windows.Forms.ToolStripButton btnIn;
-        private DevExpress.XtraEditors.SpinEdit spSoNguoi;
-        private System.Windows.Forms.Label lblSonguoi;
-        private System.Windows.Forms.CheckBox chkTheoDoan;
-        private DevExpress.XtraGrid.Columns.GridColumn dpMaTang;
-        private DevExpress.XtraGrid.Columns.GridColumn spThanhTien;
-        private System.Windows.Forms.Label lblTongTien;
     }
 }

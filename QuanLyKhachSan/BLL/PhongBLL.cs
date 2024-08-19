@@ -47,5 +47,6 @@ namespace BLL
             phongDAL.capNhatTrangThai(maPhong, TrangThai);
         }
 
+
     }
 }

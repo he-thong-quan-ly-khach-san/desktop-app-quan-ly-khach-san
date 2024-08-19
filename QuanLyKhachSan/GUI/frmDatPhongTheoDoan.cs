@@ -1,5 +1,4 @@
-﻿using DTO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,16 +39,7 @@ namespace GUI
         public frmDatPhongTheoDoan()
         {
             InitializeComponent();
-            _idPhong = string.Empty;
-            _tenPhong = string.Empty;
-            downHitInfo = new GridHitInfo();
-            this.Load += FrmDatPhongTheoDoan_Load;
-            dtPhongTrong = HamXuLy.layDuLieu("select MAPHONG, TENPHONG, DONGIA, PHONG.MATANG, TENTANG  from PHONG inner join TANG on PHONG.MATANG = TANG.MATANG inner join LOAIPHONG on PHONG.MALOAIPHONG = LOAIPHONG.MALOAIPHONG where PHONG.HOATDONG = 0");
-            gcPhong.DataSource = dtPhongTrong;
-            dtPhongDat = dtPhongTrong.Clone();
-            gcPhongDat.DataSource = dtPhongDat;
         }
-
         private void FrmDatPhongTheoDoan_Load(object sender, EventArgs e)
         {
             sp_DatPhongBLL = new SP_DatPhongBLL();
@@ -108,11 +98,11 @@ namespace GUI
 
         }
         
-
         private void label3_Click(object sender, EventArgs e)
         {
 
         }
+
 
         private void btnThem_Click(object sender, EventArgs e)
         {
